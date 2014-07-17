@@ -8,6 +8,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.esotericsoftware.yamlbeans.YamlReader;
 import com.esotericsoftware.yamlbeans.YamlWriter;
@@ -16,7 +18,8 @@ import com.giantrocket.team.data.model.Team;
 
 public class TeamService {
 	
-	private static final String USER_PATH = "env/teams/";
+    @Value("${com.giantrocket.filepath}")
+	private String filePath;
 	
 	public void saveTeam(Team team, String teamName) throws Exception{
 		String filePath = createFilePath(team.getName());
@@ -57,7 +60,7 @@ public class TeamService {
 	
 	private String createFilePath(String teamName) {
 		String fileName = teamName.toLowerCase().replaceAll("\\s+","");
-		return USER_PATH + fileName + ".yml";
+		return filePath + fileName + ".yml";
 	}
 	
 }

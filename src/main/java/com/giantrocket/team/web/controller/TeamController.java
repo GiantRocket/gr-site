@@ -39,7 +39,7 @@ public class TeamController {
 			return view;
 		}
 		catch(Exception e){
-			ModelAndView view = new ModelAndView("create-team-screen");
+			ModelAndView view = new ModelAndView("success-team-screen");
 			view.addObject("team", team);
 			view.addObject("message", "There has been errors, please try again later");
 			return view;
@@ -64,6 +64,9 @@ public class TeamController {
 		try{
 			Team team = this.teamService.getTeam(teamName);
 			ModelAndView view = new ModelAndView("create-team-screen");
+			view.addObject("roles", Role.values());
+			view.addObject("countries", Country.values());
+			view.addObject("states", State.values());
 			if(team == null){
 				view.addObject("message","There has been errors, please try again later");
 				team = new Team();
@@ -87,6 +90,9 @@ public class TeamController {
 		}
 		catch(Exception e){
 			ModelAndView view = new ModelAndView("create-team-screen");
+			view.addObject("roles", Role.values());
+			view.addObject("countries", Country.values());
+			view.addObject("states", State.values());
 			view.addObject("team", team);
 			view.addObject("message", "There has been errors, please try again later");
 			return view;
