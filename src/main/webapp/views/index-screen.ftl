@@ -24,7 +24,7 @@
 </head>
 <body class="home">
 	<!-- Google Analytics -->
-	<?php include_once("analyticstracking.php") ?>
+	<!-- <?php include_once("analyticstracking.php") ?> -->
 	<!-- /Google Analytics -->
 
 	<div class="navbar navbar-inverse navbar-fixed-top headroom">
@@ -35,12 +35,12 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html"><img
+				<a class="navbar-brand" href="/"><img
 					src="http://i.imgur.com/ze7FE4z.png"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="#map-section">Ganadores</a></li>
+					<li><a href="#champ-section">Ganadores</a></li>
 					<li><a href="#team-section">Torneo II</a></li>
 					<li><a href="#premios-section">Seguinos</a></li>
 				</ul>
@@ -76,7 +76,7 @@
 		<div class="row">
 			<div class="col-sm-2"></div>
             <div class="col-sm-4 text-center" id="dreamPic">
-                <img class="imgToShow" src="http://i.imgur.com/ZUjSBJW.jpg" width='200' height='200' /> <img class="imgToHide" src="http://i.imgur.com/c58zsNM.png" width='200' height='200' />
+                <img class="imgToShow" src="http://i.imgur.com/ZUjSBJW.jpg" width='200' height='200' /> <img class="imgToHide" src="http://i.imgur.com/yKzGvJn.png" width='200' height='200' />
                 <h3 class="prize">Segundo Puesto: $800</h3>
                 <h4 class="prize-team">Dream e-Sport</h4>
             </div>

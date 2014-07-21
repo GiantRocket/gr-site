@@ -2,6 +2,7 @@ package com.giantrocket.team.web.controller;
 
 import java.io.FileNotFoundException;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,9 +21,11 @@ import com.giantrocket.team.data.service.TeamService;
 public class TeamController {
 	
 	private TeamService teamService;
+	private static Logger LOGGER = Logger.getLogger(TeamController.class);
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView getEmptyTeamForm() {
+		LOGGER.info("returning empty form to create a team");
 		ModelAndView view = new ModelAndView("create-team-screen");
 		view.addObject("roles", Role.values());
 		view.addObject("countries", Country.values());
@@ -34,11 +37,13 @@ public class TeamController {
 	public ModelAndView saveTeam(@RequestBody Team team) {
 		try{
 			this.teamService.saveTeam(team, null);
+			LOGGER.info("Saved team");
 			ModelAndView view = new ModelAndView("success-team-screen");
 			view.addObject("message", "team has been successfully created");
 			return view;
 		}
 		catch(Exception e){
+			LOGGER.info("We got some error while trying to save team: "+e.getMessage());
 			ModelAndView view = new ModelAndView("success-team-screen");
 			view.addObject("team", team);
 			view.addObject("message", "There has been errors, please try again later");

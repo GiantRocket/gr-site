@@ -8,7 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
-import org.springframework.beans.factory.annotation.Required;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 
 import com.esotericsoftware.yamlbeans.YamlReader;
@@ -20,12 +20,15 @@ public class TeamService {
 	
     @Value("${com.giantrocket.filepath}")
 	private String filePath;
+    private static Logger LOGGER = Logger.getLogger(TeamService.class);
 	
 	public void saveTeam(Team team, String teamName) throws Exception{
 		String filePath = createFilePath(team.getName());
+		LOGGER.info("creating file on "+filePath);
 		if(teamName == null){
 			File teamFile = new File(filePath);
 			if(teamFile.exists()){
+				LOGGER.info("team "+teamName+" already exists");
 				RuntimeException ex = new RuntimeException("A team with the requested name already exists, please contact an administrator to solve this problem");
 				throw ex;
 			}
@@ -37,6 +40,7 @@ public class TeamService {
 		writer.getConfig().setClassTag("Team", Team.class);
 		writer.getConfig().setClassTag("Player", Player.class);
 		writer.close();
+		LOGGER.info("succesfully created team");
 	}
 
 	public Team getTeam(String teamName) throws FileNotFoundException{
