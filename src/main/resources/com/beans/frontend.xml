@@ -31,6 +31,9 @@
 		
 	<mvc:resources location="/images/"
 		mapping="/images/**" cache-period="0" />
+	
+	<mvc:resources location="/fonts/"
+		mapping="/fonts/**" cache-period="0" />
     
 
 </beans>

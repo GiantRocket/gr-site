@@ -3,6 +3,8 @@ package com.giantrocket.team.web.controller;
 import java.io.FileNotFoundException;
 
 import org.apache.log4j.Logger;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,21 +36,11 @@ public class TeamController {
 	}
 	
 	@RequestMapping(value = "", method = RequestMethod.POST)
-	public ModelAndView saveTeam(@RequestBody Team team) {
-		try{
+	public ResponseEntity<Void> saveTeam(@RequestBody Team team) {
 			this.teamService.saveTeam(team, null);
 			LOGGER.info("Saved team");
-			ModelAndView view = new ModelAndView("success-team-screen");
-			view.addObject("message", "team has been successfully created");
-			return view;
-		}
-		catch(Exception e){
-			LOGGER.info("We got some error while trying to save team: "+e.getMessage());
-			ModelAndView view = new ModelAndView("success-team-screen");
-			view.addObject("team", team);
-			view.addObject("message", "There has been errors, please try again later");
-			return view;
-		}
+			return new ResponseEntity<Void>(HttpStatus.OK);
+		
 	}
 	
 	@RequestMapping(value = "/{teamName}", method = RequestMethod.DELETE)
@@ -86,22 +78,9 @@ public class TeamController {
 	}
 	
 	@RequestMapping(value = "/{teamName}", method = RequestMethod.PUT)
-	public ModelAndView updateTeam(@PathVariable String teamName, @RequestBody Team team) {
-		try{
-			this.teamService.saveTeam(team, teamName);
-			ModelAndView view = new ModelAndView("success-team-screen");
-			view.addObject("message", "team has been successfully created");
-			return view;
-		}
-		catch(Exception e){
-			ModelAndView view = new ModelAndView("create-team-screen");
-			view.addObject("roles", Role.values());
-			view.addObject("countries", Country.values());
-			view.addObject("states", State.values());
-			view.addObject("team", team);
-			view.addObject("message", "There has been errors, please try again later");
-			return view;
-		}
+	public ResponseEntity<Void> updateTeam(@PathVariable String teamName, @RequestBody Team team) {
+		this.teamService.saveTeam(team, teamName);
+		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 
 	public void setTeamService(TeamService teamService) {

@@ -262,10 +262,10 @@
 			        contentType: 'application/json',
 			        mimeType: 'application/json',
 			        success: function (data) {
-			        	 alert("SUCCESS");
+			        	 location.href="/team/success";
 			        },
 			        error:function(data,status,er) {
-			            alert("error");
+			            alert(data.responseJSON.message);
 			        }
 			    });
 			});

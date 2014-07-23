@@ -40,9 +40,9 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="#champ-section">Ganadores</a></li>
-					<li><a href="#team-section">Torneo II</a></li>
-					<li><a href="#premios-section">Seguinos</a></li>
+					<li><a id="champlink" href="">Ganadores</a></li>
+					<li><a id="tourneylink" href="">Torneo II</a></li>
+					<li><a id="followlink" href="">Seguinos</a></li>
 				</ul>
 			</div>
 		</div>
@@ -60,6 +60,7 @@
 	<!-- Intro -->
 
 	<div class="container text-center">
+	<div class="row" id="champ-section">
 		&nbsp;
 		<h1 class="thin">
 			FELICITACIONES A ISURUS GAMING HYPER-X
@@ -71,6 +72,7 @@
 				<h3 class="prize">Primer Puesto: $3200</h3>
 				<h4 class="prize-team">Isurus Gaming HyperX</h4>
 		</div>
+	</div>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -92,7 +94,7 @@
 	<!-- Highlights - jumbotron -->
 
 	<div class="jumbotron top-space">
-		<div class="container">
+		<div class="container" id="tourney-section">
 			<h3 class="text-center thin">¿TU EQUIPO YA ESTÁ ENTRENANDO PARA DESAFIAR AL CAMPEÓN?</h3>
 			<p class="new-copy">Próximamente estaremos anunciando los detalles de la segunda edición del Torneo Giant Rocket. Volvemos con mas equipos, mas partidas, mas premios y muchas novedades mas. Estate atento a nuestro grupo de Facebook, donde estaremos anunciando los detalles del segundo torneo.
 			¡Empezá a entrenar!</p>
@@ -103,30 +105,30 @@
 	</div>
 	<!-- /Highlights -->
 	<!-- Map -->
-	<div class="container">
-		<div class="row"></div>
-	</div>			
+	<!-- <div class="container"> -->
+	<!--	 <div class="row"></div> -->
+	<!-- </div>			-->
 
 	<!-- container -->
 
-	<div class="container team-container">
-	</div>
+	<!-- <div class="container team-container"> -->
+	<!-- </div> -->
 	<!-- fixture -->
 
-	<div class="container">
-	</div>
+	<!-- <div class="container"> -->
+	<!-- </div> -->
 
 	<!-- /row -->
 
 	<!-- New Premios-->	
-	<div class="container prize-row">
-	</div>
+	<!-- <div class="container prize-row"> -->
+	<!-- </div> -->
 	<!-- / New Premios-->
 	<!-- /container -->
 
 	<footer id="footer">
 		<div class="footer1">
-			<div class="container">
+			<div class="container" id='follow-section'>
 				<div class="row">
 					<div class="col-md-9 widget">
 						<h3 class="widget-title">Contact</h3>
@@ -156,6 +158,7 @@
 		<div class="footer2">
 			<div class="container">
 				<div class="row">
+				<a class="reset-anchor" name="follow-section"></a>
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="text-left">
@@ -176,6 +179,7 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="js/headroom.min.js"></script>
+	<script src="js/jquery.scrollTo.min.js"></script>
 	<script src="js/jQuery.headroom.min.js"></script>
 	<script src="js/template.js"></script>
 	<!-- Google Maps -->
@@ -249,6 +253,19 @@
 				hoverIn("#dreamPic");
 			}, function() {
 				hoverOut("#dreamPic");
+			});
+			
+			$('#champlink').click(function(e){
+				e.preventDefault();
+				$('body').scrollTo($('#champ-section'));
+			});
+			$('#tourneylink').click(function(e){
+				e.preventDefault();
+				$('body').scrollTo($('#tourney-section'));
+			});
+			$('#followlink').click(function(e){
+				e.preventDefault();
+				$('body').scrollTo($('#follow-section'));
 			});
 
 		});

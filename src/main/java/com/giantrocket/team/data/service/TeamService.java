@@ -15,6 +15,8 @@ import com.esotericsoftware.yamlbeans.YamlReader;
 import com.esotericsoftware.yamlbeans.YamlWriter;
 import com.giantrocket.team.data.model.Player;
 import com.giantrocket.team.data.model.Team;
+import com.giantrocket.team.exceptions.ErrorType;
+import com.giantrocket.team.exceptions.ManagerException;
 
 public class TeamService {
 	
@@ -22,24 +24,28 @@ public class TeamService {
 	private String filePath;
     private static Logger LOGGER = Logger.getLogger(TeamService.class);
 	
-	public void saveTeam(Team team, String teamName) throws Exception{
+	public void saveTeam(Team team, String teamName) {
 		String filePath = createFilePath(team.getName());
 		LOGGER.info("creating file on "+filePath);
 		if(teamName == null){
 			File teamFile = new File(filePath);
 			if(teamFile.exists()){
 				LOGGER.info("team "+teamName+" already exists");
-				RuntimeException ex = new RuntimeException("A team with the requested name already exists, please contact an administrator to solve this problem");
-				throw ex;
+				throw new ManagerException(ErrorType.TEAM_EXISTS);
 			}
 		}
 		Date creationDate = Calendar.getInstance().getTime();
 		team.setCreationDate(creationDate);
-		YamlWriter writer = new YamlWriter(new FileWriter(filePath));
-		writer.write(team);
-		writer.getConfig().setClassTag("Team", Team.class);
-		writer.getConfig().setClassTag("Player", Player.class);
-		writer.close();
+		try {
+			YamlWriter writer = new YamlWriter(new FileWriter(filePath));
+			writer.getConfig().setClassTag("Team", Team.class);
+			writer.getConfig().setClassTag("Player", Player.class);			
+			writer.write(team);
+			writer.close();
+		} catch (Exception e) {
+			throw new ManagerException(ErrorType.FILE_WRITE_ERROR, e);
+		}		
+
 		LOGGER.info("succesfully created team");
 	}
 
@@ -52,7 +58,7 @@ public class TeamService {
 			reader.close();
 			return team;
 		}catch(Exception e){
-			return null;
+			throw new ManagerException(ErrorType.FILE_WRITE_ERROR, e);
 		}
 	}
 	
