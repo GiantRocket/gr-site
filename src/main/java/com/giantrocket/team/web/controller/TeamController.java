@@ -1,7 +1,5 @@
 package com.giantrocket.team.web.controller;
 
-import java.io.FileNotFoundException;
-
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -58,26 +56,16 @@ public class TeamController {
 	
 	@RequestMapping(value = "/{teamName}", method = RequestMethod.GET)
 	public ModelAndView getTeam(@PathVariable String teamName) {
-		try{
-			Team team = this.teamService.getTeam(teamName);
-			ModelAndView view = new ModelAndView("create-team-screen");
-			view.addObject("roles", Role.values());
-			view.addObject("countries", Country.values());
-			view.addObject("states", State.values());
-			if(team == null){
-				view.addObject("message","There has been errors, please try again later");
-				team = new Team();
-			}
-			view.addObject("team", team);
-			return view;
-		}catch(FileNotFoundException e){
-			ModelAndView view = new ModelAndView("create-team-screen");
-			view.addObject("message","Team does not exist");
-			return view;
-		}
+		Team team = this.teamService.getTeam(teamName);
+		ModelAndView view = new ModelAndView("create-team-screen");
+		view.addObject("roles", Role.values());
+		view.addObject("countries", Country.values());
+		view.addObject("states", State.values());
+		view.addObject("team", team);
+		return view;
 	}
 	
-	@RequestMapping(value = "/{teamName}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/{teamName}", method = RequestMethod.PATCH)
 	public ResponseEntity<Void> updateTeam(@PathVariable String teamName, @RequestBody Team team) {
 		this.teamService.saveTeam(team, teamName);
 		return new ResponseEntity<Void>(HttpStatus.OK);

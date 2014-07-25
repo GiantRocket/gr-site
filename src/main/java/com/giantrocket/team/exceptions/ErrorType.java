@@ -6,7 +6,11 @@ public enum ErrorType {
 	
 	TEAM_EXISTS(HttpStatus.BAD_REQUEST, 1, "A team with the requested name already exists, please contact an administrator to solve this problem"),
 	
-	FILE_WRITE_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, 1, "There has been errors trying to create your team, please contact an administrator to solve this problem or try again later");
+	FILE_WRITE_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, 1, "There has been errors trying to create your team, please contact an administrator to solve this problem or try again later"),
+	
+	FILE_READ_ERROR(HttpStatus.BAD_REQUEST,1,"The requested team couldnt be read, please contact an administrator to solve this problem or try again later"), 
+	
+	FILE_NOT_FOUND(HttpStatus.BAD_REQUEST,1,"The requested team does not exist");
 	
 	private String message;
 	private HttpStatus httpStatus;

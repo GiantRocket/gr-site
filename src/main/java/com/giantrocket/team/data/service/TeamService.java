@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 
+import com.esotericsoftware.yamlbeans.YamlException;
 import com.esotericsoftware.yamlbeans.YamlReader;
 import com.esotericsoftware.yamlbeans.YamlWriter;
 import com.giantrocket.team.data.model.Player;
@@ -36,29 +37,48 @@ public class TeamService {
 		}
 		Date creationDate = Calendar.getInstance().getTime();
 		team.setCreationDate(creationDate);
+		YamlWriter writer = null;
 		try {
-			YamlWriter writer = new YamlWriter(new FileWriter(filePath));
+			writer = new YamlWriter(new FileWriter(filePath));
 			writer.getConfig().setClassTag("Team", Team.class);
 			writer.getConfig().setClassTag("Player", Player.class);			
 			writer.write(team);
-			writer.close();
 		} catch (Exception e) {
 			throw new ManagerException(ErrorType.FILE_WRITE_ERROR, e);
-		}		
+		}finally{
+			try {
+				writer.close();
+			} catch (YamlException e) {
+				throw new ManagerException(ErrorType.FILE_WRITE_ERROR, e);
+			}
+		}
 
 		LOGGER.info("succesfully created team");
 	}
 
-	public Team getTeam(String teamName) throws FileNotFoundException{
+	public Team getTeam(String teamName){
+		String filePath = createFilePath(teamName);
+		FileReader fileReader = null;
+		try {
+			fileReader = new FileReader(filePath);
+		} catch (FileNotFoundException fileNotFound) {
+			throw new ManagerException(ErrorType.FILE_NOT_FOUND, fileNotFound);
+		}
+		YamlReader reader = null;
 		try{
-			String filePath = createFilePath(teamName);
-			YamlReader reader = new YamlReader(new FileReader(filePath));
+			reader = new YamlReader(fileReader);
 			reader.getConfig().setClassTag("Team", Team.class);
 			Team team = (Team) reader.read();
 			reader.close();
 			return team;
 		}catch(Exception e){
-			throw new ManagerException(ErrorType.FILE_WRITE_ERROR, e);
+			throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+		}finally{
+			try {
+				reader.close();
+			} catch (Exception e) {
+				throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+			}
 		}
 	}
 	
