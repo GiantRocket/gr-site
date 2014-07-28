@@ -226,8 +226,6 @@
 				team.imageUrl = $("#logoUrl").val();
 				var players = [];
 				$(".player").each(function() {
-				  if($(this).find("#name").val() != ""){
-				  	  var heroes = [];
 					  var player = new Object();
 					  player.name = $(this).find("#name").val();
 					  player.lastName = $(this).find("#lastName").val();
@@ -246,7 +244,6 @@
 					  }
 					  player.pictureUrl = $(this).find("#pictureUrl").val();
 					  players.push(player);
-					}
 				});
 				team.players = players;
 				
@@ -262,7 +259,8 @@
 			        contentType: 'application/json',
 			        mimeType: 'application/json',
 			        success: function (data) {
-			        	 location.href="/team/success";
+			        		alert("ganamos")
+			        	 // location.href="/team/success";
 			        },
 			        error:function(data,status,er) {
 			            alert(data.responseJSON.message);
