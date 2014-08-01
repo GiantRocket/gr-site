@@ -181,7 +181,7 @@
 		</div>
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/hero.css" />
 	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> -->
   	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -197,13 +197,13 @@
 					htmlComplete += "<label class='team-labels' for='idNumber'>Documento*</label><br> <input type='text' placeholder='34383757' class='mustComplete form-control' id='idNumber' name='idNumber' value=''><br>";
 					htmlComplete += "<label class='team-labels' for='nick'>Nick*</label><br> <input class='mustComplete form-control' placeholder='Fear' type='text' id='nick' name='nick' value=''><br>";
 					htmlComplete += "<label class='team-labels' for='dotabuff'>Dotabuff Url</label><br> <input class='form-control' placeholder='http://dotabuff.com/players/86890833' type='text' id='dotabuff' name='dotabuff' value=''><br>";
-					htmlComplete += "<label class='team-labels' for='country'>País*</label><br> <select class='country form-control' id='country' name='country'> <#list countries as country> <option value='${country}'>${country.description}</option> </#list> </select> <br>";
+					htmlComplete += "<label class='team-labels' for='country'>País de residencia*</label><br> <select class='country form-control' id='country' name='country'> <#list countries as country> <option value='${country}'>${country.description}</option> </#list> </select> <br>";
 					htmlComplete += "<label class='team-labels relativeLocation' for='city'>Ciudad*</label><br class='relativeLocation'> <input placeholder='Ciudad Autonoma de Buenos Aires' class='form-control relativeLocation' type='text' id='city' name='city' value=''><br class='relativeLocation'> "
 					htmlComplete += "<label class='team-labels' for='roles'>Rol*</label><br> <select class='mustComplete form-control' id='role' name='role'> <option  value='DEFAULT'>Elije un rol</option> <#list roles as enum> <option value='${enum}'>${enum.description}</option> </#list> </select> <br>";
 					htmlComplete += "</div>";
-					htmlComplete += "<div class='col-sm-6 text-left'>";
+					htmlComplete += "<div class='col-sm-6 text-left second-player-column'>";
 					htmlComplete += "<label class='team-labels' for='lastName'>Apellido*</label><br> <input placeholder='Loomis' class='tagEditor mustComplete form-control' type='text' id='lastName' name='lastName' value=''><br>";
-					htmlComplete += "<label class='team-labels' for='birthday'>Fecha de nac.*</label><br> <input placeholder='18/12/1991' class='birthday mustComplete form-control' type='text' id='birthday"+playerNumber+"'><br>";
+					htmlComplete += "<label class='team-labels' for='birthday'>Fecha de nacimiento*</label><br> <input readonly='readonly' placeholder='18/12/1991' style='background:white;cursor:pointer;'class='birthday mustComplete form-control' type='text' id='birthday"+playerNumber+"'><br>";
 					htmlComplete += "<label class='team-labels' for='pictureUrl'>Foto de perfil*</label><br> <input placeholder='imgur.com/8flyD2F.jpg' class='mustComplete form-control' type='text' id='pictureUrl' name='pictureUrl' value=''><br>";
 					htmlComplete += "<label class='team-labels' for='steam'>Steam Url</label><br> <input class='mustComplete form-control' placeholder='http://steamcommunity.com/profiles/76561198047156561' type='text' id='steam' name='steam' value=''><br>";
 					htmlComplete += "<label  class='team-labels relativeLocation' for='state'>Provincia*</label><br class='relativeLocation'> <select class='relativeLocation form-control' id='state' name='state'> <#list states as state> <option value='${state}'>${state.description}</option> </#list> </select> <br class='relativeLocation'>"
@@ -257,13 +257,13 @@
 					$(this).datepicker({
 					    changeMonth: true,
 					    changeYear: true,
-					    buttonImage: "/images/calendar.gif",
-					    showOn: "button",
-	      				buttonImageOnly: true,
-	      				yearRange: "-100:+0",
+	      				yearRange: "-70:+0",
+	      				maxDate: new Date(1996, 11, 1),
+	      				minDate: new Date(1946, 1, 1),
 	      				dateFormat: "dd/mm/yy"
 				  	});
 				});
+				$( ".birthday" ).datepicker( "option", "gotoCurrent", true );
 			});
 			$("#create-team").click(function(e){
 				e.preventDefault(); 
