@@ -65,6 +65,13 @@ public class TeamController {
 		return view;
 	}
 	
+	@RequestMapping(value = "/export", method = RequestMethod.GET)
+	public ModelAndView exportTeams() {
+		teamService.exportTeams();
+		ModelAndView view = new ModelAndView("index-screen");
+		return view;
+	}
+	
 	@RequestMapping(value = "/{teamName}", method = RequestMethod.PATCH)
 	public ResponseEntity<Void> updateTeam(@PathVariable String teamName, @RequestBody Team team) {
 		this.teamService.saveTeam(team, teamName);

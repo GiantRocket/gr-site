@@ -4,11 +4,14 @@
 		<meta charset="UTF-8" />
 	    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" media="screen" rel="stylesheet" />
-	    <link href="css/bootstrap.min.css" rel="stylesheet" />
-	    <link href="css/font-awesome.min.css" rel="stylesheet" />
+	    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+	    <link href="/css/font-awesome.min.css" rel="stylesheet" />
+	    <link href="/css/jquery-ui.css" rel="stylesheet" />
+	    <link href="/css/jquery-ui.structure.css" rel="stylesheet" />
+	    <link href="/css/jquery-ui.theme.css" rel="stylesheet" />
 	    <!-- Custom styles for our template -->
-	    <link href="css/bootstrap-theme.css" media="screen" rel="stylesheet" />
-	    <link href="css/main.css" rel="stylesheet" />
+	    <link href="/css/bootstrap-theme.css" media="screen" rel="stylesheet" />
+	    <link href="/css/main.css" rel="stylesheet" />
 	</head>
 	<body class="home">
 		<div class="navbar navbar-inverse navbar-fixed-top headroom">
@@ -32,81 +35,155 @@
 	        </div>
     	</div>
     	<header id="head">
-	        <div class="container">
 	            <div class="row">
 	                <img class="header-logo" src="http://i.imgur.com/ze7FE4z.png" />
 	                <h1 class="lead">
 	                    <img src="https://i.imgur.com/wQabEMq.png" />
 	            </div>
-	        </div>
     	</header>
-    	<h1 class="text-center">Sistema de Inscripción de Equipos</h1>
+    	<div class="row title-row">
+    		<div class="col-sm-3 text-left">
+    		</div>
+			<div class="col-sm-6 text-center">
+				<h1 class="super-title">Formulario de Inscripción</h1>
+				<h3 class="epigraph">Agregá a tu equipo para participar de nuestros torneos</h1>
+			</div>
+    		<div class="col-sm-3 text-left">
+    		</div>
+		</div>
+		<div class="team-form">
     	<div class="row">
-    		<div class="col-sm-4 text-center form-col">
-				<form id="teamForm">
-					<label for="teamName">Team Name:</label>
-					<input class="mustComplete" type="text" id="teamName" name="teamName" value=""><br>
-					<label for="teamName">TAG:</label>
-					<input class="mustComplete" type="text" id="tag" name="tag" value=""><br>
-					<label for="teamName">Mail:</label>
-					<input class="mustComplete" type="text" id="mail" name="mail" value=""><br>
-					<label for="teamName">Logo URL:</label> 
-					<input class="mustComplete" type="text" id="logoUrl" name="logoUrl" value=""><br>
-					<label for="teamName">Facebook:</label>
-					<input type="text" id="facebook" name="facebook" value=""><br>
-					<label for="teamName">Twitter:</label>
-					<input type="text" id="twitter" name="twitter" value=""><br>
-					<label for="teamName">Team Web:</label>
-					<input type="text" id="web" name="web" value=""><br>
-					
-					<ul id="playersList">
+    		<div class="col-sm-3 text-left">
+    		</div>
+			<div class="col-sm-6 text-left">
+				<h1 class="sub-titles">Información del equipo</h1>
+			</div>
+    		<div class="col-sm-3 text-left">
+    		</div>
+		</div>
+    	<div class="row">
+    		<div class="col-sm-3 text-left">
+    		</div>
+    		<div class="col-sm-3 text-left">
+					<label class='team-labels' for="teamName">Team Name*</label><br>
+					<input class="mustComplete form-control" type="text" id="teamName" name="teamName" value="" placeholder="Evil Geniuses"><br>
+					<label class='team-labels' for="teamName">Mail*</label><br>
+					<input class="mustComplete form-control" type="text" id="mail" name="mail" value=""><br>
+			</div>
+			<div class="col-sm-3 text-left">
+					<label class='team-labels' for="teamName">TAG*</label><br>
+					<input class="mustComplete form-control" type="text" id="tag" name="tag" value=""><br>
+					<label class='team-labels' for="teamName">Logo URL*</label><br> 
+					<input class="mustComplete form-control" type="text" id="logoUrl" name="logoUrl" value=""><br>
+			</div>
+    		<div class="col-sm-3 text-left">
+    		</div>
+		</div>
+		<div class="row">
+    		<div class="col-sm-3 text-left">
+    		</div>
+			<div class="col-sm-6 text-left">
+				<h1 class="sub-titles">Paginas del equipo</h1>
+			</div>
+    		<div class="col-sm-3 text-left">
+    		</div>
+		</div>
+		<div class="row">
+    		<div class="col-sm-3 text-left">
+    		</div>
+    		<div class="col-sm-3 text-left">
+					<label class='team-labels' for="teamName">Team Web</label><br>
+					<input class='form-control' type="text" id="web" name="web" value=""><br>
+					<label class='team-labels' for="teamName">Twitter</label><br>
+					<input class='form-control' type="text" id="twitter" name="twitter" value=""><br>
+			</div>
+			<div class="col-sm-3 text-left">
+					<label class='team-labels' for="teamName">Fanpage</label><br>
+					<input class='form-control' type="text" id="facebook" name="facebook" value=""><br>
+			</div>
+    		<div class="col-sm-3 text-left">
+    		</div>
+		</div>
+		<div class="row">
+    		<div class="col-sm-3 text-left">
+    		</div>
+			<div class="col-sm-6 text-left">
+				<h1 class="sub-titles">Información de los jugadores</h1>
+			</div>
+    		<div class="col-sm-3 text-left">
+    		</div>
+		</div>
+		<div class="row">
+		   	<div class="col-sm-3 text-left">
+    		</div>
+    		<div class="col-sm-6 text-left">
+					<ul class="ul-align" id="playersList">
 						<div id="accordion">
-							<h3 id="1">Player 1:</h3> 
+							<h3 id="1">Capitán</h3> 
 								<div> 
+									<input type='hidden' id='initialText1' value='Capitán'/>
 									<li class='player' id="player1">
 									</li>
 								</div> 
-							<h3 id="2">Player 2:</h3> 
-								<div> 
+							<h3 id="2">Titular 1</h3> 
+								<div>
+									<input type='hidden' id='initialText2' value='Titular 1'/> 
 									<li class='player' id="player2">
 									</li>
 								</div>
-							<h3 id="3">Player 3:</h3> 
+							<h3 id="3">Titular 2</h3> 
 								<div> 
+									<input type='hidden' id='initialText3' value='Titular 2'/>
 									<li class='player' id="player3">
 									</li>
 								</div> 
-							<h3 id="4">Player 4:</h3> 
+							<h3 id="4">Titular 3</h3> 
 								<div> 
+									<input type='hidden' id='initialText4' value='Titular 3'/>
 									<li class='player' id="player4">
 									</li>
 								</div> 
-							<h3 id="5">Player 5:</h3> 
+							<h3 id="5">Titular 4</h3> 
 								<div> 
+									<input type='hidden' id='initialText5' value='Titular 4'/>
 									<li class='player' id="player5">
 									</li>
 								</div> 
-							<h3 id="6">Player 6:</h3> 
+							<h3 id="6">Suplente 1</h3> 
 								<div> 
+									<input type='hidden' id='initialText6' value='Suplente 1'/>
 									<li class='player' id="player6">
 									</li>
 								</div> 
-							<h3 id="7">Player 7:</h3> 
+							<h3 id="7">Suplente 2</h3> 
 								<div> 
+									<input type='hidden' id='initialText7' value='Suplente 2'/>
 									<li class='player' id="player7">
 									</li>
 								</div> 																																								 
 						</div>
 					</ul>
-					<input class="btn primary" type="submit" value="Create">
-				</form>
+					
 			</div>
+			<div class="col-sm-3 text-left">
+    		</div>
+    		</div>	
+    		<div class="row">
+		   	<div class="col-sm-3 text-left">
+    		</div>
+    		<div class="col-sm-6 text-center last-section">
+    		<input id="create-team" class="btn create-button" value="Create">
+    		</div>
+    		<div class="col-sm-3 text-left">
+    		</div>
+		</div>
+		</div>
 		</div>
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/hero.css" />
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="/css/hero.css" />
+	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> -->
   	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
   	<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 	<script>
@@ -114,32 +191,26 @@
 			var playerNumber = 0;
 				while(playerNumber < 7){
 					playerNumber++;
-					var htmlPlayerNumber = "<input type='hidden' id='playerNumber' value='"+playerNumber+"'/>"
-					var htmlName = "<label for='name'>Name:</label> <input class='tagEditor mustComplete' type='text' id ='name' name='name' value=''><br>";
-					var htmlLastName = "<label for='lastName'>Last Name:</label> <input class='tagEditor mustComplete' type='text' id='lastName' name='lastName' value=''><br>";
-					var htmlIdNumber = "<label for='idNumber'>Documento:</label> <input type='text' class='mustComplete' id='idNumber' name='idNumber' value=''><br>";
-					var htmlBirthday = "<label for='birthday'>Cumpleaños:</label> <input class='birthday mustComplete' type='text' id='birthday"+playerNumber+"'><br>";
-					var htmlNick = "<label for='nick'>Nick:</label> <input class='mustComplete' type='text' id='nick' name='nick' value=''><br>";
-					var htmlSteam = "<label for='steam'>Steam:</label> <input class='mustComplete' type='text' id='steam' name='steam' value=''><br>";
-					var htmlDotabuff = "<label for='dotabuff'>Dotabuff:</label> <input type='text' id='dotabuff' name='dotabuff' value=''><br>";
-					var htmlPicture = "<label for='pictureUrl'>Picture URL:</label> <input class='mustComplete' type='text' id='pictureUrl' name='pictureUrl' value=''><br>";
-					var htmlCaptain = "<label for='isCaptain'>Capitan:</label> <input type='checkbox' class='isCaptain' id='isCaptain' name='isCaptain' value='"+playerNumber+"'><br>";
-					var htmlCountry = "<label for='country'>Country:</label> <select class='country' id='country' name='country'> <#list countries as country> <option value='${country}'>${country.description}</option> </#list> </select> <br>";
-					var htmlRelativeLocation = "<div id='relativeLocation'> <label for='state'>Provincia:</label> <select id='state' name='state'> <#list states as state> <option value='${state}'>${state.description}</option> </#list> </select> <br> <label for='city'>Ciudad:</label> <input type='text' id='city' name='city' value=''><br> <label for='neighbourhood'>Barrio:</label> <input type='text' id='neighbourhood' name='neighbourhood' value=''><br> </div>";
-					var htmlRole = "<label for='roles'>Rol:</label> <select class='mustComplete' id='role' name='role'> <option  value='DEFAULT'>Elije un rol</option> <#list roles as enum> <option value='${enum}'>${enum.description}</option> </#list> </select> <br>";
-					$("#player"+playerNumber).append(htmlPlayerNumber);
-					$("#player"+playerNumber).append(htmlName);
-					$("#player"+playerNumber).append(htmlLastName);
-					$("#player"+playerNumber).append(htmlIdNumber);
-					$("#player"+playerNumber).append(htmlBirthday);
-					$("#player"+playerNumber).append(htmlNick);
-					$("#player"+playerNumber).append(htmlSteam);
-					$("#player"+playerNumber).append(htmlDotabuff);
-					$("#player"+playerNumber).append(htmlPicture);
-					$("#player"+playerNumber).append(htmlCaptain);
-					$("#player"+playerNumber).append(htmlCountry);
-					$("#player"+playerNumber).append(htmlRelativeLocation);
-					$("#player"+playerNumber).append(htmlRole);
+					var htmlComplete = "<div class='col-sm-6 text-left first-player-column'>";
+					htmlComplete += "<input type='hidden' id='playerNumber' value='"+playerNumber+"'/>";
+					htmlComplete += "<label class='team-labels' for='name'>Nombre*</label><br> <input class='tagEditor mustComplete form-control' type='text' id ='name' name='name' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='idNumber'>Documento*</label><br> <input type='text' class='mustComplete form-control' id='idNumber' name='idNumber' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='nick'>Nick*</label><br> <input class='mustComplete form-control' type='text' id='nick' name='nick' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='dotabuff'>Dotabuff Url</label><br> <input class='form-control' type='text' id='dotabuff' name='dotabuff' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='country'>País*</label><br> <select class='country form-control' id='country' name='country'> <#list countries as country> <option value='${country}'>${country.description}</option> </#list> </select> <br>";
+					htmlComplete += "<label class='team-labels relativeLocation' for='city'>Ciudad*</label><br class='relativeLocation'> <input class='form-control' type='text' class='relativeLocation' id='city' name='city' value=''><br class='relativeLocation'> "
+					htmlComplete += "<label class='team-labels' for='roles'>Rol*</label><br> <select class='mustComplete form-control' id='role' name='role'> <option  value='DEFAULT'>Elije un rol</option> <#list roles as enum> <option value='${enum}'>${enum.description}</option> </#list> </select> <br>";
+					htmlComplete += "</div>";
+					htmlComplete += "<div class='col-sm-6 text-left'>";
+					htmlComplete += "<label class='team-labels' for='lastName'>Apellido*</label><br> <input class='tagEditor mustComplete form-control' type='text' id='lastName' name='lastName' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='birthday'>Fecha de nac.*</label><br> <input class='birthday mustComplete form-control' type='text' id='birthday"+playerNumber+"'><br>";
+					htmlComplete += "<label class='team-labels' for='pictureUrl'>Foto de perfil*</label><br> <input class='mustComplete form-control' type='text' id='pictureUrl' name='pictureUrl' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='steam'>Steam Url</label><br> <input class='mustComplete form-control' type='text' id='steam' name='steam' value=''><br>";
+					htmlComplete += "<label  class='team-labels relativeLocation' for='state'>Provincia*</label><br class='relativeLocation'> <select class='relativeLocation form-control' id='state' name='state'> <#list states as state> <option value='${state}'>${state.description}</option> </#list> </select> <br class='relativeLocation'>"
+					htmlComplete += "<label class='team-labels relativeLocation' for='neighbourhood'>Barrio*</label><br class='relativeLocation' > <input class='relativeLocation form-control' type='text' id='neighbourhood' name='neighbourhood' value=''>";
+					htmlComplete += "</div>";
+					
+					$("#player"+playerNumber).append(htmlComplete);
 				}
 			$(".isCaptain").change(function(){
 				var isCaptain = $(this).is(":checked");
@@ -156,8 +227,8 @@
 				}
 			});
 			var icons = {
-		      header: "ui-icon-circle-arrow-e",
-		      activeHeader: "ui-icon-circle-arrow-s"
+		      header: "ui-icon-plusthick",
+		      activeHeader: "ui-icon-minusthick"
 		    };
 		    $( "#accordion" ).accordion({
 			  collapsible: true,
@@ -174,15 +245,24 @@
 			});
 		    $(".tagEditor").on('input',function(e){
 		      var playerNumber =$(this).parent().find("#playerNumber").val();
-			  $("#"+playerNumber).html($(this).parent().find("#name").val() + " " + $(this).parent().find("#lastName").val())
-			  $("#"+playerNumber).append("<span class='ui-accordion-header-icon ui-icon ui-icon-circle-arrow-s'></span>");
+		      var initialText = $("#initialText"+playerNumber).val();
+		      var name = $(this).parent().find("#name").val();
+		      var lastName = $(this).parent().find("#lastName").val();
+		      if(name != "" || lastName != ""){
+				$("#"+playerNumber).html(initialText + " - " + name + " " + lastName)
+			  }else{
+			  	$("#"+playerNumber).html(initialText)
+			  }
+			    $("#"+playerNumber).append("<span class='ui-accordion-header-icon ui-icon ui-icon-minusthick'></span>");
 			});
 			
 			function hideLocation(e){
-				e.find("#relativeLocation").hide()
+				e.parent().find(".relativeLocation").hide()
+				e.parent().parent().css('height','100%');
 			}
 			function showLocation(e){
-				e.find("#relativeLocation").show()
+				e.parent().find(".relativeLocation").show()
+				e.parent().parent().css('height','100%');
 			}
 			
 			$(function() {
@@ -190,7 +270,7 @@
 					$(this).datepicker({
 					    changeMonth: true,
 					    changeYear: true,
-					    buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+					    buttonImage: "/images/calendar.gif",
 					    showOn: "button",
 	      				buttonImageOnly: true,
 	      				yearRange: "-100:+0",
@@ -198,7 +278,7 @@
 				  	});
 				});
 			});
-			$("#teamForm").submit(function(e){
+			$("#create-team").click(function(e){
 				e.preventDefault(); 
 				
 				//validations

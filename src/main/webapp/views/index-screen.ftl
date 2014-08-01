@@ -10,16 +10,16 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
 	media="screen" rel="stylesheet" />
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/font-awesome.min.css" rel="stylesheet" />
+<link href="/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/css/font-awesome.min.css" rel="stylesheet" />
 <!-- Custom styles for our template -->
-<link href="css/bootstrap-theme.css" media="screen"
+<link href="/css/bootstrap-theme.css" media="screen"
 	rel="stylesheet" />
-<link href="css/main.css" rel="stylesheet" />
+<link href="/css/main.css" rel="stylesheet" />
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
+	<script src="assets//js/html5shiv.js"></script>
+	<script src="assets//js/respond.min.js"></script>
 	<![endif]-->
 </head>
 <body class="home">
@@ -178,13 +178,13 @@
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="js/headroom.min.js"></script>
-	<script src="js/jquery.scrollTo.min.js"></script>
-	<script src="js/jQuery.headroom.min.js"></script>
-	<script src="js/template.js"></script>
+	<script src="/js/headroom.min.js"></script>
+	<script src="/js/jquery.scrollTo.min.js"></script>
+	<script src="/js/jQuery.headroom.min.js"></script>
+	<script src="/js/template.js"></script>
 	<!-- Google Maps -->
 	<script src="http://maps.googleapis.com/maps/api/js?v=3.14&(KEY=****)&sensor=false"></script>
-	<script src="js/google-map.js"></script>
+	<script src="/js/google-map.js"></script>
 
 	<script>
 		$(document).ready(function() {

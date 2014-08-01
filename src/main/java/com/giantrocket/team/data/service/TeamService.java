@@ -4,8 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -21,9 +24,12 @@ import com.giantrocket.team.exceptions.ManagerException;
 
 public class TeamService {
 	
-    @Value("${com.giantrocket.filepath}")
+	@Value("${com.giantrocket.filepath}")
 	private String filePath;
+	@Value("${com.giantrocket.exportpath}")
+	private String exportPath;
     private static Logger LOGGER = Logger.getLogger(TeamService.class);
+    private static final char COMMA = ',';
 	
 	public void saveTeam(Team team, String teamName) {
 		String filePath = createFilePath(team.getName());
@@ -68,6 +74,7 @@ public class TeamService {
 		try{
 			reader = new YamlReader(fileReader);
 			reader.getConfig().setClassTag("Team", Team.class);
+			reader.getConfig().setClassTag("Player", Player.class);
 			Team team = (Team) reader.read();
 			reader.close();
 			return team;
@@ -81,6 +88,172 @@ public class TeamService {
 			}
 		}
 	}
+	
+	public Team getTeam(File teamFile){
+		FileReader fileReader = null;
+		try {
+			fileReader = new FileReader(teamFile);
+		} catch (FileNotFoundException fileNotFound) {
+			throw new ManagerException(ErrorType.FILE_NOT_FOUND, fileNotFound);
+		}
+		YamlReader reader = null;
+		try{
+			reader = new YamlReader(fileReader);
+			reader.getConfig().setClassTag("Team", Team.class);
+			reader.getConfig().setClassTag("Player", Player.class);
+			Team team = (Team) reader.read();
+			reader.close();
+			return team;
+		}catch(Exception e){
+			throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+		}finally{
+			try {
+				reader.close();
+			} catch (Exception e) {
+				throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+			}
+		}
+	}
+	
+	public List<Team> getAllTeams(){
+		List<Team> teams = new ArrayList<Team>();
+		File folder = new File(filePath);
+		File[] listOfFiles = folder.listFiles();
+		for(File file:listOfFiles){
+			Team team = this.getTeam(file);
+			teams.add(team);
+		}
+		return teams;
+	}
+	
+	public void exportTeams(){
+		FileWriter writer = null;
+		try{
+			writer = new FileWriter(exportPath + "data.csv");
+		    List<Team> allTeams = this.getAllTeams();
+		    writeCsvHeader(writer);
+		    for(Team team:allTeams){
+			    writeTeamInformation(writer, team);
+			    for(Player player:team.getPlayers()){
+				    writePlayerInformation(writer, player);
+			    }
+		 
+		    }
+		}
+		catch(IOException e)
+		{
+			throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+		} finally{
+			try{
+			    writer.flush();
+			    writer.close();
+			} catch (Exception e) {
+				throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+			}
+		}
+		
+	}
+
+	private void writePlayerInformation(FileWriter writer, Player player) throws IOException {
+		writer.append(player.getName());
+		writer.append(COMMA);
+		writer.append(player.getLastName());
+		writer.append(COMMA);
+		writer.append(player.getBirthday());
+		writer.append(COMMA);
+		writer.append(player.getNick());
+		writer.append(COMMA);
+		writer.append(player.getIdNumber());
+		writer.append(COMMA);
+		writer.append(player.getRole().getDescription());
+		writer.append(COMMA);
+		if(player.isCaptain()){
+		    writer.append("true");
+		    writer.append(COMMA);
+		}else{
+			writer.append("false");
+		    writer.append(COMMA);
+		}
+		writer.append(player.getSteam());
+		writer.append(COMMA);
+		writer.append(player.getDotabuff());
+		writer.append(COMMA);
+		writer.append(player.getCountry().getDescription());
+		writer.append(COMMA);
+		writer.append(player.getState());
+		writer.append(COMMA);
+		writer.append(player.getCity());
+		writer.append(COMMA);
+		writer.append(player.getNeighbourhood());
+		writer.append(COMMA);
+		writer.append(player.getPictureUrl());
+	}
+
+	private void writeTeamInformation(FileWriter writer, Team team) throws IOException {
+		writer.append('\n');
+		writer.append(team.getName());
+		writer.append(COMMA);
+		writer.append(team.getTag());
+		writer.append(COMMA);
+		writer.append(team.getCreationDate().toString());
+		writer.append(COMMA);
+		writer.append(team.getMail());
+		writer.append(COMMA);
+		writer.append(team.getTwitter());
+		writer.append(COMMA);
+		writer.append(team.getWeb());
+		writer.append(COMMA);
+		writer.append(team.getImageUrl());
+		writer.append(COMMA);
+	}
+
+	private void writeCsvHeader(FileWriter writer) throws IOException {
+		writer.append("Name");
+		writer.append(COMMA);
+		writer.append("Tag");
+		writer.append(COMMA);
+		writer.append("Creation Date");
+		writer.append(COMMA);
+		writer.append("Mail");
+		writer.append(COMMA);
+		writer.append("Twitter");
+		writer.append(COMMA);
+		writer.append("Web");
+		writer.append(COMMA);
+		writer.append("Logo Url");
+		writer.append(COMMA);
+		
+		for(int i=1; i<=7; i++){
+			writer.append("Player "+i+" Name");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" Last Name");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" Birthday");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" Nick");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" Id Number");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" Role");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" Captain");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" Steam Url");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" Dotabuff");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" Country");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" State");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" City");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" Neighbourhood");
+		    writer.append(COMMA);
+		    writer.append("Player "+i+" Picture Url");
+		}
+	}
+	
 	
 	public boolean deleteTeam(String teamName) {
 		String filePath = createFilePath(teamName);
