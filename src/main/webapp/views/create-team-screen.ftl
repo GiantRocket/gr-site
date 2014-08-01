@@ -22,7 +22,7 @@
 	                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
 	                        class="icon-bar"></span>
 	                </button>
-	                <a class="navbar-brand" href="index.html"><img
+	                <a class="navbar-brand" href="/"><img
 	                    src="http://i.imgur.com/ze7FE4z.png"></a>
 	            </div>
 	            <div class="navbar-collapse collapse">
@@ -68,13 +68,13 @@
 					<label class='team-labels' for="teamName">Team Name*</label><br>
 					<input class="mustComplete form-control" type="text" id="teamName" name="teamName" value="" placeholder="Evil Geniuses"><br>
 					<label class='team-labels' for="teamName">Mail*</label><br>
-					<input class="mustComplete form-control" type="text" id="mail" name="mail" value=""><br>
+					<input class="mustComplete form-control" type="text" id="mail" name="mail" value="" placeholder="contact@evilgeniuses.com"><br>
 			</div>
 			<div class="col-sm-3 text-left">
 					<label class='team-labels' for="teamName">TAG*</label><br>
-					<input class="mustComplete form-control" type="text" id="tag" name="tag" value=""><br>
+					<input class="mustComplete form-control" type="text" id="tag" name="tag" value="" placeholder="EG"><br>
 					<label class='team-labels' for="teamName">Logo URL*</label><br> 
-					<input class="mustComplete form-control" type="text" id="logoUrl" name="logoUrl" value=""><br>
+					<input class="mustComplete form-control" type="text" id="logoUrl" name="logoUrl" value="" placeholder="imgur.com/8flyD2F.jpg"><br>
 			</div>
     		<div class="col-sm-3 text-left">
     		</div>
@@ -93,13 +93,13 @@
     		</div>
     		<div class="col-sm-3 text-left">
 					<label class='team-labels' for="teamName">Team Web</label><br>
-					<input class='form-control' type="text" id="web" name="web" value=""><br>
+					<input class='form-control' type="text" id="web" name="web" value="" placeholder="www.evilgeniuses.com"><br>
 					<label class='team-labels' for="teamName">Twitter</label><br>
-					<input class='form-control' type="text" id="twitter" name="twitter" value=""><br>
+					<input class='form-control' type="text" id="twitter" name="twitter" value="" placeholder="@evilgeniuses"><br>
 			</div>
 			<div class="col-sm-3 text-left">
 					<label class='team-labels' for="teamName">Fanpage</label><br>
-					<input class='form-control' type="text" id="facebook" name="facebook" value=""><br>
+					<input class='form-control' type="text" id="facebook" name="facebook" value="" placeholder="facebook.com/evilgeniuses"><br>
 			</div>
     		<div class="col-sm-3 text-left">
     		</div>
@@ -193,39 +193,26 @@
 					playerNumber++;
 					var htmlComplete = "<div class='col-sm-6 text-left first-player-column'>";
 					htmlComplete += "<input type='hidden' id='playerNumber' value='"+playerNumber+"'/>";
-					htmlComplete += "<label class='team-labels' for='name'>Nombre*</label><br> <input class='tagEditor mustComplete form-control' type='text' id ='name' name='name' value=''><br>";
-					htmlComplete += "<label class='team-labels' for='idNumber'>Documento*</label><br> <input type='text' class='mustComplete form-control' id='idNumber' name='idNumber' value=''><br>";
-					htmlComplete += "<label class='team-labels' for='nick'>Nick*</label><br> <input class='mustComplete form-control' type='text' id='nick' name='nick' value=''><br>";
-					htmlComplete += "<label class='team-labels' for='dotabuff'>Dotabuff Url</label><br> <input class='form-control' type='text' id='dotabuff' name='dotabuff' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='name'>Nombre*</label><br> <input placeholder='Clinton' class='tagEditor mustComplete form-control' type='text' id ='name' name='name' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='idNumber'>Documento*</label><br> <input type='text' placeholder='34383757' class='mustComplete form-control' id='idNumber' name='idNumber' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='nick'>Nick*</label><br> <input class='mustComplete form-control' placeholder='Fear' type='text' id='nick' name='nick' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='dotabuff'>Dotabuff Url</label><br> <input class='form-control' placeholder='http://dotabuff.com/players/86890833' type='text' id='dotabuff' name='dotabuff' value=''><br>";
 					htmlComplete += "<label class='team-labels' for='country'>País*</label><br> <select class='country form-control' id='country' name='country'> <#list countries as country> <option value='${country}'>${country.description}</option> </#list> </select> <br>";
-					htmlComplete += "<label class='team-labels relativeLocation' for='city'>Ciudad*</label><br class='relativeLocation'> <input class='form-control' type='text' class='relativeLocation' id='city' name='city' value=''><br class='relativeLocation'> "
+					htmlComplete += "<label class='team-labels relativeLocation' for='city'>Ciudad*</label><br class='relativeLocation'> <input placeholder='Ciudad Autonoma de Buenos Aires' class='form-control relativeLocation' type='text' id='city' name='city' value=''><br class='relativeLocation'> "
 					htmlComplete += "<label class='team-labels' for='roles'>Rol*</label><br> <select class='mustComplete form-control' id='role' name='role'> <option  value='DEFAULT'>Elije un rol</option> <#list roles as enum> <option value='${enum}'>${enum.description}</option> </#list> </select> <br>";
 					htmlComplete += "</div>";
 					htmlComplete += "<div class='col-sm-6 text-left'>";
-					htmlComplete += "<label class='team-labels' for='lastName'>Apellido*</label><br> <input class='tagEditor mustComplete form-control' type='text' id='lastName' name='lastName' value=''><br>";
-					htmlComplete += "<label class='team-labels' for='birthday'>Fecha de nac.*</label><br> <input class='birthday mustComplete form-control' type='text' id='birthday"+playerNumber+"'><br>";
-					htmlComplete += "<label class='team-labels' for='pictureUrl'>Foto de perfil*</label><br> <input class='mustComplete form-control' type='text' id='pictureUrl' name='pictureUrl' value=''><br>";
-					htmlComplete += "<label class='team-labels' for='steam'>Steam Url</label><br> <input class='mustComplete form-control' type='text' id='steam' name='steam' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='lastName'>Apellido*</label><br> <input placeholder='Loomis' class='tagEditor mustComplete form-control' type='text' id='lastName' name='lastName' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='birthday'>Fecha de nac.*</label><br> <input placeholder='18/12/1991' class='birthday mustComplete form-control' type='text' id='birthday"+playerNumber+"'><br>";
+					htmlComplete += "<label class='team-labels' for='pictureUrl'>Foto de perfil*</label><br> <input placeholder='imgur.com/8flyD2F.jpg' class='mustComplete form-control' type='text' id='pictureUrl' name='pictureUrl' value=''><br>";
+					htmlComplete += "<label class='team-labels' for='steam'>Steam Url</label><br> <input class='mustComplete form-control' placeholder='http://steamcommunity.com/profiles/76561198047156561' type='text' id='steam' name='steam' value=''><br>";
 					htmlComplete += "<label  class='team-labels relativeLocation' for='state'>Provincia*</label><br class='relativeLocation'> <select class='relativeLocation form-control' id='state' name='state'> <#list states as state> <option value='${state}'>${state.description}</option> </#list> </select> <br class='relativeLocation'>"
-					htmlComplete += "<label class='team-labels relativeLocation' for='neighbourhood'>Barrio*</label><br class='relativeLocation' > <input class='relativeLocation form-control' type='text' id='neighbourhood' name='neighbourhood' value=''>";
+					htmlComplete += "<label class='team-labels relativeLocation' for='neighbourhood'>Barrio*</label><br class='relativeLocation' > <input placeholder='Caballito' class='relativeLocation form-control' type='text' id='neighbourhood' name='neighbourhood' value=''>";
 					htmlComplete += "</div>";
 					
 					$("#player"+playerNumber).append(htmlComplete);
 				}
-			$(".isCaptain").change(function(){
-				var isCaptain = $(this).is(":checked");
-				if(isCaptain){
-					var captainNumber = $(this).val();
-					$(".isCaptain").each(function(){
-						if($(this).val() != captainNumber){
-							if($(this).is(":checked")){
-								alert("Ya habias marcado un capitan, se actualizo por el que acabas de seleccionar")
-								$(this).attr('checked', false)
-							}
-						}
-					});
-				}
-			});
+			
 			var icons = {
 		      header: "ui-icon-plusthick",
 		      activeHeader: "ui-icon-minusthick"
@@ -244,10 +231,10 @@
 			  
 			});
 		    $(".tagEditor").on('input',function(e){
-		      var playerNumber =$(this).parent().find("#playerNumber").val();
+		      var playerNumber =$(this).parent().parent().find("#playerNumber").val();
 		      var initialText = $("#initialText"+playerNumber).val();
-		      var name = $(this).parent().find("#name").val();
-		      var lastName = $(this).parent().find("#lastName").val();
+		      var name = $(this).parent().parent().find("#name").val();
+		      var lastName = $(this).parent().parent().find("#lastName").val();
 		      if(name != "" || lastName != ""){
 				$("#"+playerNumber).html(initialText + " - " + name + " " + lastName)
 			  }else{
@@ -311,7 +298,10 @@
 					  player.lastName = $(this).find("#lastName").val();
 					  player.nick = $(this).find("#nick").val();
 					  player.role = $(this).find("#role").val();
-					  player.captain = $(this).find("#isCaptain").is(":checked");
+					  player.captain = false;
+					  if($(this).find("playerNumber").val() == 1){
+					  	player.captain = true;
+					  }
 					  player.steam = $(this).find("#steam").val();
 					  player.dotabuff = $(this).find("#dotabuff").val();
 					  player.idNumber = $(this).find("#idNumber").val();
