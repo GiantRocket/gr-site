@@ -29,6 +29,36 @@
 	margin-bottom: 0px;
 }
 
+.last-section{
+	margin-bottom: 0;
+}
+
+.helper-text{
+	font-size:12px;
+	font-family: cursive;
+}
+
+.boxed-text{
+	border-style: solid;
+    border-width: 3px;
+    border-color: #276DA0;
+    color: #276DA0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.divisory-line{
+	border-top: 1px solid black;
+}
+
+.bolded-text{
+	font-weight: 500;
+}
+
+.title-text{
+	font-weight: 600;
+}
+
 .sub-titles{
 	font-size: 20px;
 	color: #276DA0;
@@ -77,6 +107,8 @@
 	font-weight: 600;
 	color: #000000;
 	padding-top:5px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
 }
 
 .ul-align{
@@ -119,7 +151,7 @@
 h1, h2, h3, h4, h5, h6 { font-family:"Open sans", Helvetica, Arial; }
 h1, .h1, h2, .h2, h3, .h3 { margin-top:16px; } 
 blockquote { font-style: italic; font-family: Georgia; color:#999; margin:30px 0 30px; }
-label { color: #777; }
+.label { color: #777; }
 .thin { font-weight:300; }
 .page-title { margin-top:20px; font-weight:300; }
 .text-muted { color:#888; }
