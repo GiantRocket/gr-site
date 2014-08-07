@@ -33,6 +33,13 @@ public class TeamController {
 		return view;
 	}
 	
+	@RequestMapping(value = "success", method = RequestMethod.GET)
+	public ModelAndView sucessForm() {
+		LOGGER.info("returning success view after creation");
+		ModelAndView view = new ModelAndView("success-team-screen");
+		return view;
+	}
+	
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	public ResponseEntity<Void> saveTeam(@RequestBody Team team) {
 			this.teamService.saveTeam(team, null);

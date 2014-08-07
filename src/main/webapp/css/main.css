@@ -25,6 +25,15 @@
 
 /*navbar fix*/
 
+.small-dialog .modal-dialog {
+	width: 350px;
+}
+
+.title-and-epigraph{
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
 .navbar .container{
 	margin-bottom: 0px;
 }
@@ -35,14 +44,48 @@
 
 .helper-text{
 	font-size:12px;
-	font-family: cursive;
+	font-family: Open sans-serif;
+	font-style: italic;
+}
+
+.rules-link{
+	color:#287FB8;
+}
+/**
+.rules-error{
+	border-style: solid;
+    border-width: 3px;
+    border-color: #a94442;
+    color: #a94442;
+}
+*/
+
+.success-container{
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.success-form{
+	background-color: #F4F5F6;
+}
+
+.success-text{
+	border-radius:5px;
+	border-style: solid;
+    border-width: 5a px;
+    border-color: #1abc9c;
+    color: #1abc9c;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 15px;
+    font-size:28px;
 }
 
 .boxed-text{
 	border-style: solid;
     border-width: 3px;
-    border-color: #276DA0;
-    color: #276DA0;
+    border-color: #287FB8;
+    color: #287FB8;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -61,8 +104,9 @@
 
 .sub-titles{
 	font-size: 20px;
-	color: #276DA0;
+	color: #287FB8;
 	font-weight: bold;
+	margin-top: 16px;
 }
 
 .super-title{
@@ -71,17 +115,19 @@
 }
 
 .epigraph{
-	font-size: 14px
+	font-size: 14px;
+	margin-bottom: 16px;
 }
 
 .title-row{
-	background-color: #BCC3C9;
+	background-color: white;
 	margin-top: 0;
 	padding-top: 0;
+	color: #5c6870;
 }
 
 .create-button{
-	background-color: #276DA0;
+	background-color: #287FB8;
 	color: #FFFFFF;
 	font-weight: 600;
 	box-shadow: 2px 2px 1px #888888;
@@ -92,7 +138,8 @@
 }
 
 .team-form{
-	background-color: #EEEEEE;
+	background-color: #F4F5F6;
+	padding-top:16px;
 }
 
 .first-player-column{
@@ -102,11 +149,13 @@
 .second-player-column{
 	padding-right: 0;
 }
+.checkbox{
+	color:#5c6870;
+}
 
 .team-labels{
 	font-weight: 600;
-	color: #000000;
-	padding-top:5px;
+	color: #5c6870;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 14px;
 }
@@ -236,3 +285,17 @@ footer#footer .container {
 @media (max-width: 480px) { 
 	.container{ margin-bottom: 20px;}
 	}		
+	
+	
+::-webkit-input-placeholder {
+    color:    #CCCCCC !important;
+}
+:-moz-placeholder {
+    color:    #CCCCCC !important;
+}
+::-moz-placeholder {
+    color:    #CCCCCC !important;
+}
+:-ms-input-placeholder {
+    color:    #CCCCCC !important;
+}
