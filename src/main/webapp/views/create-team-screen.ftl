@@ -503,7 +503,7 @@
 					  player.nick = $(this).find("#nick").val();
 					  player.role = $(this).find("#role").val();
 					  player.captain = false;
-					  if($(this).find("playerNumber").val() == 1){
+					  if($(this).find("#playerNumber").val() == 1){
 					  	player.captain = true;
 					  }
 					  player.steam = $(this).find("#steam").val();
