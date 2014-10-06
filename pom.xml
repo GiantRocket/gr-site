@@ -116,6 +116,12 @@
 			<artifactId>cglib</artifactId>
 			<version>2.2</version>
 		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.5</version>
+		</dependency>
+		
 		
 	   <!-- CODEHAUS -->
 	   <!-- sin esto, no funciona get y post de application/json, con esto, sin tocar nada, ya anda --> 

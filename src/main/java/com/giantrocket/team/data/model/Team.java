@@ -14,6 +14,7 @@ public class Team {
 	private String web;
 	private String imageUrl;
 	private List<Player> players;
+	private boolean mainTeam;
 	
 	public String getName() {
 		return name;
@@ -71,5 +72,11 @@ public class Team {
 	}
 	public void setPlayers(List<Player> players) {
 		this.players = players;
+	}
+	public boolean isMainTeam() {
+		return mainTeam;
+	}
+	public void setMainTeam(boolean mainTeam) {
+		this.mainTeam = mainTeam;
 	}
 }

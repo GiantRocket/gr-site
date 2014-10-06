@@ -410,7 +410,6 @@
 					    changeMonth: true,
 					    changeYear: true,
 	      				yearRange: "-70:+0",
-	      				maxDate: new Date(1996, 11, 1),
 	      				minDate: new Date(1946, 1, 1),
 	      				dateFormat: "dd/mm/yy"
 				  	});
@@ -501,6 +500,7 @@
 				team.twitter = $("#twitter").val();
 				team.web = $("#web").val();
 				team.imageUrl = $("#logoUrl").val();
+				team.mainTeam = false;
 				var players = [];
 				$(".player").each(function() {
 					  var player = new Object();

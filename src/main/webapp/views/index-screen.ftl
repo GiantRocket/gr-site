@@ -22,12 +22,12 @@
 	<script src="assets//js/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body>
+<body id="body">
 		<!-- Google Analytics -->
 	<!-- <?php include_once("analyticstracking.php") ?> -->
 	<!-- /Google Analytics -->
 
-	<div class="navbar navbar-inverse navbar-fixed-top headroom">
+	<div class="navbar navbar-inverse navbar-fixed-top headroom not-map">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -53,7 +53,7 @@
 		</div>
 	</div>
 	<header id="head">
-		<div class="container">
+		<div class="container not-map">
 			<div class="row">
 				<img class="header-logo" src="http://i.imgur.com/ze7FE4z.png" />
 				<h1 class="lead">
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 	</header>
-	<div class="shortcuts-section">
+	<div class="shortcuts-section not-map">
 		<div class="container">
 			<div class="row">
 				<h2>GIANT ROCKET LEAGUE</h2>
@@ -80,7 +80,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="dates-section" class="fechas-section">
+	<div id="dates-section" class="fechas-section not-map">
 		<div class="container">
 			<div class="row">
 				<div class="section-header">
@@ -143,26 +143,24 @@
 	<div id="places-section" class="lugar-section">
 		<div class="container">
 			<div class="row">
-				<div class="section-header">
+				<div class="section-header not-map">
 					<p class="title">LUGAR</p>
 				</div>
 				<div class="lugar-content">
-					<div class="lugar-foto">
+					<div class="lugar-foto not-map">
 						<div class="direccion">
 							<a href="https://www.facebook.com/TecnoBarARG" target="_blank">TECNOBAR - Fitz Roy 2021</a>
 						</div>
 					</div>
 					<div class="map">
-						<div class="map-frame">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.8947227297044!2d-58.433292399999985!3d-34.58153029999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb591c1d7fb83%3A0x70bb5ba86148ab79!2sFitz+Roy+2021%2C+Buenos+Aires%2C+Ciudad+Aut%C3%B3noma+de+Buenos+Aires!5e0!3m2!1ses-419!2sar!4v1412362914449" width="100%" height="100%" frameborder="0" style="border:0">
-							</iframe>
+						<div id="map-frame"class="map-frame">
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="teams-section" class="equipos-section">
+	<div id="teams-section" class="equipos-section not-map">
 		<div class="container">
 			<div class="row">
 				<div class="section-header">
@@ -180,7 +178,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="prize-section" class="premios-section">
+	<div id="prize-section" class="premios-section not-map">
 		<div class="container">
 			<div class="row">
 				<div class="section-header">
@@ -239,11 +237,52 @@
 	</footer>
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<!-- Google Maps -->
-    <script src="http://maps.googleapis.com/maps/api/js?v=3.14&(KEY=****)&sensor=false"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?v=3.14&(KEY=AIzaSyAFsgkhp6VN6jEFwNomU_tIOUorPEhNTRY)&sensor=false"></script>
     <script src="/js/google-map.js"></script>
     <script src="/js/jquery.scrollTo.min.js"></script>
 	<script>
 	$(document).ready(function() {
+		var myCenter = new google.maps.LatLng(-34.581548, -58.433314);
+		var marker;
+		function initialize() {
+	        var mapOptions = {
+	          scrollwheel: false,
+	          center: myCenter,
+	          zoom: 17,
+	          mapTypeId: google.maps.MapTypeId.ROADMAP
+	        };
+	        var map = new google.maps.Map(document.getElementById("map-frame"),
+	            mapOptions);
+		    marker=new google.maps.Marker({
+			  position:myCenter,
+			  icon:"/images/map-marker.png",
+			  title:'Fitz Roy 2021'
+			  });
+			
+			marker.setMap(map);
+			
+			var infowindow = new google.maps.InfoWindow({
+			  content:"Fitz Roy 2021"
+			});
+			
+			$(".not-map").each(function(i) {
+			  google.maps.event.addDomListener(this, 'click', function(event){
+	          	map.setOptions({scrollwheel:false});
+	          });
+			});
+
+			
+			google.maps.event.addListener(map, 'click', function(event){
+	          this.setOptions({scrollwheel:true});
+	        });
+	        
+			infowindow.open(map,marker);
+      	}
+      	
+
+      	google.maps.event.addDomListener(window, 'load', initialize);
+      	
+      	
 		$('.dates-ref').click(function(e){
 			e.preventDefault();
 			$('body').scrollTo($('#dates-section'));

@@ -12,6 +12,8 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.joda.time.LocalDate;
+import org.joda.time.Years;
 import org.springframework.beans.factory.annotation.Value;
 
 import com.esotericsoftware.yamlbeans.YamlException;
@@ -118,11 +120,28 @@ public class TeamService {
 	public List<Team> getAllTeams(){
 		List<Team> teams = new ArrayList<Team>();
 		File folder = new File(filePath);
+		LOGGER.info("looking for all team files");
 		File[] listOfFiles = folder.listFiles();
 		for(File file:listOfFiles){
 			Team team = this.getTeam(file);
 			teams.add(team);
 		}
+		LOGGER.info("returning all teams");
+		return teams;
+	}
+	
+	public List<Team> getMainTeams(){
+		List<Team> teams = new ArrayList<Team>();
+		File folder = new File(filePath);
+		LOGGER.info("looking for all team files");
+		File[] listOfFiles = folder.listFiles();
+		for(File file:listOfFiles){
+			Team team = this.getTeam(file);
+			if(team.isMainTeam()){
+				teams.add(team);
+			}
+		}
+		LOGGER.info("returning main teams");
 		return teams;
 	}
 	
@@ -152,6 +171,24 @@ public class TeamService {
 			}
 		}
 		
+	}
+	
+	public Double getAverageAge() {
+		List<Team> allTeams = this.getAllTeams();
+		int counter = 0;
+		Double total = 0.0;
+		for(Team team:allTeams){
+			for(Player player:team.getPlayers()){
+				counter++;
+				String[] split = player.getBirthday().split("/");
+				LocalDate birthday = new LocalDate(Integer.valueOf(split[2]).intValue(), Integer.valueOf(split[1]).intValue(),  Integer.valueOf(split[0]).intValue());
+				LocalDate now = new LocalDate();
+				Years age = Years.yearsBetween(birthday, now);
+				total += age.getYears();
+			}
+		}
+		total = total/counter;
+		return total;
 	}
 
 	private void writePlayerInformation(FileWriter writer, Player player) throws IOException {
@@ -265,5 +302,5 @@ public class TeamService {
 		String fileName = teamName.toLowerCase().replaceAll("\\s+","");
 		return filePath + fileName + ".yml";
 	}
-	
+
 }

@@ -1,5 +1,7 @@
 package com.giantrocket.team.web.controller;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 import com.giantrocket.team.data.model.Role;
 import com.giantrocket.team.data.model.Country;
@@ -40,6 +43,20 @@ public class TeamController {
 		return view;
 	}
 	
+	@RequestMapping(value = "/get/main", method = RequestMethod.GET)
+	public ResponseEntity<List<Team>> getMainTeams() {
+		List<Team> teams = teamService.getMainTeams();
+		LOGGER.info("returning main teams");
+		return new ResponseEntity<List<Team>>(teams, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/get/all", method = RequestMethod.GET)
+	public ResponseEntity<List<Team>> getAllTeams() {
+		List<Team> teams = teamService.getAllTeams();
+		LOGGER.info("returning main teams");
+		return new ResponseEntity<List<Team>>(teams, HttpStatus.OK);
+	}
+	
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	public ResponseEntity<Void> saveTeam(@RequestBody Team team) {
 			this.teamService.saveTeam(team, null);
@@ -62,18 +79,16 @@ public class TeamController {
 	}
 	
 	@RequestMapping(value = "/{teamName}", method = RequestMethod.GET)
-	public ModelAndView getTeam(@PathVariable String teamName) {
+	public ResponseEntity<Team> getTeam(@PathVariable String teamName) {
+		LOGGER.info("Looking on db for team: " + teamName);
 		Team team = this.teamService.getTeam(teamName);
-		ModelAndView view = new ModelAndView("create-team-screen");
-		view.addObject("roles", Role.values());
-		view.addObject("countries", Country.values());
-		view.addObject("states", State.values());
-		view.addObject("team", team);
-		return view;
+		LOGGER.info("Returning team: " + teamName);
+		return new ResponseEntity<Team>(team,HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/export", method = RequestMethod.GET)
 	public ModelAndView exportTeams() {
+		LOGGER.info("running export teams to csv");
 		teamService.exportTeams();
 		ModelAndView view = new ModelAndView("index-screen");
 		return view;

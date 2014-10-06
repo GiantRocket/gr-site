@@ -13,6 +13,10 @@
  		<property name="teamService" ref="teamService"/>
  	</bean>
  	
+ 	<bean class="com.giantrocket.team.web.controller.StatController">
+ 		<property name="teamService" ref="teamService"/>
+ 	</bean>
+ 	
  	<bean class="com.giantrocket.team.web.controller.HomeController" />
  	<bean class="com.giantrocket.team.web.controller.ManagerExceptionController" />
  	
