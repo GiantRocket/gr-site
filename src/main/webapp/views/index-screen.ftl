@@ -8,13 +8,13 @@
 <title>Giant Rocket</title>
 <link href="http://puu.sh/8JT1a.png" rel="shortcut icon" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
-<link href="/css/bootstrap.min.css" rel="stylesheet" />
-<link href="/css/font-awesome.min.css" rel="stylesheet" />
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/font-awesome.min.css" rel="stylesheet" />
 <!-- Custom styles for our template -->
-<link href="/css/bootstrap-theme.css" media="screen"
+<link href="css/bootstrap-theme.css" media="screen"
 	rel="stylesheet" />
-<link href="/css/main.css" rel="stylesheet" />
-<link href="/css/custom-main.css" rel="stylesheet"/>
+<link href="css/main.css" rel="stylesheet" />
+<link href="css/custom-main.css" rel="stylesheet"/>
 <link href="/css/parallax.css" rel="stylesheet" />
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -71,11 +71,11 @@
 			</div>
 			<div class="shortcut-icons">
 				<ul class="icons-list">
-					<li><a class="dates-ref" href=""> <div  class="icon-container fechas"></div> <p>FECHAS<p> </a></li>
-					<li><a class="places-ref" href=""> <div  class="icon-container lugar"></div><p>LUGAR<p> </a></li>
-					<li><a class="teams-ref" href=""> <div  class="icon-container equipos"></div><p>EQUIPOS<p> </a></li>
-					<!--<li><a class="games-ref" href=""> <div  class="icon-container partidas"></div><p>PARTIDAS<p> </a></li>-->
-					<li><a class="prize-ref" href=""> <div  class="icon-container premios"></div><p>PREMIOS<p> </a></li>
+					<li><a class="dates-ref" href=""> <div class="icon-container fechas"></div> <p>FECHAS<p> </a></li>
+					<li><a class="places-ref" href=""> <div class="icon-container lugar"></div><p>LUGAR<p> </a></li>
+					<li><a class="teams-ref" href=""> <div class="icon-container equipos"></div><p>EQUIPOS<p> </a></li>
+					<!--<li><a href=""> <div class="icon-container partidas"></div><p>PARTIDAS<p> </a></li>-->
+					<li><a class="prize-ref"  href=""> <div class="icon-container premios"></div><p>PREMIOS<p> </a></li>
 				</ul>
 			</div>
 		</div>
@@ -95,16 +95,16 @@
 								<li>
 									<p class="head">Clasificatorias</p>
 									<ul>
-										<li>Lunes 17/11 a Viernes 21/11 - 22hs</li>
-										<li>Sábado 22/11 - 18hs</li>
-										<li>Domingo 23/11 - 18hs</li>
-										<li>Lunes 24/11 - 22hs</li>
+										<li>Lunes 10/11 a Viernes 14/11 - 22hs</li>
+										<li>Sábado 15/11 - 18hs</li>
+										<li>Domingo 16/11 - 18hs</li>
+										<li>Lunes 17/11 - 22hs</li>
 									</ul>
 								</li>
 								<li>
 									<p class="head">Octavos</p>
 									<ul>
-										<li>Martes 25/11 a Viernes 28/11 - 22hs</li>
+										<li>Martes 18/11 a Viernes 21/11 - 22hs</li>
 									</ul>
 								</li>
 							</ul>
@@ -118,19 +118,19 @@
 								<li>
 									<p class="head">Semifinales<p>
 									<ul>
-										<li>Sábado 29/11 - 14hs a 21hs</li>
+										<li>Sábado 22/11 - 13hs a 19hs</li>
 									</ul>
 								</li>
 								<li>
 									<p class="head">Tercer Puesto<p>
 									<ul>
-										<li>Domingo 30/11 - 14hs a 16hs</li>
+										<li>Domingo 23/11 - 13hs a 15hs</li>
 									</ul>
 								</li>
 								<li>
 									<p class="head">Final<p>
 									<ul>
-										<li>Domingo 30/11 - 16hs a 21hs</li>
+										<li>Domingo 23/11 - 15hs a 19hs</li>
 									</ul>
 								</li>
 							</ul>
@@ -188,7 +188,7 @@
 				</div>
 				<div class="premios-content">
 					<div class="datos">
-						<p class="list-title">ALGUNOS DATOS<p>
+						<p class="list-title">ALGUNOS DATOS</p>
 						<ul>
 							<li>Premio base primer puesto:$5000</br>Premio base segundo puesto:$4000</br>Premio base tercer puesto:$1000</li>
 							<li>El 40% del valor de entradas y tickets incrementa el pozo acumulado</li>
@@ -196,15 +196,15 @@
 						</ul>
 					</div>
 					<div class="pozo">
-						<p class="list-title">POZO ACTUAL<p>
+						<p class="list-title">POZO ACTUAL</p>
 						<div class="valor-pozo"><p>$10.000</p></div>
 						<p class="small-text">¡La compra de tickets y entradas incrementa el pozo!</p>
-						<p class="list-title">TICKET INGAME<p>
+						<p class="list-title">TICKET INGAME</p>
 						<p class="small-text">¡Disponible en noviembre!</p>
 						<img style="width:150px;" src="http://i.imgur.com/bsg1Jcj.png"/>
 					</div>
 					<div class="donde-comprar">
-						<p class="list-title">DONDE COMPRAR<p>
+						<p class="list-title">DONDE COMPRAR</p>
 						<ul>
 							<li>Las entradas anticipadas pueden comprarse en Tecnobar</li>
 							<li>El valor de la entrada incluye una consumisión</li>
@@ -234,7 +234,7 @@
 			</div>
 		</div>
 		<div class="credits">
-			<p>Copyright © 2014, Giant Rocket. Designed and coded with love by @revesm, @iumaycallmev, @emecibelli and @sergiofruto.<p>
+			<p>Copyright © 2014, Giant Rocket. Designed and coded with love by @marcosreves, @iumaycallmev, @emecibelli and @sergiofruto.</p>
 		</div>
 	</footer>
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
