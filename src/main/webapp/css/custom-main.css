@@ -1,0 +1,518 @@
+*{
+	font-family: Open Sans;
+}
+
+.navbar-inverse{
+	background:#2574A9;
+	opacity:0.9;
+}
+
+#head{
+	background:#181015 url( ../images/header.jpg) no-repeat;
+	height: 400px;
+	padding-top: 120px;
+	min-height: 440px;
+}
+
+.container h2{
+	font-size: 26px;
+	font-weight: 300;
+	margin-top: 10px;
+}
+
+#head .container{
+	height: 80px;
+}
+
+.nav.navbar-nav.pull-right{
+	height: 80px;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+
+.nav.navbar-nav.pull-right a{
+	color:#FFFFFF;
+	font-weight: normal;
+}
+
+.nav.navbar-nav.pull-right a:hover{
+	font-weight: bold;
+}
+.header-logo{
+	height: 170px;
+}
+
+.lead img{
+	height: 40px;
+	margin-top: 10px;
+}
+
+.navbar-brand{
+	height: 80px;
+	width: 80px;
+}
+
+.navbar-header{
+	height:80px;
+}
+
+.shortcuts-section h2{
+	text-align: center;
+	color: #2574A9;
+	font-weight: normal;
+	letter-spacing: 2px;
+	word-spacing: 4px;
+	padding-top: 30px;
+	font-size: 22px;
+}
+
+.shortcuts-section h3{
+	text-align: center;
+	color: #596467;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+.icons-list{
+	list-style-type: none;
+	text-align: center;
+	padding-bottom: 25px;
+}
+
+.icons-list li{
+	display: inline;
+}
+
+.icons-list p{
+	display: inline;
+	color: #596467;
+	font-weight: bold;
+	margin: 0;
+}
+
+.icons-list p:hover{
+	display: inline;
+	color: #2574A9;
+	font-weight: bold;
+}
+
+.icons-list a{
+	text-decoration: none;
+	display: block;
+}
+
+.icons-list li{
+	display: inline-block;
+	width: 20%;
+	margin-left: -4px;
+
+}
+.icon-container{
+	height: 75px;
+	width: 75px;
+	display: block;
+	margin: 20px auto;
+}
+
+.icon-container.fechas{
+	background: url(http://i.imgur.com/Q9Bvbbq.png);
+}
+
+.icon-container.lugar{
+	background: url(http://i.imgur.com/77vKzS2.png);
+}
+
+.icon-container.equipos{
+	background: url(http://i.imgur.com/T24gnP3.png);
+}
+
+.icon-container.partidas{
+	background: url(http://i.imgur.com/YOXqqkx.png);
+}
+
+.icon-container.premios{
+	background: url(http://i.imgur.com/jLAJK43.png);
+}
+
+.icon-container.fechas:hover{
+	background: url(http://i.imgur.com/zDvLyjE.png);
+}
+
+.icon-container.lugar:hover{
+	background: url(http://i.imgur.com/tSfS5zT.png);
+}
+
+.icon-container.equipos:hover{
+	background: url(http://i.imgur.com/opgQg26.png);
+}
+
+.icon-container.partidas:hover{
+	background: url(http://i.imgur.com/978qkUy.png);
+}
+
+.icon-container.premios:hover{
+	background: url(http://i.imgur.com/RGmasFW.png);
+}
+
+/*.fechas-header{
+	height: 60px;
+	width: 1170px;
+	background: #2574A9;
+}*/
+
+.fechas-section .container{
+width: 100%;
+margin: 0 auto;
+}
+
+.section-header{
+	width: 100%;
+	height: 60px;
+	background: #2574A9;
+	color: #FFFFFF;
+}
+
+.fechas-content{
+	width: 100%;
+	height: 300px;
+	background:url(http://i.imgur.com/iE4s8xD.jpg);
+	padding-top: 40px;
+}
+
+.etapa-content img{
+	display: inline;
+}
+
+.title{
+	text-align: center;
+	font-weight:bold;
+	font-size: 20px;
+	padding-top: 15px;
+}
+
+.etapa-left{
+	float: left;
+	width: 50%;
+}
+
+.etapa-right{
+	float:right;
+	width: 50%;
+	margin:0 auto;
+}
+
+.etapa-title{
+	font-weight: bold;
+	color:#2574A9;
+	font-size: 16px;
+	padding-left: 10px;
+	display: inline-block;
+}
+
+.fechas-list li p{
+	font-weight: bold;
+	color:#2574A9;
+	font-size: 14px;
+	position: relative;
+	margin: 0;
+}
+
+
+.fechas-list li p.head:before{
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	top: 4px;
+	left: -20px;
+	background-color: #2574A9;
+	border-radius: 50%;
+}
+
+.fechas-list{
+	padding: 10px 0 0 38px;
+	 list-style: none
+}
+
+.fechas-list li ul li{
+	font-weight: bold;
+	color:#596467;
+	list-style-type: none;
+	margin-bottom: 5px;
+}
+
+.fechas-list .head{
+	margin:0;
+}
+
+.fechas-content img{
+	width: 45px;
+	display: inline-block;
+}
+
+.etapa-content{
+	width: 330px;
+	margin: 0 auto;
+}
+
+.lugar-section .container{
+width: 100%;
+}
+
+.lugar-section .section-header{
+	background: #FFFFFF;
+	color: #2574A9;
+}
+
+.lugar-content{
+	width: 100%;
+}
+
+.lugar-foto{
+	background: url(http://i.imgur.com/JueusRe.jpg) no-repeat;
+	height: 300px;
+	background-size: cover;
+}
+
+.lugar-content .map{
+	width: 100%;
+	height: 250px;
+}
+
+.lugar-content .map .map-frame{
+	height: 250px;
+}
+
+.direccion{
+	padding-top: 130px;
+}
+
+.direccion a{
+	width: 300px; 
+	height: 50px; 
+	border: 3px solid #FFFFFF; 
+	border-radius: 3px; 
+	margin: 0 auto; 
+	color: #FFFFFF; 
+	font-size: 20px; 
+	text-align: center; 
+	padding-top: 8px; 
+	box-sizing: border-box; 
+	display: block;
+}
+
+.direccion a:hover{
+	color: #FFFFFF;
+	background: #2574A9;
+	text-decoration: none;
+	border: 3px solid #2574A9; 
+}
+
+.equipos-section .container{
+width: 100%;
+}
+
+.container{
+	margin-bottom: 0px;
+}
+
+.equipos-foto{
+	background: url(http://i.imgur.com/4wocNI4.png) no-repeat;
+	height: 300px;
+	background-size: cover;
+}
+
+.inscripcion{
+	padding-top: 110px;
+}
+
+.inscripcion-message{
+	width: 350px; 
+	height: 50px; 
+	border-radius: 3px; 
+	margin: 0 auto; 
+	color: #FFFFFF; 
+	font-size: 18px; 
+	text-align: center; 
+	padding-top: 10px;
+	margin-bottom: 10px; 
+	box-sizing: border-box; 
+	display: block;
+	background: rgba(37,116,169,0.75);
+}
+
+.inscripcion .inscribe-button{
+	width: 200px; 
+	height: 50px; 
+	border-bottom: solid 3px #1D5C86;
+	border-radius: 3px; 
+	margin: 0 auto; 
+	font-size: 18px; 
+	text-align: center; 
+	padding-top: 8px; 
+	box-sizing: border-box; 
+	display: block;
+	color: #FFFFFF;
+	background-color: #287FB8;
+	text-decoration: none;
+	transition: background 0.1s ease-in-out;
+	-webkit-transition: background 0.1s ease-in-out;
+	-moz-transition: background 0.1s ease-in-out;
+	-ms-transition: background 0.1s ease-in-out;
+	-o-transition: background 0.1s ease-in-out;
+}
+
+.inscripcion .inscribe-button:hover {
+	background-color: #2574A9;
+	transition: background 0.1s ease-in-out;
+	-webkit-transition: background 0.1s ease-in-out;
+	-moz-transition: background 0.1s ease-in-out;
+	-ms-transition: background 0.1s ease-in-out;
+	-o-transition: background 0.1s ease-in-out;
+}
+
+.premios-section .container{
+width: 100%;
+}
+
+.premios-content{
+	width: 100%;
+	height: 350px;
+	background: white;
+}
+
+footer{
+	width: 100%;
+}
+
+footer .main-footer{
+	height: 150px;
+	background: #232323;
+}
+
+.main-footer .social{
+	width: 40%;
+	height: 150px;
+	float: left;
+	text-align: center;
+	padding-top: 30px;
+}
+
+.main-footer .social p{
+	color: white;
+	font-family: Open Sans;
+	letter-spacing: 2px;
+}
+.main-footer .social ul li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.main-footer .social ul li img{
+	width: 50px;
+}
+
+.main-footer .giant-rocket{
+	width: 40%;
+	height: 150px;
+	float: right;
+	text-align: center;
+	padding-top: 30px;
+}
+
+.main-footer .giant-rocket li{
+	list-style: none;
+}
+
+.main-footer .giant-rocket p{
+	font-size: 12px;
+	color: white;
+}
+
+footer .credits{
+	height: 50px;
+	background:#191919;
+}
+
+footer .credits p{
+	color: #777;
+	padding-left: 8px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 50px;
+	margin-bottom: 0;
+}
+
+.premios-section .datos{
+	width: 40%;
+	float: left;
+	padding-top: 30px;
+	padding-left: 100px;
+}
+
+.premios-section .datos p{
+	padding-left: 22px;
+}
+
+.premios-section .pozo{
+	width: 20%;
+	float: left;
+	padding-top: 30px;
+	text-align: center;
+}
+
+.premios-section .donde-comprar{
+	width: 40%;
+	float: left;
+	padding-top: 30px;
+	padding-left: 80px;
+}
+
+.premios-section p{
+	padding-left: 20px;
+}
+
+.premios-section .list-title{
+	color: #2574A9;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.premios-section li{
+	color: #2574A9;
+	font-weight: 500;
+	width: 300px;
+	padding-bottom: 20px;
+}
+
+.pozo .small-text{
+	color: #878d91;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.valor-pozo{
+	background: url(http://i.imgur.com/e48ncBP.jpg);
+	background-size: cover;
+	width: 200px;
+	height: 40px;
+	line-height: 39px;
+	margin: 0 auto 18px auto;
+
+}
+
+.valor-pozo p{
+	color: #2574A9;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 35px;
+	letter-spacing: 3px;
+	padding-left: 0px;
+}
+

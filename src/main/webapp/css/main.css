@@ -9,6 +9,11 @@
     font-style: normal;
 
 }
+
+.close-message{
+	cursor:pointer;
+	font-size: 14px;
+}
 /* Header */
 #head { background:#181015 url( /images/Portada.jpg) no-repeat; background-size: cover; min-height:520px; text-align: center; padding-top:190px; color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300; }
 #head.secondary { height:100px; min-height: 100px; padding-top:0px; }
@@ -169,10 +174,6 @@
 	padding-top: 13px;
 	font-size: 16px;
 }
-.navbar-inverse .navbar-brand{
-	padding: 6px 0 10px 15px;
-	max-width: 75px;
-}
 
 .fa.fa-rocket.fa-4{
 	font-size: 2.4em;
@@ -298,4 +299,9 @@ footer#footer .container {
 }
 :-ms-input-placeholder {
     color:    #CCCCCC !important;
+}
+
+.blue-background-color{
+	background:#2574A9;
+	color:white;
 }

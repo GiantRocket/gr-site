@@ -14,39 +14,51 @@
 	    <link href="/css/main.css" rel="stylesheet" />
 	    <link href="/css/parallax.css" rel="stylesheet" />
 	    <link href="/css/bootstrap-dialog.min.css" rel="stylesheet" />
-	    <title>Inscripción de Equipos</title>
+	    <title>Inscripción</title>
 		<link href="http://puu.sh/8JT1a.png" rel="shortcut icon" />
-	</head>
-	<body class="home">
-		<div class="navbar navbar-inverse navbar-fixed-top headroom">
-	        <div class="container">
-	            <div class="navbar-header">
-	                <button type="button" class="navbar-toggle" data-toggle="collapse"
-	                    data-target=".navbar-collapse">
-	                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span
-	                        class="icon-bar"></span>
-	                </button>
-	                <a class="navbar-brand" href="/"><img
-	                    src="http://i.imgur.com/ze7FE4z.png"></a>
-	            </div>
-	            <div class="navbar-collapse collapse">
-	                <ul class="nav navbar-nav pull-right">
-	                    <li><a href="#map-section">Ganadores</a></li>
-	                    <li><a href="#team-section">Torneo II</a></li>
-	                    <li><a href="#premios-section">Seguinos</a></li>
-	                </ul>
-	            </div>
-	        </div>
-    	</div>
-    	<header id="head">
-    		<div class="container-fluid">
-	            <div class="row">
-	                <img class="header-logo" src="http://i.imgur.com/ze7FE4z.png" />
-	                <h1 class="lead">
-	                    <img src="https://i.imgur.com/wQabEMq.png" />
-	            </div>
-	        </div>
-    	</header>
+		<link href="/css/custom-main.css" rel="stylesheet"/>
+</head>
+<body>
+		<!-- Google Analytics -->
+	<!-- <?php include_once("analyticstracking.php") ?> -->
+	<!-- /Google Analytics -->
+ 
+	<div class="navbar navbar-inverse navbar-fixed-top headroom">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/"><img
+					src="http://i.imgur.com/dYfCy3V.png"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="/">Fechas</a></li>
+					<li><a href="/">Lugar</a></li>
+					<li><a href="/">Equipos</a></li>
+					<li><a href="/">Premios</a></li>
+					<li><a href="/team">Inscripción al torneo</a></li>
+					<!--<li><a href="">Torneos Anteriores</a></li>
+					<li><a href="">Quienes Somos</a></li>
+					<li><a href="">Preguntas Frecuentes</a></li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<header id="head">
+		<div class="container">
+			<div class="row">
+				<img class="header-logo" src="http://i.imgur.com/ze7FE4z.png" />
+				<h1 class="lead">
+					<img src="https://i.imgur.com/wQabEMq.png" />
+				</h1>
+				<h2>Gaming events by gamers</h2>	
+			</div>
+		</div>
+	</header>
     	<div class="container-fluid">
 	    	<div class="row title-row">
 	    		<div class="col-sm-3 text-left">
@@ -54,6 +66,22 @@
 				<div class="col-sm-6 text-center title-and-epigraph">
 					<h1 class="super-title">Formulario de Inscripción</h1>
 					<h3 class="epigraph">Agregá a tu equipo para participar de nuestros torneos</h1>
+				</div>
+	    		<div class="col-sm-3 text-left">
+	    		</div>
+			</div>
+		</div>
+		<div class="container-fluid" id="important-message">
+	    	<div class="row title-row blue-background-color">
+	    		<div class="col-sm-3 text-left">
+	    		</div>
+				<div class="col-sm-6 text-center title-and-epigraph">
+					
+					<h1 class="super-title">IMPORTANTE:
+					<span class="pull-right glyphicon glyphicon-remove close-message" id="close-message"></span>
+					</h1>
+					<h3 class="epigraph">Solo 16 equipos participarán del torneo</h1>
+					<h3 class="epigraph">Los mismos deberan abonar un costo de inscripción en caso de ser seleccionados</h1>
 				</div>
 	    		<div class="col-sm-3 text-left">
 	    		</div>
@@ -226,54 +254,28 @@
 				</div>
 			</div>
 		</div>
-		<footer id="footer">
-			<div class="footer1">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-9 widget">
-							<h3 class="widget-title">Contact</h3>
-							<div class="widget-body">
-								<p>
-									<a href="mailto:#">staff@giantrocket.com.ar</a><br /> <br />
-									Fitz Roy 2021, Capital Federal
-								</p>
-							</div>
-						</div>
-	
-						<div class="col-md-3 widget">
-							<h3 class="widget-title">Follow Us</h3>
-	
-							<div class="widget-body">
-								<p class="follow-me-icons">
-									<a href="http://www.twitter.com/giantrocket" target="_blank"><i
-										class="fa fa-twitter fa-2"></i></a> <a
-										href="http://www.facebook.com/giantrocket" target="_blank"><i
-										class="fa fa-facebook fa-2"></i></a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
+	<footer>
+		<div class="main-footer">
+			<div class="social">
+				<p>CONTACTANOS</p>
+				<ul>
+					<li> <a href="https://twitter.com/GiantRocket" target="_blank"><img src="http://i.imgur.com/BvYcIdN.png"/> </a></li>
+					<li> <a href="https://www.facebook.com/giantrocket" target="_blank"><img src="http://i.imgur.com/gaemO2U.png"/></a></li>
+					<li> <a href="mailto:staff@giantrocket.com.ar" target="_blank"><img src="http://i.imgur.com/Idxn638.png"/></a></li>
+				</ul>
 			</div>
-			<div class="footer2">
-				<div class="container">
-					<div class="row">
-					<a class="reset-anchor" name="follow-section"></a>
-						<div class="col-md-6 widget">
-							<div class="widget-body">
-								<p class="text-left">
-									Copyright &copy; 2014, Giant Rocket. Adapted by Giant Rocket.
-									Template Designed by <a href="http://gettemplate.com/"
-										rel="designer">gettemplate</a>
-								</p>
-							</div>
-						</div>
-	
-						<div class="col-md-6 widget"></div>
-					</div>
-				</div>
+			<div class="giant-rocket">
+				<ul>
+					<li><img style="width:50px;" src="http://i.imgur.com/Ultx2gD.png"/></li>
+					<li><img style="width:150px;" src="http://i.imgur.com/wQabEMq.png"/></li>
+				<ul></ul>
+				<p>Gaming Events by Gamers</p>
 			</div>
-		</footer>
+		</div>
+		<div class="credits">
+			<p>Copyright © 2014, Giant Rocket. Designed and coded with love by @revesm, @iumaycallmev, @emecibelli and @sergiofruto.<p>
+		</div>
+	</footer>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -341,6 +343,10 @@
 	        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
 	            e.preventDefault();
 	        }
+    	});
+    	
+    	$("#close-message").click(function(e){
+				$("#important-message").hide(); 
     	});
 			
 			var icons = {
