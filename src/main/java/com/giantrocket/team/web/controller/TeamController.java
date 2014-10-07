@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -65,7 +66,7 @@ public class TeamController {
 		
 	}
 	
-	@RequestMapping(value = "/{teamName}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/get/{teamName}", method = RequestMethod.DELETE)
 	public ModelAndView deleteTeam(@PathVariable String teamName) {
 		boolean status = this.teamService.deleteTeam(teamName);
 		if(status){
@@ -78,7 +79,7 @@ public class TeamController {
 		return view;
 	}
 	
-	@RequestMapping(value = "/{teamName}", method = RequestMethod.GET)
+	@RequestMapping(value = "/get/{teamName}", method = RequestMethod.GET)
 	public ResponseEntity<Team> getTeam(@PathVariable String teamName) {
 		LOGGER.info("Looking on db for team: " + teamName);
 		Team team = this.teamService.getTeam(teamName);
@@ -86,7 +87,7 @@ public class TeamController {
 		return new ResponseEntity<Team>(team,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/export", method = RequestMethod.GET)
+	@RequestMapping(value = "/get/export", method = RequestMethod.GET)
 	public ModelAndView exportTeams() {
 		LOGGER.info("running export teams to csv");
 		teamService.exportTeams();
@@ -94,7 +95,7 @@ public class TeamController {
 		return view;
 	}
 	
-	@RequestMapping(value = "/{teamName}", method = RequestMethod.PATCH)
+	@RequestMapping(value = "/get/{teamName}", method = RequestMethod.PATCH)
 	public ResponseEntity<Void> updateTeam(@PathVariable String teamName, @RequestBody Team team) {
 		this.teamService.saveTeam(team, teamName);
 		return new ResponseEntity<Void>(HttpStatus.OK);
