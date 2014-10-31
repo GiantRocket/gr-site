@@ -6,7 +6,8 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	
-	<bean id="teamService" class="com.giantrocket.team.data.service.TeamService">
-	</bean>
+	<bean id="teamService" class="com.giantrocket.team.data.service.TeamService" />
+	
+	<bean id="matchService" class="com.giantrocket.team.data.service.MatchService" />
 	
 </beans>

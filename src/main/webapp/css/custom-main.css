@@ -2,6 +2,39 @@
 	font-family: Open Sans;
 }
 
+.fixture-box{
+	border-style: solid;
+    border-width: 3px;
+    border-color: #287FB8;
+    color: #287FB8;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.fixture-air-box{
+	border-style: none;
+    border-width: 3px;
+    border-color: none;
+    color: none;
+    margin-top: 27px;
+    margin-bottom: 27px;
+    padding-top: 27px;
+    padding-bottom: 27px;
+}
+
+.half-fixture-air-box{
+	border-style: none;
+    border-width: 1.5px;
+    border-color: none;
+    color: none;
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+}
+
 .navbar-inverse{
 	background:#2574A9;
 	opacity:0.9;

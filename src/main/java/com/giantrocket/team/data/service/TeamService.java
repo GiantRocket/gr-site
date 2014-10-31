@@ -52,12 +52,12 @@ public class TeamService {
 			writer.getConfig().setClassTag("Player", Player.class);			
 			writer.write(team);
 		} catch (Exception e) {
-			throw new ManagerException(ErrorType.FILE_WRITE_ERROR, e);
+			throw new ManagerException(ErrorType.FILE_MATCH_WRITE_ERROR, e);
 		}finally{
 			try {
 				writer.close();
 			} catch (YamlException e) {
-				throw new ManagerException(ErrorType.FILE_WRITE_ERROR, e);
+				throw new ManagerException(ErrorType.FILE_MATCH_WRITE_ERROR, e);
 			}
 		}
 
@@ -70,7 +70,7 @@ public class TeamService {
 		try {
 			fileReader = new FileReader(filePath);
 		} catch (FileNotFoundException fileNotFound) {
-			throw new ManagerException(ErrorType.FILE_NOT_FOUND, fileNotFound);
+			throw new ManagerException(ErrorType.TEAM_NOT_FOUND, fileNotFound);
 		}
 		YamlReader reader = null;
 		try{
@@ -81,12 +81,12 @@ public class TeamService {
 			reader.close();
 			return team;
 		}catch(Exception e){
-			throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+			throw new ManagerException(ErrorType.FILE_TEAM_READ_ERROR, e);
 		}finally{
 			try {
 				reader.close();
 			} catch (Exception e) {
-				throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+				throw new ManagerException(ErrorType.FILE_TEAM_READ_ERROR, e);
 			}
 		}
 	}
@@ -96,7 +96,7 @@ public class TeamService {
 		try {
 			fileReader = new FileReader(teamFile);
 		} catch (FileNotFoundException fileNotFound) {
-			throw new ManagerException(ErrorType.FILE_NOT_FOUND, fileNotFound);
+			throw new ManagerException(ErrorType.TEAM_NOT_FOUND, fileNotFound);
 		}
 		YamlReader reader = null;
 		try{
@@ -107,12 +107,12 @@ public class TeamService {
 			reader.close();
 			return team;
 		}catch(Exception e){
-			throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+			throw new ManagerException(ErrorType.FILE_TEAM_READ_ERROR, e);
 		}finally{
 			try {
 				reader.close();
 			} catch (Exception e) {
-				throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+				throw new ManagerException(ErrorType.FILE_TEAM_READ_ERROR, e);
 			}
 		}
 	}
@@ -161,13 +161,13 @@ public class TeamService {
 		}
 		catch(IOException e)
 		{
-			throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+			throw new ManagerException(ErrorType.FILE_TEAM_READ_ERROR, e);
 		} finally{
 			try{
 			    writer.flush();
 			    writer.close();
 			} catch (Exception e) {
-				throw new ManagerException(ErrorType.FILE_READ_ERROR, e);
+				throw new ManagerException(ErrorType.FILE_TEAM_READ_ERROR, e);
 			}
 		}
 		
@@ -189,6 +189,19 @@ public class TeamService {
 		}
 		total = total/counter;
 		return total;
+	}
+	
+	public List<String> getAllTeamsNames() {
+		List<String> teams = new ArrayList<String>();
+		File folder = new File(filePath);
+		LOGGER.info("looking for all team files");
+		File[] listOfFiles = folder.listFiles();
+		for(File file:listOfFiles){
+			Team team = this.getTeam(file);
+			teams.add(team.getName());
+		}
+		LOGGER.info("returning all teams names");
+		return teams;
 	}
 
 	private void writePlayerInformation(FileWriter writer, Player player) throws IOException {
@@ -288,6 +301,7 @@ public class TeamService {
 		    writer.append("Player "+i+" Neighbourhood");
 		    writer.append(COMMA);
 		    writer.append("Player "+i+" Picture Url");
+		    writer.append(COMMA);
 		}
 	}
 	

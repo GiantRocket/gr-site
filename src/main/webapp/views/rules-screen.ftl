@@ -259,7 +259,5 @@
 		});
 	</script> 
 	</body>
-</html></span>
-					<br>
-					<br>
+</html>
 					

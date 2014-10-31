@@ -6,11 +6,17 @@ public enum ErrorType {
 	
 	TEAM_EXISTS(HttpStatus.BAD_REQUEST, 1, "Un equipo con el nombre solicitado ya se encuentra creado, por favor contacta con un administrador para resolver el problema"),
 	
-	FILE_WRITE_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, 1, "Hubo errores al intentar crear el equipo, por favor contacta un administrador o intenta de nuevo mas tarde"),
+	FILE_TEAM_WRITE_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, 1, "Hubo errores al intentar crear el equipo, por favor contacta un administrador o intenta de nuevo mas tarde"),
 	
-	FILE_READ_ERROR(HttpStatus.BAD_REQUEST,1,"El equipo solicitado no ha podido ser leido, por favor contacta un administrador o intenta de nuevo mas tarde"), 
+	FILE_TEAM_READ_ERROR(HttpStatus.BAD_REQUEST,1,"El equipo solicitado no ha podido ser leido, por favor contacta un administrador o intenta de nuevo mas tarde"), 
 	
-	FILE_NOT_FOUND(HttpStatus.BAD_REQUEST,1,"El equipo solicitado no existe");
+	FILE_MATCH_READ_ERROR(HttpStatus.BAD_REQUEST,1,"El match solicitado no ha podido ser leido, por favor contacta un administrador o intenta de nuevo mas tarde"),
+	
+	FILE_MATCH_WRITE_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, 1, "Hubo errores al intentar crear el match, por favor contacta un administrador o intenta de nuevo mas tarde"),
+	
+	TEAM_NOT_FOUND(HttpStatus.BAD_REQUEST,1,"El equipo solicitado no existe"),
+	
+	MATCH_NOT_FOUND(HttpStatus.BAD_REQUEST,1,"El match solicitado no existe");
 	
 	private String message;
 	private HttpStatus httpStatus;
