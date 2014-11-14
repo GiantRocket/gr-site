@@ -305,3 +305,22 @@ footer#footer .container {
 	background:#2574A9;
 	color:white;
 }
+
+
+.teamImage{
+	width: 150px;
+	height: 150px;	
+}
+
+.team-title{
+	font-weight: 700;
+	font-size: 28px;
+	color: #2574A9;	
+}
+
+.team-epigraph{
+	font-size: 18px;
+	margin-bottom: 16px;
+	color: gray;
+	font-weight: 300;
+}

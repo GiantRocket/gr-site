@@ -8,6 +8,8 @@ public class Team {
 	private String name;
 	private String tag;
 	private Date creationDate;
+	private String shortFacebook;
+	private String shortTwitter;
 	private String mail;
 	private String facebook;
 	private String twitter;
@@ -78,5 +80,17 @@ public class Team {
 	}
 	public void setMainTeam(boolean mainTeam) {
 		this.mainTeam = mainTeam;
+	}
+	public String getShortFacebook() {
+		return shortFacebook;
+	}
+	public void setShortFacebook(String shortFacebook) {
+		this.shortFacebook = shortFacebook;
+	}
+	public String getShortTwitter() {
+		return shortTwitter;
+	}
+	public void setShortTwitter(String shortTwitter) {
+		this.shortTwitter = shortTwitter;
 	}
 }

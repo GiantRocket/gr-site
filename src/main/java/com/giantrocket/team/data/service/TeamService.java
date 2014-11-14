@@ -130,6 +130,7 @@ public class TeamService {
 		return teams;
 	}
 	
+	
 	public List<Team> getMainTeams(){
 		List<Team> teams = new ArrayList<Team>();
 		File folder = new File(filePath);
@@ -237,6 +238,7 @@ public class TeamService {
 		writer.append(player.getNeighbourhood());
 		writer.append(COMMA);
 		writer.append(player.getPictureUrl());
+		writer.append(COMMA);
 	}
 
 	private void writeTeamInformation(FileWriter writer, Team team) throws IOException {

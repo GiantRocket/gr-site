@@ -705,3 +705,64 @@ img
 {
     max-width: none;
 }
+
+/*TEAM PAGE STYLES*/
+.teams-section .team-card{
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 5%;
+	border: 1px solid #ecf0f1;
+	border-radius: 3px;
+}
+
+.teams-section .team-card h3{
+	width: 100%;
+	background-color: #2574A9;
+	padding: 15px 0;
+	margin: 0;
+	text-align: center;
+	color: #ffffff;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.card-content{
+	background-color: white;
+	padding-bottom: 15px;
+	border-radius: 3px;
+	padding-top: 15px;
+}
+
+.teams-section .team-card ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+.teams-section .team-card ul .column{
+	width: 25%;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: -3px;
+	text-align: center;
+}
+.teams-section .team-card ul .column li{
+	margin-bottom:5px;
+}
+
+.teams-section .team-card ul .column li:first-child{
+	text-transform: uppercase;
+	color: gray;
+	font-weight: bold;
+	text-align: center;
+}
+
+.teams-section .team-card .playerColumn span,
+.teams-section .team-card .suplenteColumn span{
+	color: #9E9E9E;
+}
+
+.teams-section .team-card .playerColumn b,
+.teams-section .team-card .suplenteColumn b{
+	color: #0075AB;
+}
