@@ -138,7 +138,7 @@ public class TeamService {
 		File[] listOfFiles = folder.listFiles();
 		for(File file:listOfFiles){
 			Team team = this.getTeam(file);
-			if(team.isMainTeam()){
+			if(team.isMain()){
 				teams.add(team);
 			}
 		}

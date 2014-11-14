@@ -16,7 +16,8 @@ public class Team {
 	private String web;
 	private String imageUrl;
 	private List<Player> players;
-	private boolean mainTeam;
+	private boolean main = false;
+	private String smallPicture;
 	
 	public String getName() {
 		return name;
@@ -75,12 +76,6 @@ public class Team {
 	public void setPlayers(List<Player> players) {
 		this.players = players;
 	}
-	public boolean isMainTeam() {
-		return mainTeam;
-	}
-	public void setMainTeam(boolean mainTeam) {
-		this.mainTeam = mainTeam;
-	}
 	public String getShortFacebook() {
 		return shortFacebook;
 	}
@@ -92,5 +87,17 @@ public class Team {
 	}
 	public void setShortTwitter(String shortTwitter) {
 		this.shortTwitter = shortTwitter;
+	}
+	public boolean isMain() {
+		return main;
+	}
+	public void setMain(boolean main) {
+		this.main = main;
+	}
+	public String getSmallPicture() {
+		return smallPicture;
+	}
+	public void setSmallPicture(String smallPicture) {
+		this.smallPicture = smallPicture;
 	}
 }

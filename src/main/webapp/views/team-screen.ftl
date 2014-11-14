@@ -41,10 +41,10 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a class="dates-ref" href="">Fechas</a></li>
-					<li><a class="places-ref" href="">Lugar</a></li>
-					<li><a class="teams-ref" href="">Equipos</a></li>
-					<li><a class="prize-ref" href="">Premios</a></li>
+					<li><a href="/">Fechas</a></li>
+					<li><a href="/">Lugar</a></li>
+					<li><a href="/">Equipos</a></li>
+					<li><a href="/">Premios</a></li>
 					<li><a href="/team">Inscripción al torneo</a></li>
 					<!--<li><a href="">Torneos Anteriores</a></li>
 					<li><a href="">Quienes Somos</a></li>
@@ -64,72 +64,70 @@
 			</div>
 		</div>
 	</header>
-	<div class="teams-section">
+	
 	<div class="container-fluid">
 	    	<div class="row">
 	    		<div class="col-sm-3 text-left">
 	    		</div>
 				<div class="col-sm-6 text-center title-and-epigraph">
-					<h1 class="team-title">EQUIPOS INVITADOS</h1>
+					<h1 class="team-title">EQUIPOS PARTICIPANTES</h1>
 					<h3 class="team-epigraph">Noviembre 2014</h3>
 				</div>
 	    		<div class="col-sm-3 text-left">
 	    		</div>
 			</div>
 		</div>
-
+		<div class="teams-section">
 			<#list teams as team>
 			<div class="container-fluid">
-			<div class="row">
-			<div class="col-sm-3 text-left">
-	    		</div>
-	    		<div class="col-sm-6 text-center">
-			<div class="team-card">
-				<h3>${team.name}</h3>
-				<div class="card-content">
-					<ul>
-						<li class="column">
-							<img src="${team.imageUrl}" alt="" class="teamImage">
-						</li>
-						<li class="column playerColumn">
-							<ul>
-								<li>EQUIPO</li>
-								<li><span>Game tag: </span><b>${team.tag}</b></li>
-								<#if team.shortFacebook != "">
-								<li><span>Facebook: </span><b>${team.shortFacebook}</b></li>
-								</#if>
-								<#if team.shortTwitter != "">
-								<li><span>Twitter: </span><b>${team.shortTwitter}</b></li>
-								</#if>
-							</ul>
-						</li>
-						<li class="column playerColumn">
-							<ul>
-								<li>JUGADORES</li>
-								<li><span>${team.tag}.</span><b>${team.players[0].nick}</b></li>
-								<li><span>${team.tag}.</span><b>${team.players[1].nick}</b></li>
-								<li><span>${team.tag}.</span><b>${team.players[2].nick}</b></li>
-								<li><span>${team.tag}.</span><b>${team.players[3].nick}</b></li>
-								<li><span>${team.tag}.</span><b>${team.players[4].nick}</b></li>
-							</ul>
-						</li>
-						<li class="column playerColumn">
-							<ul>
-								<li>SUPLENTES</li>
-								<li><span>${team.tag}.</span><b>${team.players[5].nick}</b></li>
-								<li><span>${team.tag}.</span><b>${team.players[6].nick}</b></li>
-							</ul>
-						</li>
-					</ul>
+				<div class="row">
+					<div class="col-sm-2 text-left">
+	    			</div>
+	    			<div class="col-sm-8 text-center">
+						<div class="team-card">
+							<div class="row">
+							<h3>${team.name}</h3>
+							</div>
+							<div class="row card-content">
+									<div class='col-sm-3'>
+										<img src="${team.smallPicture}" alt="" class="teamImage">
+									</div>
+									<div class="column playerColumn col-sm-3 text-left">
+										<ul>
+											<li>EQUIPO</li>
+											<li><span>Game tag: </span><b>${team.tag}</b></li>
+											<#if team.shortFacebook != "">
+											<li><span>Facebook: </span><a class="teamSocial" target="_blank" href="${team.facebook}">${team.shortFacebook}</a></li>
+											</#if>
+											<#if team.shortTwitter != "">
+											<li><span>Twitter: </span><a class="teamSocial" target="_blank" href="${team.twitter}">${team.shortTwitter}</a></li>
+											</#if>
+										</ul>
+									</div>
+									<div class="column playerColumn col-sm-3 text-left">
+										<ul>
+											<li>JUGADORES</li>
+											<li><span>${team.tag}.</span><b>${team.players[0].nick}</b></li>
+											<li><span>${team.tag}.</span><b>${team.players[1].nick}</b></li>
+											<li><span>${team.tag}.</span><b>${team.players[2].nick}</b></li>
+											<li><span>${team.tag}.</span><b>${team.players[3].nick}</b></li>
+											<li><span>${team.tag}.</span><b>${team.players[4].nick}</b></li>
+										</ul>
+									</div>
+									<div class="column playerColumn col-sm-3 text-left">
+										<ul>
+											<li>SUPLENTES</li>
+											<li><span>${team.tag}.</span><b>${team.players[5].nick}</b></li>
+											<li><span>${team.tag}.</span><b>${team.players[6].nick}</b></li>
+										</ul>
+									</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			</div>
-			</div>
-			</div>
 			</#list>
-			
-		
-		</div>
+		</div>			
 	<footer>
 		<div class="main-footer">
 			<div class="social">
@@ -155,43 +153,5 @@
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<!-- Google Maps -->
     <script src="http://maps.googleapis.com/maps/api/js?v=3.14&(KEY=AIzaSyAFsgkhp6VN6jEFwNomU_tIOUorPEhNTRY)&sensor=false"></script>
-    <script src="/js/google-map.js"></script>
-    <script src="/js/jquery.scrollTo.min.js"></script>
-    <script src="/js/jquery.jsPlumb-1.6.4-min.js"></script>
-    <script src="/js/connect-boxes-second-tourney.js"></script>
-    <script src="/js/home-map.js"></script>
-    <script src="/js/match.js"></script>
-	<script>
-		$(document).ready(function() {
-		
-		$('.dates-ref').click(function(e){
-			e.preventDefault();
-			$('body').scrollTo($('#dates-section'));
-		});
-		
-		$('.places-ref').click(function(e){
-			e.preventDefault();
-			$('body').scrollTo($('#places-section'));
-		});
-		
-		$('.prize-ref').click(function(e){
-			e.preventDefault();
-			$('body').scrollTo($('#prize-section'));
-		});
-		
-		$('.games-ref').click(function(e){
-			e.preventDefault();
-			$('body').scrollTo($('#games-section'));
-		});
-		
-		$('.teams-ref').click(function(e){
-			e.preventDefault();
-			$('body').scrollTo($('#teams-section'));
-		});
-		
-		loadHomeMap();
-		connectFixtureBoxes()		
-	});
-	</script>
 </body>	
 </html>

@@ -22,7 +22,7 @@ public class TeamPageController {
 	public ModelAndView getTeamPage() {
 		LOGGER.info("returning empty form to create a team");
 		ModelAndView view = new ModelAndView("team-screen");
-		List<Team> mainTeams = teamService.getAllTeams();
+		List<Team> mainTeams = teamService.getMainTeams();
 		view.addObject("teams", mainTeams);
 		return view;
 	}

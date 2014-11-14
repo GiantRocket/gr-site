@@ -13,10 +13,11 @@
 <!-- Custom styles for our template -->
 <link href="css/bootstrap-theme.css" media="screen"
 	rel="stylesheet" />
+	<link href="/css/jsplumb.css" rel="stylesheet" />
 <link href="css/main.css" rel="stylesheet" />
 <link href="css/custom-main.css" rel="stylesheet"/>
 <link href="/css/parallax.css" rel="stylesheet" />
-<link href="/css/jsplumb.css" rel="stylesheet" />
+
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
 	<script src="assets//js/html5shiv.js"></script>
@@ -96,16 +97,16 @@
 								<li>
 									<p class="head">Clasificatorias</p>
 									<ul>
-										<li>Lunes 10/11 a Viernes 14/11 - 22hs</li>
-										<li>Sábado 15/11 - 18hs</li>
-										<li>Domingo 16/11 - 18hs</li>
-										<li>Lunes 17/11 - 22hs</li>
+										<li>Lunes 17/11 a Viernes 21/11 - 22hs</li>
+										<li>Sábado 22/11 - 18hs</li>
+										<li>Domingo 23/11 - 18hs</li>
+										<li>Lunes 24/11 - 22hs</li>
 									</ul>
 								</li>
 								<li>
 									<p class="head">Octavos</p>
 									<ul>
-										<li>Martes 18/11 a Viernes 21/11 - 22hs</li>
+										<li>Martes 25/11 a Viernes 28/11 - 22hs</li>
 									</ul>
 								</li>
 							</ul>
@@ -119,19 +120,19 @@
 								<li>
 									<p class="head">Semifinales<p>
 									<ul>
-										<li>Sábado 22/11 - 13hs a 19hs</li>
+										<li>Sábado 29/11 - 13hs a 19hs</li>
 									</ul>
 								</li>
 								<li>
 									<p class="head">Tercer Puesto<p>
 									<ul>
-										<li>Domingo 23/11 - 13hs a 15hs</li>
+										<li>Domingo 30/11 - 13hs a 15hs</li>
 									</ul>
 								</li>
 								<li>
 									<p class="head">Final<p>
 									<ul>
-										<li>Domingo 23/11 - 15hs a 19hs</li>
+										<li>Domingo 30/11 - 15hs a 19hs</li>
 									</ul>
 								</li>
 							</ul>
@@ -179,6 +180,7 @@
 			</div>
 		</div>
 	</div>
+	<!--
 	<div id="fixture-section" class="equipos-section not-map">
 		<div class="container">
 			<div class="row">
@@ -346,6 +348,7 @@
 			</div>
 		</div>
 	</div>
+	-->
 	<div id="prize-section" class="premios-section not-map">
 		<div class="container">
 			<div class="row">
@@ -408,8 +411,10 @@
     <script src="http://maps.googleapis.com/maps/api/js?v=3.14&(KEY=AIzaSyAFsgkhp6VN6jEFwNomU_tIOUorPEhNTRY)&sensor=false"></script>
     <script src="/js/google-map.js"></script>
     <script src="/js/jquery.scrollTo.min.js"></script>
-    <script src="/js/jquery.jsPlumb-1.6.4-min.js"></script>
-    <script src="/js/connect-boxes-second-tourney.js"></script>
+    <!-- 
+    	<script src="/js/jquery.jsPlumb-1.6.4-min.js"></script>
+    	<script src="/js/connect-boxes-second-tourney.js"></script>
+    -->
     <script src="/js/home-map.js"></script>
     <script src="/js/match.js"></script>
 	<script>
@@ -441,7 +446,7 @@
 		});
 		
 		loadHomeMap();
-		connectFixtureBoxes()		
+		// connectFixtureBoxes()		
 	});
 	</script>
 </body>	

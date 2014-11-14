@@ -729,9 +729,9 @@ img
 
 .card-content{
 	background-color: white;
-	padding-bottom: 15px;
 	border-radius: 3px;
-	padding-top: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .teams-section .team-card ul{
@@ -760,6 +760,13 @@ img
 .teams-section .team-card .playerColumn span,
 .teams-section .team-card .suplenteColumn span{
 	color: #9E9E9E;
+}
+
+.teams-section .team-card .playerColumn a,
+.teams-section .team-card .suplenteColumn a{
+	color: #0075AB;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 .teams-section .team-card .playerColumn b,
