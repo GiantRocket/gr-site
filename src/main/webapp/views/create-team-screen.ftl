@@ -500,7 +500,7 @@
 				team.twitter = $("#twitter").val();
 				team.web = $("#web").val();
 				team.imageUrl = $("#logoUrl").val();
-				team.mainTeam = false;
+				team.main = false;
 				var players = [];
 				$(".player").each(function() {
 					  var player = new Object();

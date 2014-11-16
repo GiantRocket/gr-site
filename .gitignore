@@ -17,3 +17,4 @@ dist
 /.target
 /example
 /example.log.1
+/target
