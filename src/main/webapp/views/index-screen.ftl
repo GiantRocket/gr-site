@@ -180,175 +180,6 @@
 			</div>
 		</div>
 	</div>
-	<!--
-	<div id="fixture-section" class="equipos-section not-map">
-		<div class="container">
-			<div class="row">
-				<div class="section-header">
-					<p class="title">FIXTURE</p>
-				</div>
-				<div id="fixture-content" class="equipos-content">
-					<div class="col-sm-3 text-center">
-						<div id="match-1a" class='fixture-box match' value="1a">
-							<#if matches["1A"]??>
-								<span>${matches["1A"].teamA} VS ${matches["1A"].teamB}</span><br>
-								<span>${matches["1A"].date}</span>
-							<#else>
-								<span>Octavos 1</span>
-							</#if>
-						</div>
-						<div id="match-1b" class='fixture-box match' value="1b">
-							<#if matches["1B"]??>
-								<span>${matches["1B"].teamA} VS ${matches["1B"].teamB}</span><br>
-								<span>${matches["1B"].date}</span>
-							<#else>
-								<span>Octavos 2</span>
-							</#if>
-						</div>
-						<div id="match-1c" class='fixture-box match'>
-							<#if matches["1C"]??>
-								<span>${matches["1C"].teamA} VS ${matches["1C"].teamB}</span><br>
-								<span>${matches["1C"].date}</span>
-							<#else>
-								<span>Octavos 3</span>
-							</#if>
-						</div>
-						<div id="match-1d" class='fixture-box match'>
-							<#if matches["1D"]??>
-								<span>${matches["1D"].teamA} VS ${matches["1D"].teamB}</span><br>
-								<span>${matches["1D"].date}</span>
-							<#else>
-								<span>Octavos 4</span>
-							</#if>
-						</div>
-						<div id="match-1e" class='fixture-box match'>
-							<#if matches["1E"]??>
-								<span>${matches["1E"].teamA} VS ${matches["1E"].teamB}</span><br>
-								<span>${matches["1E"].date}</span>
-							<#else>
-								<span>Octavos 5</span>
-							</#if>
-						</div>
-						<div id="match-1f" class='fixture-box match'>
-							<#if matches["1F"]??>
-								<span>${matches["1F"].teamA} VS ${matches["1F"].teamB}</span><br>
-								<span>${matches["1F"].date}</span>
-							<#else>
-								<span>Octavos 6</span>
-							</#if>
-						</div>
-						<div id="match-1g" class='fixture-box match'>
-							<#if matches["1G"]??>
-								<span>${matches["1G"].teamA} VS ${matches["1G"].teamB}</span><br>
-								<span>${matches["1G"].date}</span>
-							<#else>
-								<span>Octavos 7</span>
-							</#if>
-						</div>
-						<div id="match-1h" class='fixture-box match'>
-							<#if matches["1H"]??>
-								<span>${matches["1H"].teamA} VS ${matches["1H"].teamB}</span><br>
-								<span>${matches["1H"].date}</span>
-							<#else>
-								<span>Octavos 8</span>
-							</#if>
-						</div>
-					</div>
-					<div class="col-sm-3 text-center">
-						<div class='half-fixture-air-box'>
-						</div>
-						<div id="match-2a" class='fixture-box match'>
-							<#if matches["2A"]??>
-								<span>${matches["2A"].teamA} VS ${matches["2A"].teamB}</span><br>
-								<span>${matches["2A"].date}</span>
-							<#else>
-								<span>Cuartos 1</span>
-							</#if>
-						</div>
-						<div class='fixture-air-box'>
-						</div>
-						<div id="match-2b" class='fixture-box match'>
-							<#if matches["2B"]??>
-								<span>${matches["2B"].teamA} VS ${matches["2B"].teamB}</span><br>
-								<span>${matches["2B"].date}</span>
-							<#else>
-								<span>Cuartos 2</span>
-							</#if>
-						</div>
-						<div class='fixture-air-box'>
-						</div>
-						<div id="match-2c" class='fixture-box match'>
-							<#if matches["2C"]??>
-								<span>${matches["2C"].teamA} VS ${matches["2C"].teamB}</span><br>
-								<span>${matches["2C"].date}</span>
-							<#else>
-								<span>Cuartos 3</span>
-							</#if>
-						</div>
-						<div class='fixture-air-box'>
-						</div>
-						<div id="match-2d" class='fixture-box match'>
-							<#if matches["2D"]??>
-								<span>${matches["2D"].teamA} VS ${matches["2D"].teamB}</span><br>
-								<span>${matches["2D"].date}</span>
-							<#else>
-								<span>Cuartos 4</span>
-							</#if>
-						</div>
-					</div>
-					<div class="col-sm-3 text-center">
-						<div class='fixture-air-box'>
-						</div>
-						<div class='half-fixture-air-box'>
-						</div>
-						<div id="match-3a" class='fixture-box match'>
-							<#if matches["3A"]??>
-								<span>${matches["3A"].teamA} VS ${matches["3A"].teamB}</span><br>
-								<span>${matches["3A"].date}</span>
-							<#else>
-								<span>Semi final 1</span>
-							</#if>
-						</div>
-						<div class='fixture-air-box'>
-						</div>
-						<div class='fixture-air-box'>
-						</div>
-						<div class='fixture-air-box'>
-						</div>
-						<div id="match-3b" class='fixture-box match'>
-							<#if matches["3B"]??>
-								<span>${matches["3B"].teamA} VS ${matches["3B"].teamB}</span><br>
-								<span>${matches["3B"].date}</span>
-							<#else>
-								<span>Semi final 2</span>
-							</#if>
-						</div>
-						<div class='fixture-air-box'>
-						</div>
-					</div>
-					<div class="col-sm-3 text-center">
-						<div class='fixture-air-box'>
-						</div>
-						<div class='fixture-air-box'>
-						</div>
-						<div class='fixture-air-box'>
-						</div>
-						<div class='half-fixture-air-box'>
-						</div>
-						<div id="match-4a" class='fixture-box match'>
-							<#if matches["4A"]??>
-								<span>${matches["4A"].teamA} VS ${matches["4A"].teamB}</span><br>
-								<span>${matches["4A"].date}</span>
-							<#else>
-								<span>Final</span>
-							</#if>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	-->
 	<div id="prize-section" class="premios-section not-map">
 		<div class="container">
 			<div class="row">
@@ -411,10 +242,6 @@
     <script src="http://maps.googleapis.com/maps/api/js?v=3.14&(KEY=AIzaSyAFsgkhp6VN6jEFwNomU_tIOUorPEhNTRY)&sensor=false"></script>
     <script src="/js/google-map.js"></script>
     <script src="/js/jquery.scrollTo.min.js"></script>
-    <!-- 
-    	<script src="/js/jquery.jsPlumb-1.6.4-min.js"></script>
-    	<script src="/js/connect-boxes-second-tourney.js"></script>
-    -->
     <script src="/js/home-map.js"></script>
     <script src="/js/match.js"></script>
 	<script>
@@ -446,7 +273,6 @@
 		});
 		
 		loadHomeMap();
-		// connectFixtureBoxes()		
 	});
 	</script>
 </body>	
