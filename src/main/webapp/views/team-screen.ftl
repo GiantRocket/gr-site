@@ -81,18 +81,18 @@
 			<#list teams as team>
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-sm-2 text-left">
+					<div class="col-sm-3 text-left">
 	    			</div>
-	    			<div class="col-sm-8 text-center">
+	    			<div class="col-sm-6 text-center">
 						<div class="team-card">
 							<div class="row">
 							<h3>${team.name}</h3>
 							</div>
 							<div class="row card-content">
-									<div class='col-sm-3'>
+									<div class='col-sm-4'>
 										<img src="${team.smallPicture}" alt="" class="teamImage">
 									</div>
-									<div class="column playerColumn col-sm-3 text-left">
+									<div class="column playerColumn col-sm-4 text-left">
 										<ul>
 											<li>EQUIPO</li>
 											<li><span>Game tag: </span><b>${team.tag}</b></li>
@@ -104,7 +104,7 @@
 											</#if>
 										</ul>
 									</div>
-									<div class="column playerColumn col-sm-3 text-left">
+									<div class="column playerColumn col-sm-4 text-left">
 										<ul>
 											<li>JUGADORES</li>
 											<li><span>${team.tag}.</span><b>${team.players[0].nick}</b></li>
@@ -112,13 +112,6 @@
 											<li><span>${team.tag}.</span><b>${team.players[2].nick}</b></li>
 											<li><span>${team.tag}.</span><b>${team.players[3].nick}</b></li>
 											<li><span>${team.tag}.</span><b>${team.players[4].nick}</b></li>
-										</ul>
-									</div>
-									<div class="column playerColumn col-sm-3 text-left">
-										<ul>
-											<li>SUPLENTES</li>
-											<li><span>${team.tag}.</span><b>${team.players[5].nick}</b></li>
-											<li><span>${team.tag}.</span><b>${team.players[6].nick}</b></li>
 										</ul>
 									</div>
 							</div>
