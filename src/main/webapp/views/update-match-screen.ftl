@@ -36,10 +36,8 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="/">Fechas</a></li>
-					<li><a href="/">Lugar</a></li>
-					<li><a href="/">Equipos</a></li>
-					<li><a href="/">Premios</a></li>
+					<li><a class="/fixture" href="">Fixture</a></li>
+					<li><a class="/show/teams" href="">Equipos</a></li>
 					<li><a href="/team">Inscripción al torneo</a></li>
 					<!--<li><a href="">Torneos Anteriores</a></li>
 					<li><a href="">Quienes Somos</a></li>

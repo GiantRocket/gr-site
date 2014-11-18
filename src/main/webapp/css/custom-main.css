@@ -372,7 +372,7 @@ width: 100%;
 }
 
 .equipos-foto{
-	background: url(http://i.imgur.com/4wocNI4.png) no-repeat;
+	background: url(http://i.imgur.com/N63R7WF.jpg) no-repeat;
 	height: 300px;
 	background-size: cover;
 }
@@ -776,4 +776,59 @@ img
 .teams-section .team-card .playerColumn b,
 .teams-section .team-card .suplenteColumn b{
 	color: #0075AB;
+}
+
+.col-xs-8ths {
+    width: 12.5%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-8ths {
+        width: 12.5%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-8ths {
+        width: 12.5%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-8ths {
+        width: 12.5%;
+        float: left;
+    }
+}
+
+.teams-button{
+	width: 150px;
+	height: 50px;
+	border-bottom: solid 3px #1D5C86;
+	border-radius: 3px;
+	margin: 0 auto;
+	font-size: 18px;
+	text-align: center;
+	padding-top: 8px;
+	box-sizing: border-box;
+	display: block;
+	color: #FFFFFF;
+	background-color: #287FB8;
+	text-decoration: none;
+	transition: background 0.1s ease-in-out;
+	-webkit-transition: background 0.1s ease-in-out;
+	color:white;
+}
+
+.teams-button a{
+	text-decoration:none;
+}
+
+.show-teams-button-container{
+	margin:20px;
+}
+
+.show-teams-button-container a:hover{
+	text-decoration:none;
+	color:white;
 }

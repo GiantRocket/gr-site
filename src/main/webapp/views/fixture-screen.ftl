@@ -42,10 +42,8 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a class="dates-ref" href="">Fechas</a></li>
-					<li><a class="places-ref" href="">Lugar</a></li>
-					<li><a class="teams-ref" href="">Equipos</a></li>
-					<li><a class="prize-ref" href="">Premios</a></li>
+					<li><a class="/fixture" href="">Fixture</a></li>
+					<li><a class="/show/teams" href="">Equipos</a></li>
 					<li><a href="/team">Inscripción al torneo</a></li>
 					<!--<li><a href="">Torneos Anteriores</a></li>
 					<li><a href="">Quienes Somos</a></li>
@@ -232,7 +230,7 @@
 								<span>${matches["N"].date}</span>
 							<#else>
 								<span>Ganadores <b>K</b> vs <b>L</b></span><br>
-								<span>Viernes 28/11 24:00hs</span>
+								<span>Jueves 27/11 24:00hs</span>
 							</#if>
 						</div>
 						<div class='fixture-air-box'>
@@ -273,8 +271,8 @@
 								<span><b>${matches["P"].teamA}</b> vs <b>${matches["P"].teamB}</b></span><br>
 								<span>${matches["P"].date}</span>
 							<#else>
-								<span>Ganadores <b>O</b> vs <b>AD</b></span><br>
-								<span>Sabado 29/11 18:00hs</span>
+								<span>Ganadores <b>O</b> vs <b>AE</b></span><br>
+								<span>Domingo 30/11 18:00hs</span>
 							</#if>
 						</div>
 					</div>
@@ -339,7 +337,7 @@
 								<span>${matches["V"].date}</span>
 							<#else>
 								<span>Ganador <b>R</b> vs Perdedor <b>L</b></span><br>
-								<span>Jueves 27/11 22:00hs</span>
+								<span>Viernes 28/11 22:00hs</span>
 							</#if>
 						</div>
 						<div id="match-w" class='fixture-box match' value="w">

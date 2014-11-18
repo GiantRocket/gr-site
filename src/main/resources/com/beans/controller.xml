@@ -28,6 +28,7 @@
  	
  	<bean class="com.giantrocket.team.web.controller.HomeController">
  		<property name="matchService" ref="matchService"/> 
+ 		<property name="teamService" ref="teamService"/>
  	</bean>
  	<bean class="com.giantrocket.team.web.controller.ManagerExceptionController" />
  	

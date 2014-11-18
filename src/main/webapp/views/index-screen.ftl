@@ -13,7 +13,6 @@
 <!-- Custom styles for our template -->
 <link href="css/bootstrap-theme.css" media="screen"
 	rel="stylesheet" />
-	<link href="/css/jsplumb.css" rel="stylesheet" />
 <link href="css/main.css" rel="stylesheet" />
 <link href="css/custom-main.css" rel="stylesheet"/>
 <link href="/css/parallax.css" rel="stylesheet" />
@@ -42,10 +41,8 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a class="dates-ref" href="">Fechas</a></li>
-					<li><a class="places-ref" href="">Lugar</a></li>
-					<li><a class="teams-ref" href="">Equipos</a></li>
-					<li><a class="prize-ref" href="">Premios</a></li>
+					<li><a class="/fixture" href="">Fixture</a></li>
+					<li><a class="/show/teams" href="">Equipos</a></li>
 					<li><a href="/team">Inscripción al torneo</a></li>
 					<!--<li><a href="">Torneos Anteriores</a></li>
 					<li><a href="">Quienes Somos</a></li>
@@ -168,13 +165,28 @@
 				<div class="section-header">
 					<p class="title">EQUIPOS</p>
 				</div>
+				<#list teams as team>
+				<div class="col-sm-8ths text-left">
+				<img style="width:100%;" src=${team.smallPicture} />
+				</div>
+				</#list>
+				<!--
 				<div class="equipos-content">
 					<div class="equipos-foto">
 						<div class="inscripcion">
 							<div class="inscripcion-message"><p>¿Querés participar de nuestro torneo?</p></div>
-							<!--<a href="http://giantrocket.com.ar/team" target="_blank">¡INSCRIBITE ACÁ!</a>-->
-							<a href="http://giantrocket.com.ar/team" target="_blank" class="inscribe-button">¡Inscribite acá!</a>
+							<a href="http://giantrocket.com.ar/show/teams" target="_blank" class="inscribe-button">¡Inscribite acá!</a>
 						</div>
+					</div>
+				</div>
+				-->
+			</div>
+			<div class="row">
+				<div class="col-sm-5">
+				</div>
+				<div class="col-sm-2 text-center">
+					<div class="show-teams-button-container">
+					<a href="http://giantrocket.com.ar/show/teams" target="_blank" class="teams-button">Ver equipos</a>
 					</div>
 				</div>
 			</div>
@@ -246,31 +258,6 @@
     <script src="/js/match.js"></script>
 	<script>
 		$(document).ready(function() {
-		
-		$('.dates-ref').click(function(e){
-			e.preventDefault();
-			$('body').scrollTo($('#dates-section'));
-		});
-		
-		$('.places-ref').click(function(e){
-			e.preventDefault();
-			$('body').scrollTo($('#places-section'));
-		});
-		
-		$('.prize-ref').click(function(e){
-			e.preventDefault();
-			$('body').scrollTo($('#prize-section'));
-		});
-		
-		$('.games-ref').click(function(e){
-			e.preventDefault();
-			$('body').scrollTo($('#games-section'));
-		});
-		
-		$('.teams-ref').click(function(e){
-			e.preventDefault();
-			$('body').scrollTo($('#teams-section'));
-		});
 		
 		loadHomeMap();
 	});
