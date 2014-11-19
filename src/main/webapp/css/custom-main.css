@@ -832,3 +832,11 @@ img
 	text-decoration:none;
 	color:white;
 }
+
+.fixture-box b{
+	font-weight:600;
+}
+
+.match-winner{
+	color: #2ecc71;
+}

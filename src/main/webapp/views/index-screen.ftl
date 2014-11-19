@@ -41,8 +41,9 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a class="/fixture" href="">Fixture</a></li>
-					<li><a class="/show/teams" href="">Equipos</a></li>
+					<li><a href="/">Inicio</a></li>
+					<li><a href="/fixture">Fixture</a></li>
+					<li><a href="/show/teams">Equipos</a></li>
 					<li><a href="/team">Inscripción al torneo</a></li>
 					<!--<li><a href="">Torneos Anteriores</a></li>
 					<li><a href="">Quienes Somos</a></li>
@@ -186,7 +187,7 @@
 				</div>
 				<div class="col-sm-2 text-center">
 					<div class="show-teams-button-container">
-					<a href="http://giantrocket.com.ar/show/teams" target="_blank" class="teams-button">Ver equipos</a>
+					<a href="http://giantrocket.com.ar/show/teams" class="teams-button">Ver equipos</a>
 					</div>
 				</div>
 			</div>
@@ -258,6 +259,31 @@
     <script src="/js/match.js"></script>
 	<script>
 		$(document).ready(function() {
+		
+		$('.dates-ref').click(function(e){
+			e.preventDefault();
+			$('body').scrollTo($('#dates-section'));
+		});
+		
+		$('.places-ref').click(function(e){
+			e.preventDefault();
+			$('body').scrollTo($('#places-section'));
+		});
+		
+		$('.prize-ref').click(function(e){
+			e.preventDefault();
+			$('body').scrollTo($('#prize-section'));
+		});
+		
+		$('.games-ref').click(function(e){
+			e.preventDefault();
+			$('body').scrollTo($('#games-section'));
+		});
+		
+		$('.teams-ref').click(function(e){
+			e.preventDefault();
+			$('body').scrollTo($('#teams-section'));
+		});
 		
 		loadHomeMap();
 	});

@@ -1,6 +1,6 @@
 function connectFixtureBoxes(){	
 		jsPlumb.bind("ready", function() {
-		 	jsPlumb.setContainer($("body"));
+		 	jsPlumb.setContainer($("#fixture-section"));
 	        jsPlumb.connect({
 			    source:"match-a",
 			    target:"match-i",
