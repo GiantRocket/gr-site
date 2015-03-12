@@ -840,3 +840,16 @@ img
 .match-winner{
 	color: #2ecc71;
 }
+
+.navbar-header-text{
+	padding-top: 30px;
+}
+
+.navbar-header-text a{
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #FFF;
+	text-decoration: none;
+}

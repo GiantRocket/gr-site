@@ -25,16 +25,41 @@
 
 	<div class="navbar navbar-inverse navbar-fixed-top headroom">
 		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="/"><img
-					src="http://i.imgur.com/dYfCy3V.png"></a>
-			</div>
-			<div class="navbar-collapse collapse">
+			<div class="row">
+				<div class="col-sm-1">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/"><img
+						src="http://i.imgur.com/dYfCy3V.png"></a>
+				</div>
+				</div>
+				<div class="col-sm-5">
+				</div>
+				<div class="col-sm-1">
+					<div class="navbar-header-text">					
+						<a href="/">Inicio</a>
+					</div>
+				</div>
+				<div class="col-sm-1">
+					<div class="navbar-header-text">					
+						<a href="/fixture">Fixture</a>
+					</div>
+				</div>
+				<div class="col-sm-1">
+					<div class="navbar-header-text">					
+						<a href="/show/teams">Equipos</a>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="navbar-header-text">					
+						<a href="/team">Inscripcion al torneo</a>
+					</div>
+				</div>
+				<!--
 				<ul class="nav navbar-nav pull-right">
 					<li><a href="/">Inicio</a></li>
 					<li><a href="/fixture">Fixture</a></li>
@@ -42,8 +67,9 @@
 					<li><a href="/team">Inscripción al torneo</a></li>
 					<!--<li><a href="">Torneos Anteriores</a></li>
 					<li><a href="">Quienes Somos</a></li>
-					<li><a href="">Preguntas Frecuentes</a></li>-->
+					<li><a href="">Preguntas Frecuentes</a></li>
 				</ul>
+				-->
 			</div>
 		</div>
 	</div>
