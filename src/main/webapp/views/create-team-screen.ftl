@@ -64,7 +64,11 @@
 	    		</div>
 				<div class="col-sm-6 text-center title-and-epigraph">
 					<h1 class="super-title">Formulario de Inscripción</h1>
+					<#if team??>
+					<h3 class="epigraph">Editá la información de tu equipo para participar de nuestros torneos</h1>
+					<#else>
 					<h3 class="epigraph">Agregá a tu equipo para participar de nuestros torneos</h1>
+					</#if>
 				</div>
 	    		<div class="col-sm-3 text-left">
 	    		</div>
@@ -79,7 +83,7 @@
 					<h1 class="super-title">IMPORTANTE:
 					<span class="pull-right glyphicon glyphicon-remove close-message" id="close-message"></span>
 					</h1>
-					<h3 class="epigraph">Solo 16 equipos participarán del torneo</h1>
+					<h3 class="epigraph">Solo 32 equipos participarán del torneo</h1>
 					<h3 class="epigraph">Los mismos deberan abonar un costo de inscripción en caso de ser seleccionados</h1>
 				</div>
 	    		<div class="col-sm-3 text-left">
@@ -105,22 +109,26 @@
 		    		<div class="col-sm-3 text-left">
 		    			<div class='form-group has-feedback'>
 							<label class='team-labels' for="teamName">Nombre*</label><br>
+							<#if team??>
+							<input disabled="" class="mustComplete form-control" type="text" id="teamName" name="teamName" value="${team.name}" placeholder="Evil Geniuses">
+							<#else>
 							<input class="mustComplete form-control" type="text" id="teamName" name="teamName" value="" placeholder="Evil Geniuses">
+							</#if>
 						</div>
 						<div class='form-group has-feedback'>
 							<label class='team-labels' for="mail">Mail*</label><br>
-							<input class="mustComplete form-control mail" type="text" id="mail" name="email" value="" placeholder="contact@evilgeniuses.com">
+							<input class="mustComplete form-control mail" type="text" id="mail" name="email" value="${(team.mail)!''}" placeholder="contact@evilgeniuses.com">
 							<span class="help-block helper-text">Si el equipo no tiene mail,<br> podes indicar el del capitán o representante</span>
 						</div>
 					</div>
 					<div class="col-sm-3 text-left">
 						<div class='form-group has-feedback'>
 							<label class='team-labels' for="tag">TAG*</label><br>
-							<input class="mustComplete form-control" type="text" id="tag" name="tag" value="" placeholder="EG">
+							<input class="mustComplete form-control" type="text" id="tag" name="tag" value="${(team.tag)!''}" placeholder="EG">
 						</div>
 						<div class='form-group has-feedback'>
 							<label class='team-labels' for="logoUrl">Logo URL*</label><br> 
-							<input class="mustComplete form-control" type="text" id="logoUrl" name="logoUrl" value="" placeholder="imgur.com/8flyD2F.jpg">
+							<input class="mustComplete form-control" type="text" id="logoUrl" name="logoUrl" value="${(team.imageUrl)!''}" placeholder="imgur.com/8flyD2F.jpg">
 						</div>
 					</div>
 		    		<div class="col-sm-3 text-left">
@@ -145,17 +153,17 @@
 	    		<div class="col-sm-3 text-left">
 	    			<div class='form-group has-feedback'>
 						<label class='team-labels' for="web">Web</label><br>
-						<input class='form-control' type="text" id="web" name="web" value="" placeholder="www.evilgeniuses.com">
+						<input class='form-control' type="text" id="web" name="web" value="${(team.web)!''}" placeholder="www.evilgeniuses.com">
 					</div>
 					<div class='form-group has-feedback'>
 						<label class='team-labels' for="twitter">Twitter</label><br>
-						<input class='form-control' type="text" id="twitter" name="twitter" value="" placeholder="@evilgeniuses">
+						<input class='form-control' type="text" id="twitter" name="twitter" value=${(team.shortTwitter)!''}"" placeholder="@evilgeniuses">
 					</div>
 				</div>
 				<div class="col-sm-3 text-left">
 					<div class='form-group has-feedback'>
 						<label class='team-labels' for="facebook">Fanpage</label><br>
-						<input class='form-control' type="text" id="facebook" name="facebook" value="" placeholder="facebook.com/evilgeniuses">
+						<input class='form-control' type="text" id="facebook" name="facebook" value="${(team.shortFacebook)!''}" placeholder="facebook.com/evilgeniuses">
 					</div>
 				</div>
 	    		<div class="col-sm-3 text-left">
@@ -247,7 +255,11 @@
 	    		<div class="row">
 				   	<div class="col-sm-3 text-left"></div>
 		    		<div class="col-sm-6 last-section text-center">
+		    			<#if team??>
+		    			<input type="submit" id="create-team" class="btn-parallax bg-px--blue btn__border--bottom-blue soft--sides text--white text--medium no-underline font-size--14" value="Editar equipo">
+		    			<#else>
 		    			<input type="submit" id="create-team" class="btn-parallax bg-px--blue btn__border--bottom-blue soft--sides text--white text--medium no-underline font-size--14" value="Crear equipo">
+		    			</#if>
 		    		</div>
 		    		<div class="col-sm-3 text-left"></div>
 				</div>
@@ -302,7 +314,36 @@
                 }
             }]
         });
-        
+        	
+        	<#if team??>
+        		var htmlComplete = "";
+        		var playerNumber = 0; 
+        		<#list team.players as player>
+        		playerNumber++;
+				htmlComplete = "<div class='col-sm-6 text-left first-player-column'>";
+				htmlComplete += "<input type='hidden' id='playerNumber' value='"+playerNumber+"'/>";
+				htmlComplete += "<div class='form-group has-feedback'> <label class='team-labels' for='name'>Nombre*</label><br> <input placeholder='Clinton' class='tagEditor mustComplete form-control' type='text' id ='name' name='name' value='${player.name}'></div>";
+				htmlComplete += "<div class='form-group has-feedback'> <label class='team-labels' for='idNumber'>Documento*</label><br> <input type='text' placeholder='34383757' class='idNumber mustComplete form-control' id='idNumber' name='idNumber' value='${player.idNumber}'></div>";
+				htmlComplete += "<div class='form-group has-feedback'> <label class='team-labels' for='nick'>Nick*</label><br> <input class='mustComplete form-control' placeholder='Fear' type='text' id='nick' name='nick' value='${player.nick}'></div>";
+				htmlComplete += "<div class='form-group has-feedback'> <label class='team-labels' for='dotabuff'>Perfil de Dotabuff</label><br> <input class='form-control' placeholder='http://dotabuff.com/players/86890833' type='text' id='dotabuff' name='dotabuff' value='${player.dotabuff}'></div>";
+				htmlComplete += "<div class='form-group'> <label class='team-labels' for='country'>País de residencia*</label><br> <select class='mustComplete country form-control' id='country' name='country'> <#list countries as country> <option value='${country}'>${country.description}</option> </#list> </select> </div>";
+				htmlComplete += "<div class='form-group has-feedback relativeLocation'> <label class='team-labels relativeLocation' for='city'>Ciudad*</label><br class='relativeLocation'> <input placeholder='Ciudad Autonoma de Buenos Aires' class='mustCompleteRelativeLocation form-control relativeLocation' type='text' id='city' name='city' value=''> </div>"
+				htmlComplete += "<div class='form-group'> <label class='team-labels' for='roles'>Rol*</label><br> <select class='mustComplete form-control' id='role' name='role'> <option  value='DEFAULT'>Elije un rol</option> <#list roles as enum> <option value='${enum}'>${enum.description}</option> </#list> </select> </div>";
+				htmlComplete += "</div>";
+				htmlComplete += "<div class='col-sm-6 text-left second-player-column'>";
+				htmlComplete += "<div class='form-group has-feedback'> <label class='team-labels' for='lastName'>Apellido*</label><br> <input placeholder='Loomis' class='tagEditor mustComplete form-control' type='text' id='lastName' name='lastName' value='${player.lastName}'></div>";
+				htmlComplete += "<div class='form-group has-feedback'> <label class='team-labels' for='birthday'>Fecha de nacimiento*</label><br> <input readonly='readonly' placeholder='18/12/1991' style='background:white;cursor:pointer;'class='birthday mustComplete form-control' type='text' id='birthday"+playerNumber+"' value='${player.birthday}'></div>";
+				htmlComplete += "<div class='form-group has-feedback'> <label class='team-labels' for='pictureUrl'>URL de Foto de perfil*</label><br> <input placeholder='imgur.com/8flyD2F.jpg' class='mustComplete form-control' type='text' id='pictureUrl' name='pictureUrl' value='${player.pictureUrl}'></div>";
+				htmlComplete += "<div class='form-group has-feedback'> <label class='team-labels' for='steam'>Perfil de Steam*</label><br> <input class='mustComplete form-control' placeholder='http://steamcommunity.com/profiles/76561198047156561' type='text' id='steam' name='steam' value='${player.steam}'></div>";
+				htmlComplete += "<div class='form-group relativeLocation'> <label  class='team-labels relativeLocation' for='state'>Provincia*</label><br class='relativeLocation'> <select class='mustComplete relativeLocation form-control' id='state' name='state'> <#list states as state> <option value='${state}'>${state.description}</option> </#list> </select> </div>"
+				htmlComplete += "<div class='form-group has-feedback relativeLocation'> <label class='team-labels relativeLocation' for='neighbourhood'>Barrio*</label><br class='relativeLocation' > <input placeholder='Caballito' class='mustCompleteRelativeLocation relativeLocation form-control' type='text' id='neighbourhood' name='neighbourhood' value='${player.neighbourhood}'> </div>";
+				htmlComplete += "</div>";
+				$("#player"+playerNumber).append(htmlComplete);
+				$("#player"+playerNumber+" #country").val("${player.country}")
+				$("#player"+playerNumber+" #city").val("${player.city}")
+				$("#player"+playerNumber+" #role").val("${player.role}")
+        		</#list>
+        	<#else>
 			var playerNumber = 0;
 				while(playerNumber < 7){
 					playerNumber++;
@@ -327,7 +368,7 @@
 					
 					$("#player"+playerNumber).append(htmlComplete);
 				}
-			
+			</#if>
 		$(".idNumber").keydown(function(e){
 	        // Allow: backspace, delete, tab, escape, enter and .
 	        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -492,7 +533,7 @@
 				}
 				
 				var team = new Object();
-				team.name = $("#teamName").val();
+				team.name = "${(team.name)!'$("#teamName").val()'}";
 				team.tag = $("#tag").val();
 				team.mail = $("#mail").val();
 				team.facebook = $("#facebook").val();
@@ -532,7 +573,11 @@
 				    return data;
 				}});
 				$.ajax({
-			        url: "/team",
+					<#if team??>
+					url: "/team/${team.name}",
+			        <#else>
+					url: "/team",			        
+			        </#if>
 			        type: 'POST',
 		            headers: { 
 				        'Accept': 'application/json',

@@ -79,6 +79,19 @@ public class TeamController {
 		return view;
 	}
 	
+	@RequestMapping(value = "/edit/{teamName}", method = RequestMethod.GET)
+	public ModelAndView getTeamForm(@PathVariable String teamName) {
+		LOGGER.info("Looking on db for team: " + teamName);
+		Team team = this.teamService.getTeam(teamName);
+		LOGGER.info("Returning team: " + teamName);
+		ModelAndView view = new ModelAndView("create-team-screen");
+		view.addObject("roles", Role.values());
+		view.addObject("countries", Country.values());
+		view.addObject("states", State.values());
+		view.addObject("team", team);
+		return view;
+	}
+	
 	@RequestMapping(value = "/get/{teamName}", method = RequestMethod.GET)
 	public ResponseEntity<Team> getTeam(@PathVariable String teamName) {
 		LOGGER.info("Looking on db for team: " + teamName);
@@ -95,7 +108,7 @@ public class TeamController {
 		return view;
 	}
 	
-	@RequestMapping(value = "/get/{teamName}", method = RequestMethod.PATCH)
+	@RequestMapping(value = "/{teamName}", method = RequestMethod.POST)
 	public ResponseEntity<Void> updateTeam(@PathVariable String teamName, @RequestBody Team team) {
 		this.teamService.saveTeam(team, teamName);
 		return new ResponseEntity<Void>(HttpStatus.OK);
