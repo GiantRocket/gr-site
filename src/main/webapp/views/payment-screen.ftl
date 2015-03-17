@@ -1,6 +1,6 @@
-<!DOCTYPE html> 
+﻿<!DOCTYPE html>
 <html>
-	<head>
+	<head> 
 		<meta charset="UTF-8" />
 	    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" media="screen" rel="stylesheet" />
@@ -14,16 +14,19 @@
 	    <link href="/css/main.css" rel="stylesheet" />
 	    <link href="/css/parallax.css" rel="stylesheet" />
 	    <link href="/css/bootstrap-dialog.min.css" rel="stylesheet" />
-	    <title>Equipo creado exitosamente</title>
+	    <title>Métodos de Pago</title>
 		<link href="http://puu.sh/8JT1a.png" rel="shortcut icon" />
 		<link href="/css/custom-main.css" rel="stylesheet"/>
-</head> 
+</head>
 <body>
+<script type="text/javascript">
+		(function(){function $MPBR_load(){window.$MPBR_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = ("https:"==document.location.protocol?"https://www.mercadopago.com/org-img/jsapi/mptools/buttons/":"http://mp-tools.mlstatic.com/buttons/")+"render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPBR_loaded = true;})();}window.$MPBR_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPBR_load) : window.addEventListener('load', $MPBR_load, false)) : null;})();
+</script>
 		<!-- Google Analytics -->
 	<!-- <?php include_once("analyticstracking.php") ?> -->
 	<!-- /Google Analytics -->
 
-	<div class="navbar navbar-inverse navbar-fixed-top headroom">
+		<div class="navbar navbar-inverse navbar-fixed-top headroom">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -63,8 +66,8 @@
 	    		<div class="col-sm-3 text-left">
 	    		</div>
 				<div class="col-sm-6 text-center title-and-epigraph">
-					<h1 class="super-title">Formulario de Inscripción</h1>
-					<h3 class="epigraph">Has agregado a tu equipo para participar en nuestros torneos</h1>
+					<h1 class="super-title">Métodos de pago</h1>
+					<h3 class="epigraph"><b>Importante:</b> Recordá enviar un mail adjuntando el comprobante de pago a <a href="mailto:giantrocketstaff@gmail.com">giantrocketstaff@gmail.com</a> al finalizar la operación.</h1>
 				</div>
 	    		<div class="col-sm-3 text-left">
 	    		</div>
@@ -76,14 +79,13 @@
 		    		<div class="col-sm-3 text-left">
 		    		</div>
 					<div class="col-sm-6 text-center success-container">
-						<h1 class="success-text">
-						<span>Tu equipo ha sido creado exitosamente.</span><br>
-						<span>¡Gracias por inscribirte!</span><br><br>
-						<span>Enviaremos un mail a la casilla de correo indicada con más información sobre como continuar</span><br><br>
-						<span>Además podes clickear a continuacion para ver los métodos de pago y finalizar tu inscripción</span><br><br>
-						<input type="button" id="create-team" onclick="location.href='/team/payment'" class="btn-parallax bg-px--blue btn__border--bottom-blue soft--sides text--white text--medium no-underline font-size--14" value="Ver métodos de pago"></h1>
+						<a style="text-decoration:none;margin-bottom:15px;" class="mp-botonete">MercadoPago</a>
+						<span>Si sos de Argentina y queres abonar utilizando MercadoPago, hace click en el siguiente botón que te redigirá a la ventana de pago</span><br>
+						<input style="margin-top:15px;margin-bottom:60px;" type="button" href="https://www.mercadopago.com/mla/checkout/pay?pref_id=15711133-5b139264-c3f2-44ba-be40-30d43c9611dd" name="MP-payButton" mp-mode="modal" id="create-team" class="btn-parallax bg-px--blue btn__border--bottom-blue soft--sides text--white text--medium no-underline font-size--14" value="Pagar">
+						<a style="text-decoration:none;margin-bottom:15px;" class="mp-botonete">PayPal</a>
+						<span>En caso de querer abonar via paypal, por favor contactanos via mail a <a href="mailto:giantrocketstaff@gmail.com">giantrocketstaff@gmail.com</a> para solicitar la boleta del mismo</span><br>
 					</div>
-		    		<div class="col-sm-3 text-left">
+					<div class="col-sm-3 text-left">
 		    		</div>
 				</div>
 			</div>
@@ -127,3 +129,4 @@
 	</script> 
 	</body>
 </html>
+					

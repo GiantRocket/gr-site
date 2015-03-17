@@ -37,7 +37,7 @@
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					<li><a href="/">Inicio</a></li>
-					<li><a href="/fixture">Fixture</a></li>
+					<li><a href="/team/payment">Pagar inscripción</a></li>
 					<li><a href="/show/teams">Equipos</a></li>
 					<li><a href="/team">Inscripción al torneo</a></li>
 					<!--<li><a href="">Torneos Anteriores</a></li>
@@ -533,7 +533,11 @@
 				}
 				
 				var team = new Object();
-				team.name = "${(team.name)!'$("#teamName").val()'}";
+				<#if team??>
+				team.name = "${team.name}";
+				<#else>
+				team.name = $("#teamName").val();				
+				</#if>
 				team.tag = $("#tag").val();
 				team.mail = $("#mail").val();
 				team.facebook = $("#facebook").val();

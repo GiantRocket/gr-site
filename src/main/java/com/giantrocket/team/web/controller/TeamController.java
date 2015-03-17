@@ -44,6 +44,13 @@ public class TeamController {
 		return view;
 	}
 	
+	@RequestMapping(value = "payment", method = RequestMethod.GET)
+	public ModelAndView paymentView() {
+		LOGGER.info("returning payment view");
+		ModelAndView view = new ModelAndView("payment-screen");
+		return view;
+	}
+	
 	@RequestMapping(value = "/get/main", method = RequestMethod.GET)
 	public ResponseEntity<List<Team>> getMainTeams() {
 		List<Team> teams = teamService.getMainTeams();
