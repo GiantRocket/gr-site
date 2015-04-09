@@ -18,3 +18,4 @@ dist
 /example
 /example.log.1
 /target
+.classpath
