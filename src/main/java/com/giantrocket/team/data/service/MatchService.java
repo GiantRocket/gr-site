@@ -12,6 +12,7 @@ import java.util.Map;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.esotericsoftware.yamlbeans.YamlException;
@@ -21,12 +22,14 @@ import com.giantrocket.team.data.model.Match;
 import com.giantrocket.team.exceptions.ErrorType;
 import com.giantrocket.team.exceptions.ManagerException;
 
+@Service
 public class MatchService {
+	
+	private static Logger LOGGER = Logger.getLogger(MatchService.class);
 	
 	@Value("${com.giantrocket.match.filepath}")
 	private String filePath;
-    private static Logger LOGGER = Logger.getLogger(MatchService.class);
-	
+    	
 	public void saveMatch(Match match) {
 		String filePath = createFilePath(match.getId());
 		LOGGER.info("creating file on "+filePath);

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,10 +22,13 @@ import com.giantrocket.team.data.service.TeamService;
 @RequestMapping(value = "/match")
 public class MatchController {
 	
-	private MatchService matchService;
-	private TeamService teamService;
 	private static Logger LOGGER = Logger.getLogger(MatchController.class);
 	
+	@Autowired
+	private MatchService matchService;
+	@Autowired
+	private TeamService teamService;
+		
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public ModelAndView getEmptyMatchForm() {
 		LOGGER.info("returning empty form to create a team");
@@ -84,14 +88,6 @@ public class MatchController {
 		Match match = this.matchService.getMatch(matchId);
 		LOGGER.info("Returning match: " + matchId);
 		return new ResponseEntity<Match>(match,HttpStatus.OK);
-	}
-
-	public void setMatchService(MatchService matchService) {
-		this.matchService = matchService;
-	}
-
-	public void setTeamService(TeamService teamService) {
-		this.teamService = teamService;
 	}
 	
 }

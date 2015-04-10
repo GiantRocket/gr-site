@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import com.esotericsoftware.yamlbeans.YamlException;
 import com.esotericsoftware.yamlbeans.YamlReader;
@@ -24,14 +25,16 @@ import com.giantrocket.team.data.model.Team;
 import com.giantrocket.team.exceptions.ErrorType;
 import com.giantrocket.team.exceptions.ManagerException;
 
+@Service
 public class TeamService {
+	
+    private static Logger LOGGER = Logger.getLogger(TeamService.class);
+    private static final char COMMA = ',';
 	
 	@Value("${com.giantrocket.filepath}")
 	private String filePath;
 	@Value("${com.giantrocket.exportpath}")
 	private String exportPath;
-    private static Logger LOGGER = Logger.getLogger(TeamService.class);
-    private static final char COMMA = ',';
 	
 	public void saveTeam(Team team, String teamName) {
 		String filePath = createFilePath(team.getName());

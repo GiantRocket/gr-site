@@ -12,15 +12,15 @@
    		http://www.springframework.org/schema/task/spring-task-3.0.xsd">
 	
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-      <property name="defaultEncoding" value="UTF-8"></property>
-      <property name="templateLoaderPath" value="/views"/>
+      	<property name="defaultEncoding" value="UTF-8"></property>
+      	<property name="templateLoaderPath" value="/views"/>
     </bean>
      
     <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-      <property name="cache" value="false"/>
-      <property name="prefix" value=""/>
-      <property name="suffix" value=".ftl"/>
-      <property name="contentType" value="text/html;charset=UTF-8"/>
+    	<property name="cache" value="false"/>
+      	<property name="prefix" value=""/>
+      	<property name="suffix" value=".ftl"/>
+      	<property name="contentType" value="text/html;charset=UTF-8"/>
     </bean>
     
     <mvc:resources location="/css/"
@@ -34,6 +34,8 @@
 	
 	<mvc:resources location="/fonts/"
 		mapping="/fonts/**" cache-period="0" />
+		
+	<mvc:annotation-driven />		
     
 
 </beans>

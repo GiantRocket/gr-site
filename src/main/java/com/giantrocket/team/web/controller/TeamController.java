@@ -3,6 +3,7 @@ package com.giantrocket.team.web.controller;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.giantrocket.team.data.model.Role;
 import com.giantrocket.team.data.model.Country;
 import com.giantrocket.team.data.model.State;
@@ -21,9 +23,11 @@ import com.giantrocket.team.data.service.TeamService;
 @RequestMapping(value = "/team")
 public class TeamController {
 	
-	private TeamService teamService;
 	private static Logger LOGGER = Logger.getLogger(TeamController.class);
 	
+	@Autowired
+	private TeamService teamService;
+		
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView getEmptyTeamForm() {
 		LOGGER.info("returning empty form to create a team");
@@ -117,9 +121,4 @@ public class TeamController {
 		this.teamService.saveTeam(team, teamName);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
-
-	public void setTeamService(TeamService teamService) {
-		this.teamService = teamService;
-	}
-	
 }

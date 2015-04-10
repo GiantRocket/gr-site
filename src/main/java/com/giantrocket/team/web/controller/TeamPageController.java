@@ -3,6 +3,7 @@ package com.giantrocket.team.web.controller;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,9 +16,11 @@ import com.giantrocket.team.data.service.TeamService;
 @RequestMapping(value = "/show/teams")
 public class TeamPageController {
 	
-	private TeamService teamService;
 	private static Logger LOGGER = Logger.getLogger(TeamPageController.class);
 	
+	@Autowired
+	private TeamService teamService;
+		
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView getTeamPage() {
 		LOGGER.info("returning empty form to create a team");
@@ -25,10 +28,6 @@ public class TeamPageController {
 		List<Team> mainTeams = teamService.getMainTeams();
 		view.addObject("teams", mainTeams);
 		return view;
-	}
-
-	public void setTeamService(TeamService teamService) {
-		this.teamService = teamService;
 	}
 	
 }
