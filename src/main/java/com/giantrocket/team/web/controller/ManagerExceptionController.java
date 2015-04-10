@@ -15,11 +15,7 @@ public class ManagerExceptionController extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ManagerException.class)
     public ResponseEntity<ManagerError> handleApiException(HttpServletRequest request, ManagerException ex) {
-    	ManagerError body = new ManagerError();
-        
-        body.setCode(ex.getCode());
-        body.setMessage(ex.getMessage());
-
+    	ManagerError body = new ManagerError(ex.getCode(), ex.getMessage());        
         return new ResponseEntity<ManagerError>(body, ex.getStatus());
     }
 	

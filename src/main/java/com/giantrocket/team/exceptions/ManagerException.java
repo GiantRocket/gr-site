@@ -4,21 +4,17 @@ import org.springframework.http.HttpStatus;
 
 public class ManagerException extends RuntimeException {
 
-	private static final long serialVersionUID = 940870165573989747L;
+	private static final long serialVersionUID = 1L;
 	private ErrorType errorType;
 	
 	public ManagerException(ErrorType errorType) {
-		this.errorType = errorType;
+		super(errorType.getMessage());
+		this.errorType = errorType;		
 	}
 	
 	public ManagerException(ErrorType errorType, Throwable t) {
-		super(t);
+		super(errorType.getMessage(), t);
 		this.errorType = errorType;		
-	}
-
-	@Override
-	public String getMessage() {
-		return this.errorType.getMessage();
 	}
 	
 	public HttpStatus getStatus() {
@@ -26,7 +22,8 @@ public class ManagerException extends RuntimeException {
 	}
 	
 	public String getCode() {
-		return this.errorType.getHttpStatus().value() + this.errorType.getNumber().toString();
+		// (404 * 100) + 1 = 40401 
+		return Integer.toString(this.errorType.getHttpStatus().value() * 100 + this.errorType.getNumber());
 	}
 	
 }

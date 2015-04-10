@@ -5,9 +5,6 @@ public class ManagerError {
 	 	private String code;
 	    private String message;
 
-	    public ManagerError() {
-	    }
-
 	    public ManagerError(String code, String message) {
 	    	this.message = message;
 	    	this.code = code;
