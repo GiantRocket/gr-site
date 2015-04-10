@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.giantrocket.team.data.model.Role;
 import com.giantrocket.team.data.model.Country;
 import com.giantrocket.team.data.model.State;
 import com.giantrocket.team.data.model.Team;
+import com.giantrocket.team.data.model.dota.Role;
 import com.giantrocket.team.data.service.TeamService;
 
 @Controller

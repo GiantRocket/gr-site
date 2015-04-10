@@ -1,4 +1,4 @@
-package com.giantrocket.team.data.model;
+package com.giantrocket.team.data.model.dota;
 
 public enum Hero {
 

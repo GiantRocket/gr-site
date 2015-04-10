@@ -1,60 +1,62 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>giantrocket</groupId>
-  <artifactId>team-manager</artifactId>
-  <packaging>war</packaging>
-  <version>2.0-SNAPSHOT</version>
-  <name>team-manager Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-   <properties>
-  	<spring.version>4.0.1.RELEASE</spring.version>
-  	<jetty.version>8.1.10.v20130312</jetty.version>
-  	<freemarker.version>2.3.14</freemarker.version>
-  	<jackson.version>1.9.10</jackson.version>
-  	<log4j.version>1.2.17</log4j.version>  	
-  </properties>
+  	<modelVersion>4.0.0</modelVersion>
+  	<groupId>giantrocket</groupId>
+  	<artifactId>team-manager</artifactId>
+  	<version>2.0-SNAPSHOT</version>
+  	<name>team-manager Maven Webapp</name>
+  	<url>http://maven.apache.org</url>
   
-  <developers>
-  	<developer>
-  		<name>Mariano Cibelli</name>
-  		<roles><role>Original Idea</role><role>Developer</role></roles>
-  	</developer>
-  	<developer>
-  		<name>Gustavo Paoli</name>
-  		<roles><role>Developer</role></roles>
-  	</developer>
-  </developers>
+    <description>A project to admin teams and let them register for a tournament</description>
+    
+   	<properties>
+  		<spring.version>4.0.1.RELEASE</spring.version>
+  		<jetty.version>8.1.10.v20130312</jetty.version>
+  		<freemarker.version>2.3.14</freemarker.version>
+  		<jackson.version>1.9.10</jackson.version>
+  		<log4j.version>1.2.17</log4j.version>  	
+  	</properties>
   
-  <dependencies>
+  	<developers>
+  		<developer>
+  			<name>Mariano Cibelli</name>
+  			<roles><role>Original Idea</role><role>Developer</role></roles>
+  		</developer>
+  		<developer>
+  			<name>Gustavo Paoli</name>
+  			<roles><role>Developer</role></roles>
+  		</developer>
+  	</developers>
+  
+  	<dependencies>
   		<!-- SPRING -->
-		 <dependency>
-			 <groupId>org.springframework</groupId>
-			 <artifactId>spring-core</artifactId>
-			 <version>${spring.version}</version>
-		 </dependency>		 
-		 <dependency>
-			 <groupId>org.springframework</groupId>
-			 <artifactId>spring-web</artifactId>
-			 <version>${spring.version}</version>
-		 </dependency>		 
-		 <dependency>
-			 <groupId>org.springframework</groupId>
-			 <artifactId>spring-webmvc</artifactId>
-			 <version>${spring.version}</version>
-		 </dependency>
-		 <dependency>
-			 <groupId>org.springframework</groupId>
-			 <artifactId>spring-beans</artifactId>
-			 <version>${spring.version}</version>
-		 </dependency> 
-		 <dependency>
-    		 <groupId>org.springframework</groupId>
-    		 <artifactId>spring-context-support</artifactId>
-    		 <version>${spring.version}</version>
-		 </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>		 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>		 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency> 
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-context-support</artifactId>
+    		<version>${spring.version}</version>
+		</dependency>
 		<!-- LOG4J -->		 
-		 <dependency>
+		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
@@ -65,22 +67,22 @@
 			<version>1.6.6</version>
 		</dependency> 
 		<!-- JETTY -->
-		 <dependency>
+		<dependency>
       		<groupId>org.eclipse.jetty</groupId>
       		<artifactId>jetty-server</artifactId>
       	 	<version>${jetty.version}</version>
-    	 </dependency>
-    	 <dependency>
+    	</dependency>
+    	<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-servlet</artifactId>
 			<version>${jetty.version}</version>
 		</dependency>
-    	 <dependency>
+    	<dependency>
 			<groupId>com.typesafe</groupId>
 			<artifactId>config</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-	   <!-- FREEMARKER -->
+	    <!-- FREEMARKER -->
 	   	<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
@@ -128,24 +130,34 @@
 			<version>2.5</version>
 		</dependency>
 		<dependency>
-		       <groupId>org.springframework.security</groupId>
-		       <artifactId>spring-security-web</artifactId>
-		       <version>3.2.5.RELEASE</version>
+			<groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>3.2.5.RELEASE</version>
 		</dependency>
 		<dependency>
-		        <groupId>org.springframework.security</groupId>
-		        <artifactId>spring-security-config</artifactId>
-		        <version>3.2.5.RELEASE</version>
-		</dependency>
-		
-		
-	   <!-- CODEHAUS -->
-	   <!-- sin esto, no funciona get y post de application/json, con esto, sin tocar nada, ya anda --> 
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>3.2.5.RELEASE</version>
+		</dependency>				
+	   	<!-- CODEHAUS -->
+	   	<!-- sin esto, no funciona get y post de application/json, con esto, sin tocar nada, ya anda --> 
 	   	<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
-  </dependencies>
-  <description>A project to admin teams and let them register for a tournament</description>
+	</dependencies>
+  
+  	<build>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/src/main/webapp</directory>
+			</resource>
+		</resources>
+	</build>
+
 </project>

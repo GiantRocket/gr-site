@@ -1,11 +1,11 @@
 package com.giantrocket.team.exceptions;
 
-public class ManagerError {
+public class CustomError {
 	
 	 	private String code;
 	    private String message;
 
-	    public ManagerError(String code, String message) {
+	    public CustomError(String code, String message) {
 	    	this.message = message;
 	    	this.code = code;
 	    }
