@@ -1,7 +1,5 @@
 package com.giantrocket.team.data.model;
 
-import java.util.Date;
-
 public class Match {
 	
 	private String id;
