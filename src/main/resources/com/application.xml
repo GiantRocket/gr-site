@@ -14,5 +14,9 @@
  	<context:property-placeholder location="classpath:conf/env/enviroment.properties" />
  	<context:annotation-config />
  	<context:component-scan base-package="com.giantrocket.team" />
+ 	
+ 	<mvc:interceptors>
+    	<bean class="com.giantrocket.team.web.controller.handler.RequestHandlerAdapter" />
+	</mvc:interceptors>
 
 </beans>
