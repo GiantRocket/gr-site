@@ -4,6 +4,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -16,10 +17,13 @@ public class SessionRequiredInterceptor extends HandlerInterceptorAdapter {
 	public static final String USER_COOKIE_NAME = "UID";
 	public static final String TOKEN_COOKIE_NAME = "TV";
 	
+	@Value("${com.giantrocket.login.required}")
+	private Boolean loginRequired;
+	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
 		
-		if (handler instanceof HandlerMethod) {
+		if (this.loginRequired && handler instanceof HandlerMethod) {
 		    HandlerMethod method = (HandlerMethod) handler;
 		    if (this.haveAnnotation(method)) {
 		    	String token = this.getTokenFromRequest(request);

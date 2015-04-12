@@ -65,8 +65,9 @@ public class CustomExceptionHandler {
     		CustomError body = new CustomError(errorCode, errorMessage);        
     		return new ResponseEntity<CustomError>(body, status);
     	}
-    	
-    	ModelAndView errorView = new ModelAndView("rules-screen");
+    	    	
+    	ModelAndView errorView = new ModelAndView("error");    	
+    	errorView.addObject("errorCode", errorCode);
     	return errorView;
     }
 }

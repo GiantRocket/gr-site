@@ -4,32 +4,33 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Team {
-	private String name;
-	private String tag;
-	private Date creationDate;
-	private String shortFacebook;
-	private String shortTwitter;
-	private String mail;
-	private String facebook;
-	private String twitter;
-	private String web;
-	private String imageUrl;
-	private List<Player> players;
-	private boolean main = false;
-	private String smallPicture;
+import com.despegar.integration.mongo.entities.IdentifiableEntity;
+
+public class Team implements IdentifiableEntity{
 	
+	private String id;
+	private String name;
+	private String shortName;
+	private Date creationDate;	
+	private List<String> playersIds;
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getTag() {
-		return tag;
+	public String getShortName() {
+		return shortName;
 	}
-	public void setTag(String tag) {
-		this.tag = tag;
+	public void setShortName(String shortName) {
+		this.shortName = shortName;
 	}
 	public Date getCreationDate() {
 		return creationDate;
@@ -37,67 +38,18 @@ public class Team {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
-	public String getMail() {
-		return mail;
+	public List<String> getPlayersIds() {
+		return playersIds;
 	}
-	public void setMail(String mail) {
-		this.mail = mail;
+	public void setPlayersIds(List<String> playersIds) {
+		this.playersIds = playersIds;
 	}
-	public String getFacebook() {
-		return facebook;
-	}
-	public void setFacebook(String facebook) {
-		this.facebook = facebook;
-	}
-	public String getTwitter() {
-		return twitter;
-	}
-	public void setTwitter(String twitter) {
-		this.twitter = twitter;
-	}
-	public String getWeb() {
-		return web;
-	}
-	public void setWeb(String web) {
-		this.web = web;
-	}
-	public String getImageUrl() {
-		return imageUrl;
-	}
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
-	public List<Player> getPlayers() {
-		if(players==null){
-			players=new ArrayList<Player>();
+	public void addPlayerId(String playerId) {
+		if (this.playersIds == null) {
+			this.playersIds = new ArrayList<String>();
 		}
-		return players;
+		
+		this.playersIds.add(playerId);
 	}
-	public void setPlayers(List<Player> players) {
-		this.players = players;
-	}
-	public String getShortFacebook() {
-		return shortFacebook;
-	}
-	public void setShortFacebook(String shortFacebook) {
-		this.shortFacebook = shortFacebook;
-	}
-	public String getShortTwitter() {
-		return shortTwitter;
-	}
-	public void setShortTwitter(String shortTwitter) {
-		this.shortTwitter = shortTwitter;
-	}
-	public boolean isMain() {
-		return main;
-	}
-	public void setMain(boolean main) {
-		this.main = main;
-	}
-	public String getSmallPicture() {
-		return smallPicture;
-	}
-	public void setSmallPicture(String smallPicture) {
-		this.smallPicture = smallPicture;
-	}
+
 }

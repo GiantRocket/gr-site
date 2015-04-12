@@ -4,6 +4,7 @@ import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 
+//TODO ver que hacemos con esto... vamos a poner todos los estados de todos los paises? quizas hay que asociarlo a un Country, y los nombres deberian estar en otro lado
 public enum State {
 
 	BUENOS_AIRES("Buenos Aires"),

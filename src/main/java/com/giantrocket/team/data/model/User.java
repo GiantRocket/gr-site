@@ -1,17 +1,18 @@
 package com.giantrocket.team.data.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.despegar.integration.mongo.entities.IdentifiableEntity;
 
-
-public class User {
+public class User implements IdentifiableEntity {
 	
+	private String id;
 	private String userName;
-	private String email;
-	private String password;
-	private Date creationDate;
 	private List<UserRole> roles;
+	private Country country;
+	private Date creationDate;
 	
 	public String getUserName() {
 		return userName;
@@ -19,28 +20,36 @@ public class User {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getEmail() {
-		return email;
+
+	public List<UserRole> getRoles() {
+		return roles;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setRoles(List<UserRole> roles) {
+		this.roles = roles;
 	}
-	public String getPassword() {
-		return password;
+	public String getId() {
+		return this.id;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setId(String id) {
+		this.id = id;		
+	}
+	public Country getCountry() {
+		return country;
+	}
+	public void setCountry(Country country) {
+		this.country = country;
+	}
+	public void addRole(UserRole role) {
+		if (this.roles == null) {
+			this.roles = new ArrayList<UserRole>();
+		}
+		
+		this.roles.add(role);
 	}
 	public Date getCreationDate() {
 		return creationDate;
 	}
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
-	}
-	public List<UserRole> getRoles() {
-		return roles;
-	}
-	public void setRoles(List<UserRole> roles) {
-		this.roles = roles;
 	}
 }
