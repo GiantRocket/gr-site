@@ -6,7 +6,7 @@ public enum ErrorType {
 	
 	// 400
 	TEAM_EXISTS(HttpStatus.BAD_REQUEST, 1, "Un equipo con el nombre solicitado ya se encuentra creado, por favor contacta con un administrador para resolver el problema"),
-
+	
 	// 404
 	TEAM_NOT_FOUND(HttpStatus.NOT_FOUND,1,"El equipo solicitado no existe"),
 	MATCH_NOT_FOUND(HttpStatus.NOT_FOUND,2,"El match solicitado no existe"),
