@@ -1,4 +1,4 @@
-package com.giantrocket.team.exceptions;
+package com.giantrocket.site.exceptions;
 
 import org.springframework.http.HttpStatus;
 

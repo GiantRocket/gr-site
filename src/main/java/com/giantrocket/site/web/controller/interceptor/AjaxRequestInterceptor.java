@@ -1,4 +1,4 @@
-package com.giantrocket.team.web.controller.interceptor;
+package com.giantrocket.site.web.controller.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

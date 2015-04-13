@@ -1,4 +1,4 @@
-package com.giantrocket.team.data.service;
+package com.giantrocket.site.data.service;
 
 import java.net.UnknownHostException;
 import java.util.Date;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.despegar.integration.mongo.connector.MongoCollection;
 import com.despegar.integration.mongo.connector.MongoCollectionFactory;
-import com.giantrocket.team.data.model.User;
+import com.giantrocket.site.data.model.User;
 
 @Service
 public class UserService {
