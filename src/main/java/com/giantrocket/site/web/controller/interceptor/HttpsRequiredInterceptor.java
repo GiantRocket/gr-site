@@ -1,4 +1,4 @@
-package com.giantrocket.team.web.controller.interceptor;
+package com.giantrocket.site.web.controller.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.giantrocket.team.exceptions.HttpsRequiredException;
-import com.giantrocket.team.web.annotation.HttpsRequired;
-import com.giantrocket.team.web.annotation.SessionRequired;
+import com.giantrocket.site.exceptions.HttpsRequiredException;
+import com.giantrocket.site.web.annotation.HttpsRequired;
+import com.giantrocket.site.web.annotation.SessionRequired;
 
 public class HttpsRequiredInterceptor extends HandlerInterceptorAdapter {
 

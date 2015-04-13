@@ -1,4 +1,4 @@
-package com.giantrocket.team.data.model;
+package com.giantrocket.site.data.model;
 
 import java.util.EnumSet;
 import java.util.HashMap;
@@ -11,17 +11,17 @@ public enum State {
 	CATAMARCA("Catamarca"),
 	CHACO("Chaco"),
 	CHUBUT("Chubut"),
-	CORDOBA("Córdoba"),
+	CORDOBA("Cï¿½rdoba"),
 	CORRIENTES("Corrientes"),
-	ENTRE_RIOS("Entre Ríos"),
+	ENTRE_RIOS("Entre Rï¿½os"),
 	FORMOSA("Formosa"),
 	JUJUY("Jujuy"),
 	LA_PAMPA("La Pampa"),
 	LA_RIOJA("La Rioja"),
 	MENDOZA("Mendoza"),
 	MISIONES("Misiones"),
-	NEUQUEN("Neuquén"),
-	RIO_NEGRO("Río Negro"),
+	NEUQUEN("Neuquï¿½n"),
+	RIO_NEGRO("Rï¿½o Negro"),
 	SALTA("Salta"),
 	SAN_JUAN("San Juan"),
 	SAN_LUIS("San Luis"),
@@ -29,7 +29,7 @@ public enum State {
 	SANTA_FE("Santa Fe"),
 	SANTIAGO_DEL_ESTERO("Santiago del Estero"),
 	TIERRA_DEL_FUEGO("Tierra del Fuego"),
-	TUCUMAN("Tucumán");
+	TUCUMAN("Tucumï¿½n");
 	
 	private final String description; 
 	private static final Map<String, State> LOOKUP = new HashMap<String, State>();

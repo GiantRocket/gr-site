@@ -1,4 +1,4 @@
-package com.giantrocket.team.data.model;
+package com.giantrocket.site.data.model;
 
 import java.util.ArrayList;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.giantrocket.team.exceptions;
+package com.giantrocket.site.exceptions;
 
 public class InvalidSessionException extends RuntimeException {
 

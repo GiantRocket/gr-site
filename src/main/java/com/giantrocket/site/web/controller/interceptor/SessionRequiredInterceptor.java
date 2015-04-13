@@ -1,4 +1,4 @@
-package com.giantrocket.team.web.controller.interceptor;
+package com.giantrocket.site.web.controller.interceptor;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.giantrocket.team.exceptions.InvalidSessionException;
-import com.giantrocket.team.web.annotation.SessionRequired;
+import com.giantrocket.site.exceptions.InvalidSessionException;
+import com.giantrocket.site.web.annotation.SessionRequired;
 
 public class SessionRequiredInterceptor extends HandlerInterceptorAdapter {
 

@@ -1,4 +1,4 @@
-package com.giantrocket.team;
+package com.giantrocket.site;
 
 import java.io.File;
 

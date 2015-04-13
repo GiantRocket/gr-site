@@ -1,4 +1,4 @@
-package com.giantrocket.team.web.controller.handler;
+package com.giantrocket.site.web.controller.handler;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.giantrocket.team.exceptions.CustomError;
-import com.giantrocket.team.exceptions.HttpsRequiredException;
-import com.giantrocket.team.exceptions.InvalidSessionException;
-import com.giantrocket.team.exceptions.ManagerException;
-import com.giantrocket.team.web.controller.interceptor.AjaxRequestInterceptor;
+import com.giantrocket.site.exceptions.CustomError;
+import com.giantrocket.site.exceptions.HttpsRequiredException;
+import com.giantrocket.site.exceptions.InvalidSessionException;
+import com.giantrocket.site.exceptions.ManagerException;
+import com.giantrocket.site.web.controller.interceptor.AjaxRequestInterceptor;
 
 @ControllerAdvice
 public class CustomExceptionHandler {
@@ -24,7 +24,7 @@ public class CustomExceptionHandler {
 	
 	public static final String ILLEGAL_ARGUMENT_STATUS = "400";
 	public static final String INTERNAL_SERVER_ERROR_STATUS = "500";
-	public static final String INTERNAL_SERVER_ERROR_MSG = "Bueno... tenemos un inconveniente con uno de nuestros servicios (o todos, quien sabe), pero lo más probable es que nuestros desarrolladores ya lo esten viendo, calma";
+	public static final String INTERNAL_SERVER_ERROR_MSG = "Bueno... tenemos un inconveniente con uno de nuestros servicios (o todos, quien sabe), pero lo mï¿½s probable es que nuestros desarrolladores ya lo esten viendo, calma";
 	
     @ExceptionHandler(ManagerException.class)
     public Object handleManagerException(HttpServletRequest request, ManagerException ex) {
