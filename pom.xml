@@ -28,7 +28,7 @@
   		</developer>
   	</developers>
   
-  	<dependencies>
+  	<dependencies>  				
   		<!-- SPRING -->
 		<dependency>
 			<groupId>org.springframework</groupId>
