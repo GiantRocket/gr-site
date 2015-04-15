@@ -1,28 +1,74 @@
 package com.giantrocket.site.data.connector;
 
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.giantrocket.site.data.connector.dto.steam.League;
+import com.giantrocket.site.data.connector.dto.steam.LeaguesContainer;
 import com.giantrocket.site.data.connector.dto.steam.Player;
 import com.giantrocket.site.data.connector.dto.steam.PlayersContainer;
+import com.giantrocket.site.data.connector.dto.steam.Team;
+import com.giantrocket.site.data.connector.dto.steam.TeamsContainer;
+import com.giantrocket.site.data.connector.factory.CacheClientHttpRequestFactory;
 
 @Service
 public class SteamConnector {
 	
-	public Player getPlayer(String steamId) {
-		String steamKey = "";		
-		String url = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=%s&steamids=%s";
-		 
-		RestTemplate restTemplate= new RestTemplate();		
-		ResponseEntity<PlayersContainer> response = restTemplate.getForEntity(String.format(url, steamKey, steamId), PlayersContainer.class);
+	@Value("${com.giantrocket.steam.appid}")
+	private String steamKey;
+	
+	private RestTemplate restTemplate;
+	
+	private static final String PLAYER_URL = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=%s&steamids=%s";
+	private static final String TEAM_URL = "http://api.steampowered.com/IDOTA2Match_570/GetTeamInfoByTeamID/v1?key=%s&start_at_team_id=%s&teams_requested=1";
+	private static final String LEAGUE_URL = "http://api.steampowered.com/IDOTA2Match_570/GetLeagueListing/v0001/?key=%s";
+	
+	public SteamConnector() {
+		this.restTemplate = new RestTemplate();
+		restTemplate.setRequestFactory(new CacheClientHttpRequestFactory(restTemplate.getRequestFactory()));
+	}
+	
+	public Player getPlayer(String steamId) {							 			
+		ResponseEntity<PlayersContainer> response = this.restTemplate.getForEntity(String.format(PLAYER_URL, steamKey, steamId), PlayersContainer.class);
 		
 		if (!HttpStatus.OK.equals(response.getStatusCode())) {
 			//TODO: ver que error devolver en caso de que steam no funcione
 		}	
 		
 		return response.getBody().getResponse().getPlayers().iterator().next();
+	}
+	
+	public Team getTeam(String teamId) {		
+		ResponseEntity<TeamsContainer> response = this.restTemplate.getForEntity(String.format(TEAM_URL, steamKey, teamId), TeamsContainer.class);
+		
+		if (!HttpStatus.OK.equals(response.getStatusCode())) {
+			//TODO: ver que error devolver en caso de que steam no funcione
+		}	
+		
+		return response.getBody().getResult().getTeams().iterator().next();
+	}
+	
+	public League getLeague(String leagueId) {				
+		ResponseEntity<LeaguesContainer> response = this.restTemplate.getForEntity(String.format(LEAGUE_URL, steamKey), LeaguesContainer.class);
+		
+		if (!HttpStatus.OK.equals(response.getStatusCode())) {
+			//TODO: ver que error devolver en caso de que steam no funcione
+		}	
+		
+		Collection<League> leagues = response.getBody().getResult().getLeagues();
+		
+		for (League league : leagues) {
+			if (leagueId.equals(league.getLeagueId())) {
+				return league;
+			}
+		}
+		
+		return null;
 	}
 
 }
