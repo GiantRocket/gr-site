@@ -3,6 +3,7 @@ package com.giantrocket.site.web.controller.handler;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -19,6 +20,8 @@ import com.giantrocket.site.web.controller.interceptor.AjaxRequestInterceptor;
 @ControllerAdvice
 public class CustomExceptionHandler {
 	
+	private static final Logger LOGGER = Logger.getLogger(CustomExceptionHandler.class);
+	
 	public static final String LOGIN_REDIRECT = "/login";
 	public static final String HTTPS_REDIRECT = "https://%s%s?%s";
 	
@@ -28,16 +31,19 @@ public class CustomExceptionHandler {
 	
     @ExceptionHandler(ManagerException.class)
     public Object handleManagerException(HttpServletRequest request, ManagerException ex) {
+    	LOGGER.error("Return personalize error", ex);
     	return this.generateErrorResponse(request, ex.getCode(), ex.getMessage(), ex.getStatus());
     }
     
     @ExceptionHandler(IllegalArgumentException.class)
     public Object handleIllegalArgumentException(HttpServletRequest request, IllegalArgumentException ex) {
+    	LOGGER.error("Return 400", ex);
     	return this.generateErrorResponse(request, ILLEGAL_ARGUMENT_STATUS, ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
     
     @ExceptionHandler(Exception.class)
     public Object handleException(HttpServletRequest request, Exception ex) {
+    	LOGGER.error("Return 500", ex);
         return this.generateErrorResponse(request, INTERNAL_SERVER_ERROR_STATUS, INTERNAL_SERVER_ERROR_MSG, HttpStatus.INTERNAL_SERVER_ERROR);
     }	
     

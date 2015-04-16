@@ -12,7 +12,7 @@
  	<import resource="classpath:com/beans/frontend.xml" />
  	<import resource="classpath:com/despegar/integration/mongo/mongo-context.xml" />
  
- 	<context:property-placeholder location="classpath:conf/env/enviroment.properties" />
+ 	<context:property-placeholder location="classpath:conf/configuration.properties, classpath:conf/local.properties" />
  	<context:annotation-config />
  	<context:component-scan base-package="com.giantrocket.site" />
  	

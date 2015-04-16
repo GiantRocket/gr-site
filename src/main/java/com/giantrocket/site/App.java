@@ -15,7 +15,7 @@ import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
 public class App {
-    private static String CONFIG_FILE_PATH = "conf/env/startup.conf";
+    private static String CONFIG_FILE_PATH = "conf/startup.conf";
 
     public static void main(String[] args) throws Exception {
 

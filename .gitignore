@@ -19,3 +19,4 @@ dist
 /example.log.1
 /target
 .classpath
+/src/main/resources/conf/local.properties
