@@ -38,7 +38,7 @@ public class SteamConnector {
 		}
 	}
 	
-	public Player getPlayer(String steamId) {							 			
+	public Player getPlayer(Long steamId) {							 			
 		ResponseEntity<PlayersContainer> response = this.restTemplate.getForEntity(String.format(PLAYER_URL, steamKey, steamId), PlayersContainer.class);
 		
 		if (!HttpStatus.OK.equals(response.getStatusCode())) {
@@ -48,7 +48,7 @@ public class SteamConnector {
 		return response.getBody().getResponse().getPlayers().iterator().next();
 	}
 	
-	public Team getTeam(String teamId) {		
+	public Team getTeam(Long teamId) {		
 		ResponseEntity<TeamsContainer> response = this.restTemplate.getForEntity(String.format(TEAM_URL, steamKey, teamId), TeamsContainer.class);
 		
 		if (!HttpStatus.OK.equals(response.getStatusCode())) {
@@ -58,8 +58,8 @@ public class SteamConnector {
 		return response.getBody().getResult().getTeams().iterator().next();
 	}
 	
-	public League getLeague(String leagueId) {				
-		ResponseEntity<LeaguesContainer> response = this.restTemplate.getForEntity(String.format(LEAGUE_URL, steamKey), LeaguesContainer.class);
+	public League getLeague(Long leagueId) {				
+		ResponseEntity<LeaguesContainer> response = this.restTemplate.getForEntity(String.format(LEAGUE_URL, steamKey), LeaguesContainer.class);		
 		
 		if (!HttpStatus.OK.equals(response.getStatusCode())) {
 			//TODO: ver que error devolver en caso de que steam no funcione
