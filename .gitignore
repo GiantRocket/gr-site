@@ -20,3 +20,4 @@ dist
 /target
 .classpath
 /src/main/resources/conf/local.properties
+/src/main/resources/conf/ssl.properties

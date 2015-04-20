@@ -4,13 +4,13 @@ import java.util.Collection;
 
 public class PlayersList {
 
-	private Collection<Player> players;
+	private Collection<PlayerDTO> players;
 
-	public Collection<Player> getPlayers() {
+	public Collection<PlayerDTO> getPlayers() {
 		return players;
 	}
 
-	public void setPlayers(Collection<Player> players) {
+	public void setPlayers(Collection<PlayerDTO> players) {
 		this.players = players;
 	}		
 }

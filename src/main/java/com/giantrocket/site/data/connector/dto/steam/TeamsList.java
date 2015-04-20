@@ -6,20 +6,20 @@ import java.util.Map;
 
 public class TeamsList {
 
-	private Collection<Team> teams;
+	private Collection<TeamDTO> teams;
 	private Integer status;
 
-	public Collection<Team> getTeams() {
+	public Collection<TeamDTO> getTeams() {
 		return teams;
 	}
 
 	public void setTeams(Collection<Map<String, String>> teams) {
 		//tuve que hacer este quilombo porque steam devuelve la listas de jugadores y torneos como properties
 		
-		this.teams = new ArrayList<Team>();
+		this.teams = new ArrayList<TeamDTO>();
 		
 		for (Map<String, String> teamMap : teams) {
-			Team team = new Team();
+			TeamDTO team = new TeamDTO();
 			team.setAdminAccountId(Long.parseLong(teamMap.get("admin_account_id")));
 			team.setCountry_code(teamMap.get("country_code"));
 			team.setGamesPlayedWithCurrentRoster(Integer.parseInt(teamMap.get("games_played_with_current_roster")));

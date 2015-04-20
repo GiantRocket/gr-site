@@ -2,7 +2,7 @@ package com.giantrocket.site.data.connector.dto.steam;
 
 import java.util.Collection;
 
-public class Team {
+public class TeamDTO {
 
 	private Long teamId;
 	private String name;

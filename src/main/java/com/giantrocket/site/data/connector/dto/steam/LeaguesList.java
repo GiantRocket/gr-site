@@ -4,13 +4,13 @@ import java.util.Collection;
 
 public class LeaguesList {
 
-	private Collection<League> leagues;
+	private Collection<LeagueDTO> leagues;
 
-	public Collection<League> getLeagues() {
+	public Collection<LeagueDTO> getLeagues() {
 		return leagues;
 	}
 
-	public void setLeagues(Collection<League> leagues) {
+	public void setLeagues(Collection<LeagueDTO> leagues) {
 		this.leagues = leagues;
 	}
 	

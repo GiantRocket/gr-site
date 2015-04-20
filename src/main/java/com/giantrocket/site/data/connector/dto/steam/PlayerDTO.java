@@ -1,6 +1,6 @@
 package com.giantrocket.site.data.connector.dto.steam;
 
-public class Player {	
+public class PlayerDTO {	
 	
 	private String steamid;
 	private Integer communityvisibilitystate;

@@ -2,7 +2,7 @@ package com.giantrocket.site.data.connector.dto.steam;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class League {
+public class LeagueDTO {
 	
 	private String name;
 	@JsonProperty(value="leagueid")

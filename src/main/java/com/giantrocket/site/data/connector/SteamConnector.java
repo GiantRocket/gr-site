@@ -9,13 +9,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.giantrocket.site.data.connector.dto.steam.League;
+import com.giantrocket.site.data.connector.dto.steam.LeagueDTO;
 import com.giantrocket.site.data.connector.dto.steam.LeaguesContainer;
-import com.giantrocket.site.data.connector.dto.steam.Player;
+import com.giantrocket.site.data.connector.dto.steam.PlayerDTO;
 import com.giantrocket.site.data.connector.dto.steam.PlayersContainer;
-import com.giantrocket.site.data.connector.dto.steam.Team;
+import com.giantrocket.site.data.connector.dto.steam.TeamDTO;
 import com.giantrocket.site.data.connector.dto.steam.TeamsContainer;
-import com.giantrocket.site.data.connector.rest.factory.CacheClientHttpRequestFactory;
+import com.giantrocket.site.util.rest.factory.CacheClientHttpRequestFactory;
 
 @Service
 public class SteamConnector {
@@ -38,17 +38,17 @@ public class SteamConnector {
 		}
 	}
 	
-	public Player getPlayer(Long steamId) {							 			
-		ResponseEntity<PlayersContainer> response = this.restTemplate.getForEntity(String.format(PLAYER_URL, steamKey, steamId), PlayersContainer.class);
+	public PlayerDTO getPlayer(final Long steamId) {		
+		ResponseEntity<PlayersContainer> response = SteamConnector.this.restTemplate.getForEntity(String.format(PLAYER_URL, steamKey, steamId), PlayersContainer.class);
 		
 		if (!HttpStatus.OK.equals(response.getStatusCode())) {
 			//TODO: ver que error devolver en caso de que steam no funcione
 		}	
 		
-		return response.getBody().getResponse().getPlayers().iterator().next();
+		return response.getBody().getResponse().getPlayers().iterator().next();					
 	}
 	
-	public Team getTeam(Long teamId) {		
+	public TeamDTO getTeam(Long teamId) {		
 		ResponseEntity<TeamsContainer> response = this.restTemplate.getForEntity(String.format(TEAM_URL, steamKey, teamId), TeamsContainer.class);
 		
 		if (!HttpStatus.OK.equals(response.getStatusCode())) {
@@ -58,16 +58,16 @@ public class SteamConnector {
 		return response.getBody().getResult().getTeams().iterator().next();
 	}
 	
-	public League getLeague(Long leagueId) {				
+	public LeagueDTO getLeague(Long leagueId) {				
 		ResponseEntity<LeaguesContainer> response = this.restTemplate.getForEntity(String.format(LEAGUE_URL, steamKey), LeaguesContainer.class);		
 		
 		if (!HttpStatus.OK.equals(response.getStatusCode())) {
 			//TODO: ver que error devolver en caso de que steam no funcione
 		}	
 		
-		Collection<League> leagues = response.getBody().getResult().getLeagues();
+		Collection<LeagueDTO> leagues = response.getBody().getResult().getLeagues();
 		
-		for (League league : leagues) {
+		for (LeagueDTO league : leagues) {
 			if (leagueId.equals(league.getLeagueId())) {
 				return league;
 			}

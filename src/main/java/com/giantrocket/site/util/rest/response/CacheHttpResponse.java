@@ -1,4 +1,4 @@
-package com.giantrocket.site.data.connector.rest.response;
+package com.giantrocket.site.util.rest.response;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

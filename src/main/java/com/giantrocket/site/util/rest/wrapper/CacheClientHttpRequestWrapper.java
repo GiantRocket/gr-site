@@ -1,4 +1,4 @@
-package com.giantrocket.site.data.connector.rest.wrapper;
+package com.giantrocket.site.util.rest.wrapper;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -15,7 +15,7 @@ import org.springframework.http.client.ClientHttpRequest;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.util.Assert;
 
-import com.giantrocket.site.data.connector.rest.response.CacheHttpResponse;
+import com.giantrocket.site.util.rest.response.CacheHttpResponse;
 
 public class CacheClientHttpRequestWrapper extends AbstractClientHttpRequest{
 	
