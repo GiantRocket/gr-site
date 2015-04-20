@@ -104,5 +104,11 @@
 			</resource>
 		</resources>
 	</build>
+	
+	<scm>
+		<connection>scm:git:git@github.com:GiantRocket/gr-site.git</connection>
+		<developerConnection>scm:git:git@github.com:GiantRocket/gr-site.git</developerConnection>
+		<url>scm:git:git@github.com:GiantRocket/gr-site.git</url>
+	</scm>
 
 </project>
