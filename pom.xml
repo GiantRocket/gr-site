@@ -3,7 +3,7 @@
   	
   	<groupId>giantrocket</groupId>
   	<artifactId>site</artifactId>
-  	<version>2.0.1-SNAPSHOT</version>
+  	<version>2.0.2</version>
   	
   	<name>GiantRocket Site</name>  	
     <description>A project to admin teams and let them register for a tournament</description>
