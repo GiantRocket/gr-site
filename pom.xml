@@ -104,6 +104,10 @@
 			<resource>
 				<directory>${project.basedir}/src/main/resources</directory>
 				<filtering>true</filtering>
+				<excludes>
+					<exclude>*.conf</exclude>
+					<exclude>local.properties</exclude>
+				</excludes>
 			</resource>
 			<resource>
 				<directory>${project.basedir}/src/main/webapp</directory>
