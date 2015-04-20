@@ -29,9 +29,9 @@
   	</developers>
   
   	<scm>
-		<connection>scm:git:git@github.com:GiantRocket/gr-site.git</connection>
-		<developerConnection>scm:git:git@github.com:GiantRocket/gr-site.git</developerConnection>
-		<url>scm:git:git@github.com:GiantRocket/gr-site.git</url>
+		<connection>scm:git:https://github.com/GiantRocket/gr-site.git</connection>
+		<developerConnection>scm:git:https://github.com/GiantRocket/gr-site.git</developerConnection>
+		<url>scm:git:https://github.com/GiantRocket/gr-site.git</url>
 	</scm>
   
   	<dependencies>  				
