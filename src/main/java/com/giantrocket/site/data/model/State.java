@@ -1,56 +1,40 @@
 package com.giantrocket.site.data.model;
 
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.Map;
 
-//TODO ver que hacemos con esto... vamos a poner todos los estados de todos los paises? quizas hay que asociarlo a un Country, y los nombres deberian estar en otro lado
 public enum State {
 
-	BUENOS_AIRES("Buenos Aires"),
-	CATAMARCA("Catamarca"),
-	CHACO("Chaco"),
-	CHUBUT("Chubut"),
-	CORDOBA("C�rdoba"),
-	CORRIENTES("Corrientes"),
-	ENTRE_RIOS("Entre R�os"),
-	FORMOSA("Formosa"),
-	JUJUY("Jujuy"),
-	LA_PAMPA("La Pampa"),
-	LA_RIOJA("La Rioja"),
-	MENDOZA("Mendoza"),
-	MISIONES("Misiones"),
-	NEUQUEN("Neuqu�n"),
-	RIO_NEGRO("R�o Negro"),
-	SALTA("Salta"),
-	SAN_JUAN("San Juan"),
-	SAN_LUIS("San Luis"),
-	SANTA_CRUZ("Santa Cruz"),
-	SANTA_FE("Santa Fe"),
-	SANTIAGO_DEL_ESTERO("Santiago del Estero"),
-	TIERRA_DEL_FUEGO("Tierra del Fuego"),
-	TUCUMAN("Tucum�n");
+	BUENOS_AIRES(Country.ARGENTINA),
+	CATAMARCA(Country.ARGENTINA),
+	CHACO(Country.ARGENTINA),
+	CHUBUT(Country.ARGENTINA),
+	CORDOBA(Country.ARGENTINA),
+	CORRIENTES(Country.ARGENTINA),
+	ENTRE_RIOS(Country.ARGENTINA),
+	FORMOSA(Country.ARGENTINA),
+	JUJUY(Country.ARGENTINA),
+	LA_PAMPA(Country.ARGENTINA),
+	LA_RIOJA(Country.ARGENTINA),
+	MENDOZA(Country.ARGENTINA),
+	MISIONES(Country.ARGENTINA),
+	NEUQUEN(Country.ARGENTINA),
+	RIO_NEGRO(Country.ARGENTINA),
+	SALTA(Country.ARGENTINA),
+	SAN_JUAN(Country.ARGENTINA),
+	SAN_LUIS(Country.ARGENTINA),
+	SANTA_CRUZ(Country.ARGENTINA),
+	SANTA_FE(Country.ARGENTINA),
+	SANTIAGO_DEL_ESTERO(Country.ARGENTINA),
+	TIERRA_DEL_FUEGO(Country.ARGENTINA),
+	TUCUMAN(Country.ARGENTINA);
 	
-	private final String description; 
-	private static final Map<String, State> LOOKUP = new HashMap<String, State>();
+	private final Country country; 
 
-    static {
-        for (State s : EnumSet.allOf(State.class)) {
-            LOOKUP.put(s.getDescription(), s);
-        }
+    private State(Country country) {
+        this.country = country;
     }
 
-    private State(String description) {
-        this.description = description;
-    }
+	public Country getCountry() {
+		return country;
+	}
 
-    public static State getByDescription(String description) {
-        return LOOKUP.get(description);
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-	
-	
 }

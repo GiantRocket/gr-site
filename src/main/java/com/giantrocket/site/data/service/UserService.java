@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.despegar.integration.mongo.connector.MongoCollection;
 import com.despegar.integration.mongo.connector.MongoCollectionFactory;
 import com.giantrocket.site.data.model.User;
+import com.giantrocket.site.exceptions.ErrorType;
+import com.giantrocket.site.util.validator.CustomAssert;
 
 @Service
 public class UserService {
@@ -26,6 +28,7 @@ public class UserService {
 	
 	//TODO agregar validaciones
 	public String add(User user) {
+		CustomAssert.notNull(user.getMail(), ErrorType.MAIL_REQUIRED);
 		user.setCreationDate(new Date());
 		return this.users.add(user);		
 	}	

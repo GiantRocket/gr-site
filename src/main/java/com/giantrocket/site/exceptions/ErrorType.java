@@ -6,6 +6,7 @@ public enum ErrorType {
 	
 	// 400
 	TEAM_EXISTS(HttpStatus.BAD_REQUEST, 1, "Un equipo con el nombre solicitado ya se encuentra creado, por favor contacta con un administrador para resolver el problema"),
+	MAIL_REQUIRED(HttpStatus.BAD_REQUEST, 2, "El mail es obligatorio para poder crear un usuario"),
 	
 	// 404
 	TEAM_NOT_FOUND(HttpStatus.NOT_FOUND,1,"El equipo solicitado no existe"),

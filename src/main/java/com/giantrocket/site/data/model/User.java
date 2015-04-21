@@ -9,18 +9,19 @@ import com.despegar.integration.mongo.entities.IdentifiableEntity;
 public class User implements IdentifiableEntity {
 	
 	private String id;
-	private String userName;
+	private String mail;
+	private String password;
 	private List<UserRole> roles;
 	private Country country;
+	private State state;
 	private Date creationDate;
+	private Date birthday;
+	private String idNumber;
+	private String name;
+	private String lastName;
+	private String steamId;
+	private String nick;
 	
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
 	public List<UserRole> getRoles() {
 		return roles;
 	}
@@ -52,4 +53,59 @@ public class User implements IdentifiableEntity {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
+	public String getMail() {
+		return mail;
+	}
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Date getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+	public String getIdNumber() {
+		return idNumber;
+	}
+	public void setIdNumber(String idNumber) {
+		this.idNumber = idNumber;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getSteamId() {
+		return steamId;
+	}
+	public void setSteamId(String steamId) {
+		this.steamId = steamId;
+	}
+	public String getNick() {
+		return nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+	public State getState() {
+		return state;
+	}
+	public void setState(State state) {
+		this.state = state;
+	}
 }
+		

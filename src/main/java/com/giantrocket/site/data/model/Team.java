@@ -9,10 +9,16 @@ import com.despegar.integration.mongo.entities.IdentifiableEntity;
 public class Team implements IdentifiableEntity{
 	
 	private String id;
+	private String steamId;
 	private String name;
 	private String shortName;
-	private Date creationDate;	
+	private String logoUrl;
+	private String facebookUrl;
+	private String twitter;
+	private Date creationDate;
 	private List<String> playersIds;
+	private String managerId;
+	
 	
 	public String getId() {
 		return id;
@@ -50,6 +56,36 @@ public class Team implements IdentifiableEntity{
 		}
 		
 		this.playersIds.add(playerId);
+	}
+	public String getSteamId() {
+		return steamId;
+	}
+	public void setSteamId(String steamId) {
+		this.steamId = steamId;
+	}
+	public String getFacebookUrl() {
+		return facebookUrl;
+	}
+	public void setFacebookUrl(String facebookUrl) {
+		this.facebookUrl = facebookUrl;
+	}
+	public String getManagerId() {
+		return managerId;
+	}
+	public void setManagerId(String managerId) {
+		this.managerId = managerId;
+	}
+	public String getTwitter() {
+		return twitter;
+	}
+	public void setTwitter(String twitter) {
+		this.twitter = twitter;
+	}
+	public String getLogoUrl() {
+		return logoUrl;
+	}
+	public void setLogoUrl(String logoUrl) {
+		this.logoUrl = logoUrl;
 	}
 
 }
