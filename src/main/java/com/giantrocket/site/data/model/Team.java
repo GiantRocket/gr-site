@@ -1,8 +1,7 @@
 package com.giantrocket.site.data.model;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+import java.util.Map;
 
 import com.despegar.integration.mongo.entities.IdentifiableEntity;
 
@@ -11,13 +10,14 @@ public class Team implements IdentifiableEntity{
 	private String id;
 	private String steamId;
 	private String name;
-	private String shortName;
+	private String tag;
 	private String logoUrl;
-	private String facebookUrl;
+	private String facebook;
 	private String twitter;
 	private Date creationDate;
-	private List<String> playersIds;
-	private String managerId;
+	private Map<UserRole,String> players;
+	private String foundationDate;
+	private Country country;
 	
 	
 	public String getId() {
@@ -32,48 +32,17 @@ public class Team implements IdentifiableEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getShortName() {
-		return shortName;
-	}
-	public void setShortName(String shortName) {
-		this.shortName = shortName;
-	}
 	public Date getCreationDate() {
 		return creationDate;
 	}
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
-	public List<String> getPlayersIds() {
-		return playersIds;
-	}
-	public void setPlayersIds(List<String> playersIds) {
-		this.playersIds = playersIds;
-	}
-	public void addPlayerId(String playerId) {
-		if (this.playersIds == null) {
-			this.playersIds = new ArrayList<String>();
-		}
-		
-		this.playersIds.add(playerId);
-	}
 	public String getSteamId() {
 		return steamId;
 	}
 	public void setSteamId(String steamId) {
 		this.steamId = steamId;
-	}
-	public String getFacebookUrl() {
-		return facebookUrl;
-	}
-	public void setFacebookUrl(String facebookUrl) {
-		this.facebookUrl = facebookUrl;
-	}
-	public String getManagerId() {
-		return managerId;
-	}
-	public void setManagerId(String managerId) {
-		this.managerId = managerId;
 	}
 	public String getTwitter() {
 		return twitter;
@@ -86,6 +55,36 @@ public class Team implements IdentifiableEntity{
 	}
 	public void setLogoUrl(String logoUrl) {
 		this.logoUrl = logoUrl;
+	}
+	public String getFoundationDate() {
+		return foundationDate;
+	}
+	public void setFoundationDate(String foundationDate) {
+		this.foundationDate = foundationDate;
+	}
+	public Country getCountry() {
+		return country;
+	}
+	public void setCountry(Country country) {
+		this.country = country;
+	}
+	public String getTag() {
+		return tag;
+	}
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+	public Map<UserRole, String> getPlayers() {
+		return players;
+	}
+	public void setPlayers(Map<UserRole, String> players) {
+		this.players = players;
+	}
+	public String getFacebook() {
+		return facebook;
+	}
+	public void setFacebook(String facebook) {
+		this.facebook = facebook;
 	}
 
 }

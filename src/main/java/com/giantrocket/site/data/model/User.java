@@ -1,8 +1,6 @@
 package com.giantrocket.site.data.model;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import com.despegar.integration.mongo.entities.IdentifiableEntity;
 
@@ -11,7 +9,6 @@ public class User implements IdentifiableEntity {
 	private String id;
 	private String mail;
 	private String password;
-	private List<UserRole> roles;
 	private Country country;
 	private State state;
 	private Date creationDate;
@@ -22,12 +19,6 @@ public class User implements IdentifiableEntity {
 	private String steamId;
 	private String nick;
 	
-	public List<UserRole> getRoles() {
-		return roles;
-	}
-	public void setRoles(List<UserRole> roles) {
-		this.roles = roles;
-	}
 	public String getId() {
 		return this.id;
 	}
@@ -39,13 +30,6 @@ public class User implements IdentifiableEntity {
 	}
 	public void setCountry(Country country) {
 		this.country = country;
-	}
-	public void addRole(UserRole role) {
-		if (this.roles == null) {
-			this.roles = new ArrayList<UserRole>();
-		}
-		
-		this.roles.add(role);
 	}
 	public Date getCreationDate() {
 		return creationDate;
