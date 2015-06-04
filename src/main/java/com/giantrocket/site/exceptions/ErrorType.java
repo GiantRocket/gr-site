@@ -7,6 +7,10 @@ public enum ErrorType {
 	// 400
 	TEAM_EXISTS(HttpStatus.BAD_REQUEST, 1, "Un equipo con el nombre solicitado ya se encuentra creado, por favor contacta con un administrador para resolver el problema"),
 	MAIL_REQUIRED(HttpStatus.BAD_REQUEST, 2, "El mail es obligatorio para poder crear un usuario"),
+	TOURNAMENT_NAME_AND_DESCRIPTION_REQUIRED(HttpStatus.BAD_REQUEST, 3, "El nombre y descripción del torneo son obligatorios"),
+	TOURNAMENT_DATES_MISSING(HttpStatus.BAD_REQUEST, 4, "Las fechas de inscripción y ejecución del torneo son obligatorias"),
+	TEAM_NAME(HttpStatus.BAD_REQUEST, 5, "El nombre del equipo es obligatorio"),
+	TEAM_TAG(HttpStatus.BAD_REQUEST, 6, "El tag del equipo es obligatorio"),
 	
 	// 404
 	TEAM_NOT_FOUND(HttpStatus.NOT_FOUND,1,"El equipo solicitado no existe"),

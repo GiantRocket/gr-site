@@ -1,8 +1,8 @@
 package com.giantrocket.site.data.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import com.despegar.integration.mongo.entities.IdentifiableEntity;
 
@@ -19,6 +19,7 @@ public class Tournament implements IdentifiableEntity{
 	private Date inscriptionEndDate;
 	private Date creationDate;
 	private List<String> teams;
+	private List<String> matches;
 	
 	public String getId() {
 		return id;
@@ -75,6 +76,9 @@ public class Tournament implements IdentifiableEntity{
 		this.inscriptionEndDate = inscriptionEndDate;
 	}
 	public List<String> getTeams() {
+		if(teams == null){
+			teams = new ArrayList<String>();
+		}
 		return teams;
 	}
 	public void setTeams(List<String> teams) {
@@ -85,6 +89,15 @@ public class Tournament implements IdentifiableEntity{
 	}
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
+	}
+	public List<String> getMatches() {
+		if(matches == null){
+			matches = new ArrayList<String>();
+		}
+		return matches;
+	}
+	public void setMatches(List<String> matches) {
+		this.matches = matches;
 	}
 
 }
